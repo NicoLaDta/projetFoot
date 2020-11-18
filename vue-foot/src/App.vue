@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="container-global-nav">
-    <img class="logo-club" :src="image" >
+    <img class="logo-club" :src="logo" >
       <div class="pt-roboto nav flex ">
         <nav class="mx-auto nav-desktop">
         <router-link class="padding-router color-focus" to="/">Home</router-link>
@@ -33,48 +33,54 @@
         </nav>
     </div>
 
-    <div class= "Footer">
+    <div class= "footer">
         <div class="logos-sponsors">
+
+          <div class="logo-sponsors-first">
             <a href="https://www.vice.com/fr/topic/red-star-fc">
-                <img src="" alt="logo-vice" />
+                <img :src="logoVice" alt="logo-vice" />
             </a>
             <a href="https://www.adidas.fr">
-                <img src="" alt="logo-adidas" />
+                <img :src="logoAdidas" alt="logo-adidas" />
             </a>
             <a href="https://www.groupe-realites.com/fr/">
-                <img src="" alt="logo-realites" />
+                <img :src="logoRealites" alt="logo-realites" />
             </a>            
             <a href="https://www.premiere-heure.fr">
-                <img src="" alt="logo-ph" />
-            </a>           
+                <img :src="logoPh" alt="logo-ph" />
+            </a>
+          </div>
+
+          <div class="logo-sponsors-second">             
             <a href="https://www.iledefrance.fr">
-                <img src="" alt="logo-idf" />
+                <img :src="logoIDF" alt="logo-idf" />
             </a>
             <a href="https://www.saint-ouen.fr">
-                <img src="" alt="logo-saintouen" />
+                <img :src="logoSaintOuen" alt="logo-saintouen" />
             </a>
             <a href="https://www.ville-gennevilliers.fr/2/accueil.htm">
-                <img src="" alt="logo-gennevilliers" />
+                <img :src="logoGennevilliers" alt="logo-gennevilliers" />
             </a>
             <a href="http://www.seine-saint-denis.fr">
-                <img src="" alt="logo-seinesaintdenis" />
+                <img :src="logoSeineSaintDenis" alt="logo-seinesaintdenis" />
             </a>
+          </div>  
         </div>
 
         <div class="RS">
             <p><italic>Suivez-nous !</italic></p>
                 <div class="logos-RS">
                     <a href="https://www.facebook.com/RedStarFC.Officiel/">
-                        <img src="" alt="logo-facebook" />
+                        <img :src="logoFacebook" alt="logo-facebook" />
                     </a>
                     <a href="https://www.instagram.com/redstarfc/">
-                        <img src="" alt="logo-instagram" />
+                        <img :src="logoInstagram" alt="logo-instagram" />
                     </a>
                     <a href="https://www.youtube.com/channel/UCtWK6vmeDs__9Z6xE_KNUxA">
-                        <img src="" alt="logo-youtube" />
+                        <img :src="logoYoutube" alt="logo-youtube" />
                     </a>
                     <a href="https://twitter.com/redstarfc">
-                        <img src="" alt="logo-twitter" />
+                        <img :src="logoTwitter" alt="logo-twitter" />
                     </a>
                 </div>
             <p><strong>@redstarfootball</strong></p>
@@ -92,7 +98,18 @@ export default {
   },
   data () {
   return {
-    image: require('@/assets/logo.png')
+    logo: require('@/assets/logo.png'),
+    logoAdidas: require('@/assets/logos-sponsors/adidas.svg'),
+    logoGennevilliers: require('@/assets/logos-sponsors/gennevilliers.svg'),
+    logoIDF: require('@/assets/logos-sponsors/idf.svg'),
+    logoPh: require('@/assets/logos-sponsors/ph.svg'),
+    logoRealites: require('@/assets/logos-sponsors/realites.svg'),
+    logoSeineSaintDenis: require('@/assets/logos-sponsors/saint-denis.svg'),
+    logoSaintOuen: require('@/assets/logos-sponsors/saint-ouen.svg'),
+    logoVice: require('@/assets/logos-sponsors/vice.svg'),
+    logoFacebook: require('@/assets/logos-rs/facebook.svg'),
+    logoInstagram: require('@/assets/logos-rs/instagram.svg'),
+    logoYoutube: require('@/assets/logos-rs/youtube.svg')
   }
 },
 mounted(){
@@ -167,6 +184,29 @@ font-weight: bold;
     display: block;
     
   }
+
+  .footer{
+    border: solid red 2px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .footer img {
+    width: 100px;
+  }
+
+  .logos-sponsors{
+    flex-direction: column;
+    display: flex;
+  }
+
+  .logos-sponsors-first, .logos-sponsors-second{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+
 @media screen and (max-width: 800px) {
   .logo-club{
     width: 60px;
