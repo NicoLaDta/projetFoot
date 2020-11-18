@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-  <v-home></v-home>
+  <v-header></v-header>
   </div>
 </template>
 
 <script>
-import VHome from '@/components/VHome'
+import VHeader from './components/VHeader.vue'
 
 export default {
   name: 'App',
   components: {
-   VHome,
+    VHeader,
   }
 }
 </script>
