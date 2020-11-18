@@ -1,37 +1,85 @@
 <template>
   <div id="app">
-  <div class="container-global-nav">
- <img class="logo-club" :src="image" >
-    <div class="pt-roboto nav flex ">
-      <nav class="mx-auto nav-desktop">
-      <router-link class="padding-router color-focus" to="/">Home</router-link>
-      <router-link class="padding-router color-focus" to="/">Actualités</router-link> 
-      <router-link class="padding-router color-focus" to="/">Calendrier et résultats</router-link>
-       <router-link class="padding-router color-focus" to="/">Classement</router-link>
-      <router-link class="padding-router color-focus" to="/">Billeterie</router-link>
-      <router-link class="padding-router color-focus" to="/">Boutique</router-link>
-      </nav>
-</div>
-  <div>
-  <div class="container-menu-mobile">
-  <button class="button-menu-mobile">
-    <span class="span1"></span>
-    <span class="span2"></span>
-    <span class="span3"></span>
-  </button>
+    <div class="container-global-nav">
+    <img class="logo-club" :src="image" >
+      <div class="pt-roboto nav flex ">
+        <nav class="mx-auto nav-desktop">
+        <router-link class="padding-router color-focus" to="/">Home</router-link>
+        <router-link class="padding-router color-focus" to="/">Actualités</router-link> 
+        <router-link class="padding-router color-focus" to="/">Calendrier et résultats</router-link>
+        <router-link class="padding-router color-focus" to="/">Classement</router-link>
+        <router-link class="padding-router color-focus" to="/">Billeterie</router-link>
+        <router-link class="padding-router color-focus" to="/">Boutique</router-link>
+        </nav>
     </div>
-  </div>
-  </div>
-  <div class="pt-roboto mx-auto nav-mobile nav">
-      <nav class="mx-auto flex flex-col">
-      <router-link class="padding-router color-focus" to="/">Home</router-link>
-      <router-link class="padding-router color-focus" to="/">Actualités</router-link> 
-      <router-link class="padding-router color-focus" to="/">Calendrier et résultats</router-link>
-       <router-link class="padding-router color-focus" to="/">Classement</router-link>
-      <router-link class="padding-router color-focus" to="/">Billeterie</router-link>
-      <router-link class="padding-router color-focus" to="/">Boutique</router-link>
-      </nav>
-</div>
+    <div>
+    <div class="container-menu-mobile">
+    <button class="button-menu-mobile">
+      <span class="span1"></span>
+      <span class="span2"></span>
+      <span class="span3"></span>
+    </button>
+      </div>
+    </div>
+    </div>
+    <div class="pt-roboto mx-auto nav-mobile nav">
+        <nav class="mx-auto flex flex-col">
+        <router-link class="padding-router color-focus" to="/">Home</router-link>
+        <router-link class="padding-router color-focus" to="/">Actualités</router-link> 
+        <router-link class="padding-router color-focus" to="/">Calendrier et résultats</router-link>
+        <router-link class="padding-router color-focus" to="/">Classement</router-link>
+        <router-link class="padding-router color-focus" to="/">Billeterie</router-link>
+        <router-link class="padding-router color-focus" to="/">Boutique</router-link>
+        </nav>
+    </div>
+
+    <div class= "Footer">
+        <div class="logos-sponsors">
+            <a href="https://www.vice.com/fr/topic/red-star-fc">
+                <img src="" alt="logo-vice" />
+            </a>
+            <a href="https://www.adidas.fr">
+                <img src="" alt="logo-adidas" />
+            </a>
+            <a href="https://www.groupe-realites.com/fr/">
+                <img src="" alt="logo-realites" />
+            </a>            
+            <a href="https://www.premiere-heure.fr">
+                <img src="" alt="logo-ph" />
+            </a>           
+            <a href="https://www.iledefrance.fr">
+                <img src="" alt="logo-idf" />
+            </a>
+            <a href="https://www.saint-ouen.fr">
+                <img src="" alt="logo-saintouen" />
+            </a>
+            <a href="https://www.ville-gennevilliers.fr/2/accueil.htm">
+                <img src="" alt="logo-gennevilliers" />
+            </a>
+            <a href="http://www.seine-saint-denis.fr">
+                <img src="" alt="logo-seinesaintdenis" />
+            </a>
+        </div>
+
+        <div class="RS">
+            <p><italic>Suivez-nous !</italic></p>
+                <div class="logos-RS">
+                    <a href="https://www.facebook.com/RedStarFC.Officiel/">
+                        <img src="" alt="logo-facebook" />
+                    </a>
+                    <a href="https://www.instagram.com/redstarfc/">
+                        <img src="" alt="logo-instagram" />
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCtWK6vmeDs__9Z6xE_KNUxA">
+                        <img src="" alt="logo-youtube" />
+                    </a>
+                    <a href="https://twitter.com/redstarfc">
+                        <img src="" alt="logo-twitter" />
+                    </a>
+                </div>
+            <p><strong>@redstarfootball</strong></p>
+        </div>
+    </div>
   </div>
 </template>
 
