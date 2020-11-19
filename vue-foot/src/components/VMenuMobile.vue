@@ -30,11 +30,6 @@ export default {
       ease: 'expo.out'
     }, 'start+=0.6')
   },
-   data() {
-    return {
-      logo: require("@/assets/logo.png"),
-}
-}
 }
 </script>
 
