@@ -69,7 +69,7 @@ app.post('/admin',(req,res) => {
     })
 });
 
-//Insert un admin
+//Update un admin
 app.put('/admin',(req,res) => {
     let emp = req.body;
     var sql = "SET @IdAdmin = ?;SET @Name = ?;SET @CodeAdmin = ?;SET @Salary = ?; \
