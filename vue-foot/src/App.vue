@@ -48,17 +48,11 @@
     <!--        -->
     <!-- NOTRE APP -->
     <!--        -->
-<<<<<<< HEAD
-    <div id="app">
-      <v-slide></v-slide>
-      <v-calendrier></v-calendrier>
-=======
 
     <div id="app">
       <!-- <v-slide></v-slide> -->
       <router-view />
       <!-- <v-actu></v-actu> -->
->>>>>>> d7a89a9a33f2ee29db8bf108bd555261c2275c37
     </div>
 
     <!--        -->
@@ -124,26 +118,15 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-import VMenuMobile from '@/components/VMenuMobile'
-import VSlide from '@/components/VSlide'
-import VCalendrier from './components/VCalendrier.vue';
-=======
 import VMenuMobile from "@/components/VMenuMobile";
 // import VActu from '@/components/VActu'
 // import VSlide from '@/components/VSlide'
->>>>>>> d7a89a9a33f2ee29db8bf108bd555261c2275c37
 export default {
   name: "App",
   components: {
     VMenuMobile,
-<<<<<<< HEAD
-    VSlide,
-    VCalendrier
-=======
     // VSlide,
     // VActu
->>>>>>> d7a89a9a33f2ee29db8bf108bd555261c2275c37
   },
   data() {
     return {
@@ -256,7 +239,7 @@ export default {
 
 .container-rs {
   display: flex;
-  flex-direction: raw;
+  flex-direction: column;
   align-content: center;
   justify-content: center;
   text-align: center;
