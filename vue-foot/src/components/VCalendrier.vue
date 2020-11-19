@@ -39,7 +39,7 @@
 
 <script>
 export default {
-    name: 'VCalendrier',
+    name: 'Calendrier',
     data(){
         return{
             logoRCS: require('@/assets/logos-equipes/RCS.svg'),
