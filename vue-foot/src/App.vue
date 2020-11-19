@@ -119,7 +119,7 @@ export default {
   },
   data() {
     return {
-      logo: require("@/assets/logo.png"),
+      logo: require("@/assets/logored.png"),
       logoAdidas: require("@/assets/logos-sponsors/adidas.svg"),
       logoGennevilliers: require("@/assets/logos-sponsors/gennevilliers.svg"),
       logoIDF: require("@/assets/logos-sponsors/idf.svg"),
