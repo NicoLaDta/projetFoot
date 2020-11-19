@@ -43,8 +43,10 @@
     <!--        -->
     <!-- ID APP -->
     <!--        -->
-    <div id="app"></div>
-    <v-slide></v-slide>
+    <div id="app">
+      <v-slide></v-slide>
+    </div>
+    
     <!--        -->
     <!-- FOOTER -->
     <!--        -->
