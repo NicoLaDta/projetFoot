@@ -1,34 +1,46 @@
 <template>
   <div class="container">
-    <h1 class="title font-bold">Prochains match</h1>
+    <h1 class="title font-bold not-italic text-center">Prochains match</h1>
      
-     <div class="match-item">
-       <p class="conditions font-bold">Date/heure/lieu prochain match</p>
+     <div class="match-item flex justify-center items-center flex-col">
+       <p class="conditions font-bold text-center">Date/heure/lieu prochain match</p>
 
-         <div class="versus flex justify-around font-bold">
+         <div class="versus flex justify-around font-bold items-center uppercase">
            <div class="first-team">
-             <div class="team-img"></div>
+             <div class="team-img bg-gray-200"></div>
              <p>Nom Equipe 1</p>
            </div>
              <p>VS</p>
            <div class="second-team">
-             <div class="team-img"></div>
+             <div class="team-img bg-gray-200"></div>
              <p>Nom Equipe 2</p>
            </div>
          </div>
 
-         <div class="buy-tickets">
+         <div class="buy-tickets text-center px-3 rounded">
            Billets
          </div>
      </div>
+
+    <p class="title font-bold not-italic text-center">Ou nous trouver ?</p>
+
+    <div class="find-us flex">
+      <div class="card bg-green-300 justify-center"></div>
+
+      <div class="adress">
+        <p>RedStar Football Club</p>
+        <p>92 Rue du Dr Bauer</p>
+        <p>93400 Saint-Ouen</p>
+      </div>
+    </div>
+
 
   </div>
 </template>
 
 <style lang="postcss" scoped>
- h1{
+ .container{
    font-family: Roboto Condensed;
-   font-style: normal;
  }
 
  .match-item{
@@ -40,21 +52,16 @@
  }
 
  .conditions {
-   font-family: Roboto Condensed;
    font-style: normal;
    font-size: 24px;
    line-height: 28px;
-   text-align: center;
  }
 
  .versus{
-   text-transform: uppercase;
-   font-family: Roboto Condensed;
    font-style: normal;
  }
 
  .team-img{
-   background: #C4C4C4;
    width: 100px;
    height: 100px;
  }
@@ -62,13 +69,14 @@
  .buy-tickets{
    background: rgba(12, 68, 55, 0.9);
    color: white;
-   font-family: Roboto Condensed;
-   text-align: center;
-   border: 1px solid #000000;
    box-sizing: border-box;
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-   border-radius: 10px;
    display: inline;
+ }
+
+ .card{
+  width: 574px;
+  height: 321px;
  }
 </style>
 
