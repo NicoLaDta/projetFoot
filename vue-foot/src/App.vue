@@ -28,43 +28,23 @@
         </nav>
       </div>
       <div>
-        <div class="container-menu-mobile">
-          <button class="button-menu-mobile">
-            <span class="span1"></span>
-            <span class="span2"></span>
-            <span class="span3"></span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="pt-roboto mx-auto nav-mobile nav">
-      <nav class="mx-auto flex flex-col">
-        <router-link class="padding-router color-focus" to="/"
-          >Home</router-link
-        >
-        <router-link class="padding-router color-focus" to="/"
-          >Actualités</router-link
-        >
-        <router-link class="padding-router color-focus" to="/"
-          >Calendrier et résultats</router-link
-        >
-        <router-link class="padding-router color-focus" to="/"
-          >Classement</router-link
-        >
-        <router-link class="padding-router color-focus" to="/"
-          >Billetterie</router-link
-        >
-        <router-link class="padding-router color-focus" to="/"
-          >Boutique</router-link
-        >
-      </nav>
-    </div>
 
+        <button ref="button" class="ml-auto menu-btn" :class="{ 'menu-btn--open': isMenuOpen }" @click="toggleMenu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+
+        <span class="sr-only">Menu</span>
+      </button>
+      </div>
+       <v-menu-mobile v-if="isMenuOpen"></v-menu-mobile>
+    </div>
+    
     <!--        -->
     <!-- ID APP -->
     <!--        -->
     <div id="app"></div>
-
+    <v-slide></v-slide>
     <!--        -->
     <!-- FOOTER -->
     <!--        -->
@@ -129,9 +109,14 @@
 </template>
 
 <script>
+import VMenuMobile from '@/components/VMenuMobile'
+import VSlide from '@/components/VSlide'
 export default {
   name: "App",
-  components: {},
+  components: {
+    VMenuMobile,
+    VSlide
+  },
   data() {
     return {
       logo: require("@/assets/logo.png"),
@@ -147,26 +132,25 @@ export default {
       logoInstagram: require("@/assets/logos-rs/instagram.svg"),
       logoYoutube: require("@/assets/logos-rs/youtube.svg"),
       logoTwitter: require("@/assets/logos-rs/twitter.svg"),
+      isMenuOpen: false,
     };
   },
-  mounted() {
-    const burgerMenu = document.querySelector(".container-menu-mobile");
-    burgerMenu.addEventListener("click", () => {
-      const span1 = document.querySelector(".span1");
-      const span2 = document.querySelector(".span2");
-      const span3 = document.querySelector(".span3");
-      const show = document.querySelector(".nav-mobile");
-      span1.classList.toggle("toogleBurgerSpan1");
-      span2.classList.toggle("toogleBurgerSpan2");
-      span3.classList.toggle("toogleBurgerSpan3");
-      show.classList.toggle("toogleShow");
-    });
+  methods: {
+    toggleMenu() {
+      console.log('menu')
+      this.isMenuOpen = !this.isMenuOpen
+    }
   },
-  methods: {},
+  watch:{
+    $route (){
+      this.isMenuOpen = false
+    }
+  },
 };
 </script>
 
-<style>
+<style lang="postcss" >
+
 #app {
  flex-grow:1;
  min-height: 40vh;
@@ -270,10 +254,13 @@ export default {
 }
 
 @media screen and (max-width: 800px) {
+
+  /* Menu Mobile */
   .logo-club {
     width: 60px;
     margin: 0;
   }
+
   .container-global-nav {
     display: flex;
     justify-content: space-around;
@@ -281,27 +268,46 @@ export default {
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  .container-menu-mobile {
-    display: block;
-  }
 
-  .button-menu-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .button-menu-mobile span {
-    width: 35px;
-    height: 5px;
-    margin: 3px;
-    border-radius: 15px;
-    background-color: black;
-    transition: ease 0.5s;
-  }
   .nav-desktop {
     display: none;
   }
+   .menu-btn {
+  width: 40px;
+  height: 40px;
+  outline: none;
+  padding: 13px 10px;
+  @apply border-blue-button border flex flex-col justify-between rounded-full transition duration-500;
+}
+
+.menu-btn .bar {
+  width: 18px;
+  height: 2px;
+  @apply bg-blue-button block transition duration-500 origin-center;
+}
+.menu-btn:focus,
+.menu-btn:hover {
+  @apply  bg-blue-button;
+}
+@media (hover: none) {
+  .menu-btn:hover { color: inherit; }
+}
+.menu-btn:focus .bar,
+.menu-btn:hover .bar {
+  @apply bg-white;
+}
+/**
+  Menu open
+ */
+.menu-btn--open .bar:nth-child(1){
+  transform: translateY(5px) rotate(45deg);
+}
+.menu-btn--open .bar:nth-child(2){
+  transform: scaleX(0);
+}
+.menu-btn--open .bar:nth-child(3){
+  transform: translateY(-5px) rotate(-45deg);
+}
 
 /* ---------------------- */
 /* FOOTER */
@@ -318,5 +324,6 @@ export default {
     width: 300px;
     margin: auto;
   }
+
 }
 </style>
