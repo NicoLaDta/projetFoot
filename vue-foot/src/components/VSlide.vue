@@ -20,7 +20,7 @@ export default {
     data() {
     return {
       photo: require("@/assets/actual.png"),
-      logo: require("@/assets/logo.png"),
+      logo: require("@/assets/logored.svg"),
       responsive: [
                 {
                     breakpoint: 800,
