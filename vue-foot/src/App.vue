@@ -9,48 +9,53 @@
         <nav class="mx-auto nav-desktop">
           <router-link class="padding-router color-focus" to="/">Home</router-link
           >
-          <router-link class="padding-router color-focus" to="/about"
+          <router-link class="padding-router color-focus" to="/VActu"
             >Actualités</router-link
           >
-          <router-link class="padding-router color-focus" to=""
+          <router-link class="padding-router color-focus" to="/VCalendrier"
             >Calendrier et résultats</router-link
           >
-          <router-link class="padding-router color-focus" to=""
+          <router-link class="padding-router color-focus" to="/VClassement"
             >Classement</router-link
           >
-          <router-link class="padding-router color-focus" to=""
-            >Billeterie</router-link
+          <router-link class="padding-router color-focus" to="/VBillettrie"
+            >Billetterie</router-link
           >
-          <router-link class="padding-router color-focus" to=""
+          <router-link class="padding-router color-focus" to="/VBoutique"
             >Boutique</router-link
           >
         </nav>
       </div>
+      
       <div>
+        <button
+          ref="button"
+          class="ml-auto menu-btn"
+          :class="{ 'menu-btn--open': isMenuOpen }"
+          @click="toggleMenu"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
 
-        <button ref="button" class="ml-auto menu-btn" :class="{ 'menu-btn--open': isMenuOpen }" @click="toggleMenu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-
-        <span class="sr-only">Menu</span>
-      </button>
+          <span class="sr-only">Menu</span>
+        </button>
       </div>
-       <v-menu-mobile v-if="isMenuOpen"></v-menu-mobile>
+      <v-menu-mobile v-if="isMenuOpen"></v-menu-mobile>
     </div>
     <!--        -->
-    <!-- ID APP -->
+    <!-- NOTRE APP -->
     <!--        -->
+
     <div id="app">
-       <router-view/>
       <!-- <v-slide></v-slide> -->
-     
+      <router-view />
+      <!-- <v-actu></v-actu> -->
     </div>
-    
+
     <!--        -->
     <!-- FOOTER -->
     <!--        -->
-
     <div class="footer">
       <div class="logos-sponsors">
         <a href="https://www.vice.com/fr/topic/red-star-fc" target="_blank">
@@ -111,13 +116,14 @@
 </template>
 
 <script>
+
 import VMenuMobile from '@/components/VMenuMobile'
+
 // import VSlide from '@/components/VSlide'
 export default {
   name: "App",
   components: {
     VMenuMobile,
-    // VSlide,
   },
   data() {
     return {
@@ -139,23 +145,22 @@ export default {
   },
   methods: {
     toggleMenu() {
-      console.log('menu')
-      this.isMenuOpen = !this.isMenuOpen
-    }
+      console.log("menu");
+      this.isMenuOpen = !this.isMenuOpen;
+    },
   },
-  watch:{
-    $route (){
-      this.isMenuOpen = false
-    }
+  watch: {
+    $route() {
+      this.isMenuOpen = false;
+    },
   },
 };
 </script>
 
 <style lang="postcss" >
-
 #app {
- flex-grow:1;
- min-height: 40vh;
+  flex-grow: 1;
+  min-height: 40vh;
 }
 
 .vue-container {
@@ -241,7 +246,6 @@ export default {
 }
 
 @media screen and (max-width: 800px) {
-
   /* Menu Mobile */
   .logo-club {
     width: 60px;
@@ -259,46 +263,48 @@ export default {
   .nav-desktop {
     display: none;
   }
-   .menu-btn {
-  width: 40px;
-  height: 40px;
-  outline: none;
-  padding: 13px 10px;
-  @apply border-blue-button border flex flex-col justify-between rounded-full transition duration-500;
-}
+  .menu-btn {
+    width: 40px;
+    height: 40px;
+    outline: none;
+    padding: 13px 10px;
+    @apply border-blue-button border flex flex-col justify-between rounded-full transition duration-500;
+  }
 
-.menu-btn .bar {
-  width: 18px;
-  height: 2px;
-  @apply bg-blue-button block transition duration-500 origin-center;
-}
-.menu-btn:focus,
-.menu-btn:hover {
-  @apply  bg-blue-button;
-}
-@media (hover: none) {
-  .menu-btn:hover { color: inherit; }
-}
-.menu-btn:focus .bar,
-.menu-btn:hover .bar {
-  @apply bg-white;
-}
-/**
+  .menu-btn .bar {
+    width: 18px;
+    height: 2px;
+    @apply bg-blue-button block transition duration-500 origin-center;
+  }
+  .menu-btn:focus,
+  .menu-btn:hover {
+    @apply bg-blue-button;
+  }
+  @media (hover: none) {
+    .menu-btn:hover {
+      color: inherit;
+    }
+  }
+  .menu-btn:focus .bar,
+  .menu-btn:hover .bar {
+    @apply bg-white;
+  }
+  /**
   Menu open
  */
-.menu-btn--open .bar:nth-child(1){
-  transform: translateY(5px) rotate(45deg);
-}
-.menu-btn--open .bar:nth-child(2){
-  transform: scaleX(0);
-}
-.menu-btn--open .bar:nth-child(3){
-  transform: translateY(-5px) rotate(-45deg);
-}
+  .menu-btn--open .bar:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+  }
+  .menu-btn--open .bar:nth-child(2) {
+    transform: scaleX(0);
+  }
+  .menu-btn--open .bar:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
+  }
 
-/* ---------------------- */
-/* FOOTER */
-/* ---------------------- */
+  /* ---------------------- */
+  /* FOOTER */
+  /* ---------------------- */
   .footer {
     flex-direction: column-reverse;
     padding-bottom: 15px;
@@ -311,6 +317,5 @@ export default {
     width: 300px;
     margin: auto;
   }
-
 }
 </style>

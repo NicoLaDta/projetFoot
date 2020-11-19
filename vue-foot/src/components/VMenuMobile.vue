@@ -1,12 +1,15 @@
 <template>
   <div class="MenuMobile absolute w-full">
     <div ref="background" class="absolute top-0 left-0 w-full h-full bg-gray-100 origin-top"></div>
-    <nav class="flex flex-col justify-around items-center h-full relative">
-      <router-link class="link" to="/">Accueil</router-link>
-      <router-link class="link" to="/">Actualités</router-link>
-      <router-link class="link" to="/">Calendrier et résultats</router-link>
-      <router-link class="link" to="/">Billeterie</router-link>
-      <router-link class="link" to="/about">Boutique</router-link>
+    <nav class="flex flex-col justify-around items-center h-full relative">      
+      <router-link class="link" to="/">Home</router-link>
+      <router-link class="link" to="/VActu">Actualités</router-link>
+      <router-link class="link" to="/VCalendrier">Calendrier et résultats</router-link>
+      <router-link class="link" to="/VClassement">Classement</router-link>
+      <router-link class="link" to="/VBillettrie">Billetterie</router-link>
+      <router-link class="link" to="/VBoutique">Boutique</router-link>
+
+>>>>>>> d7a89a9a33f2ee29db8bf108bd555261c2275c37
     </nav>
     
   </div>

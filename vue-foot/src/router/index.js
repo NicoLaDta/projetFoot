@@ -1,34 +1,46 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import App from '../App.vue'
-import About from '../components/About.vue'
+import VActu from '../components/VActu.vue'
+import VBillettrie from '../components/VBilletterie.vue'
+import VCalendrier from '../components/VCalendrier.vue'
+import VClassement from '../components/VClassement.vue'
+import VBoutique from '../components/VBoutique.vue'
 import VSlide from '../components/VSlide.vue'
+
+
 Vue.use(VueRouter)
 
 const routes = [
-//   {
-//     path: '/',
-//     name: 'App',
-//     component: App
-//   },
-  {
-    path: '/about',
-    name: 'About',
-    component: About
-  },
   {
     path: '/',
     name: 'VSlide',
     component: VSlide
   },
-//   {
-//     path: '/about',
-//     name: 'About',
-//     // route level code-splitting
-//     // this generates a separate chunk (about.[hash].js) for this route
-//     // which is lazy-loaded when the route is visited.
-//     component: () => import(/* webpackChunkName: "about" */ '../components/About.vue')
-//   }
+  {
+    path: '/VActu',
+    name: 'Actualités',
+    component: VActu
+  },
+  {
+    path: '/VBillettrie',
+    name: 'Billetterie',
+    component: VBillettrie
+  },
+  {
+    path: '/VCalendrier',
+    name: 'Calendrier',
+    component: VCalendrier
+  },
+  {
+    path: '/VClassement',
+    name: 'Classement',
+    component: VClassement
+  },
+  {
+    path: '/VBoutique',
+    name: 'Boutique',
+    component: VBoutique
+  },
 ]
 
 const router = new VueRouter({
