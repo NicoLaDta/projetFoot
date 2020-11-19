@@ -43,8 +43,10 @@
     <!--        -->
     <!-- ID APP -->
     <!--        -->
-    <div id="app"></div>
-    <v-slide></v-slide>
+    <div id="app">
+     <v-slide></v-slide>
+     <v-billetterie></v-billetterie>
+    </div>
     <!--        -->
     <!-- FOOTER -->
     <!--        -->
@@ -111,11 +113,13 @@
 <script>
 import VMenuMobile from '@/components/VMenuMobile'
 import VSlide from '@/components/VSlide'
+import VBilletterie from '@/components/VBilletterie'
 export default {
   name: "App",
   components: {
     VMenuMobile,
-    VSlide
+    VSlide,
+    VBilletterie
   },
   data() {
     return {
