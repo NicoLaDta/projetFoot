@@ -25,7 +25,7 @@ app.listen(3000,()=>console.log('Express server run at port nb : 3000'));
 
 //Recupere tout les admins
 app.get('/admin',(req,res) => {
-    mysqlConnection.query('SELECT * FROM admin',(err,rows,fields)=>{
+    mysqlConnection.query('SELECT * FROM admin',(err,rows,fields) => {
         if(!err)
             res.send(rows);
         else
@@ -35,7 +35,7 @@ app.get('/admin',(req,res) => {
 
 //Recupere juste un admin
 app.get('/admin/:id',(req,res) => {
-    mysqlConnection.query('SELECT * FROM admin where IdAdmin = ?',[req.params.id],(err,rows,fields)=>{
+    mysqlConnection.query('SELECT * FROM admin where IdAdmin = ?',[req.params.id],(err,rows,fields) => {
         if(!err)
             res.send(rows);
         else
@@ -45,7 +45,7 @@ app.get('/admin/:id',(req,res) => {
 
 //Delete un admin
 app.delete('/admin/:id',(req,res) => {
-    mysqlConnection.query('DELETE FROM admin where IdAdmin = ?',[req.params.id],(err,rows,fields)=>{
+    mysqlConnection.query('DELETE FROM admin where IdAdmin = ?',[req.params.id],(err,rows,fields) => {
         if(!err)
             res.send('Delete successfully');
         else
