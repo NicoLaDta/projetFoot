@@ -7,22 +7,21 @@
       <img class="logo-club" :src="logo" />
       <div class="pt-roboto nav flex">
         <nav class="mx-auto nav-desktop">
-          <router-link class="padding-router color-focus" to="/"
-            >Home</router-link
+          <router-link class="padding-router color-focus" to="/">Home</router-link
           >
-          <router-link class="padding-router color-focus" to="/"
+          <router-link class="padding-router color-focus" to="/about"
             >Actualités</router-link
           >
-          <router-link class="padding-router color-focus" to="/"
+          <router-link class="padding-router color-focus" to=""
             >Calendrier et résultats</router-link
           >
-          <router-link class="padding-router color-focus" to="/"
+          <router-link class="padding-router color-focus" to=""
             >Classement</router-link
           >
-          <router-link class="padding-router color-focus" to="/"
+          <router-link class="padding-router color-focus" to=""
             >Billeterie</router-link
           >
-          <router-link class="padding-router color-focus" to="/"
+          <router-link class="padding-router color-focus" to=""
             >Boutique</router-link
           >
         </nav>
@@ -39,12 +38,13 @@
       </div>
        <v-menu-mobile v-if="isMenuOpen"></v-menu-mobile>
     </div>
-    
     <!--        -->
     <!-- ID APP -->
     <!--        -->
     <div id="app">
-      <v-slide></v-slide>
+       <router-view/>
+      <!-- <v-slide></v-slide> -->
+     
     </div>
     
     <!--        -->
@@ -112,12 +112,12 @@
 
 <script>
 import VMenuMobile from '@/components/VMenuMobile'
-import VSlide from '@/components/VSlide'
+// import VSlide from '@/components/VSlide'
 export default {
   name: "App",
   components: {
     VMenuMobile,
-    VSlide
+    // VSlide,
   },
   data() {
     return {
@@ -193,21 +193,6 @@ export default {
 .logo-club {
   margin: auto;
   margin-bottom: 45px;
-}
-.toogleBurgerSpan1 {
-  transform: rotate(-45deg);
-  margin-left: 0px;
-}
-.toogleBurgerSpan2 {
-  transform: rotate(45deg);
-  margin-right: 27px;
-  margin-top: -8px;
-}
-.toogleBurgerSpan3 {
-  display: none;
-}
-.toogleShow {
-  display: block;
 }
 
 .footer {

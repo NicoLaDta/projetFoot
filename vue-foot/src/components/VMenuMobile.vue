@@ -3,9 +3,10 @@
     <div ref="background" class="absolute top-0 left-0 w-full h-full bg-gray-100 origin-top"></div>
     <nav class="flex flex-col justify-around items-center h-full relative">
       <router-link class="link" to="/">Accueil</router-link>
-      <a class="link"  href="#">Articles</a>
-      <a class="link"  href="#">Portfolio</a>
-      <router-link class="link" to="/about">À propos</router-link>
+      <router-link class="link" to="/">Actualités</router-link>
+      <router-link class="link" to="/">Calendrier et résultats</router-link>
+      <router-link class="link" to="/">Billeterie</router-link>
+      <router-link class="link" to="/about">Boutique</router-link>
     </nav>
     
   </div>
