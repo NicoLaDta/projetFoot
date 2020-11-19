@@ -43,8 +43,11 @@
     <!--        -->
     <!-- ID APP -->
     <!--        -->
-    <div id="app"></div>
-    <v-slide></v-slide>
+    <div id="app">
+      <v-slide></v-slide>
+      <v-calendrier></v-calendrier>
+    </div>
+
     <!--        -->
     <!-- FOOTER -->
     <!--        -->
@@ -111,11 +114,13 @@
 <script>
 import VMenuMobile from '@/components/VMenuMobile'
 import VSlide from '@/components/VSlide'
+import VCalendrier from './components/VCalendrier.vue';
 export default {
   name: "App",
   components: {
     VMenuMobile,
-    VSlide
+    VSlide,
+    VCalendrier
   },
   data() {
     return {
@@ -229,7 +234,7 @@ export default {
 
 .container-rs {
   display: flex;
-  flex-direction: column;
+  flex-direction: raw;
   align-content: center;
   justify-content: center;
   text-align: center;
