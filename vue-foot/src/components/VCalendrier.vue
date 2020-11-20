@@ -200,7 +200,7 @@ export default {
     margin-bottom: 15px;
     width: 70px;
     flex-direction: column;
-        justify-content: center;
+    justify-content: center;
 }
 
 .button{
@@ -301,20 +301,19 @@ export default {
         width: 300px;
         margin: auto;
         font-size: 1rem;
-
     }
 
     .next-game{
         width: 300px;
         margin: auto;
         font-size: 1rem;
+        margin-bottom: 10px;
     }
 
     .time-location{
-            margin-bottom: 0px;
-
+        margin-bottom: 0px;
     }
-    .pt-roboto{
+    .game-title{
         font-size: 1.5rem;
         text-align: center;
     }
