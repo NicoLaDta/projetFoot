@@ -2,69 +2,96 @@
     <div>
         <div class="latest-and-upcoming-games">
             <div class="game-container">
-            <p class="pt-roboto">Dernier match</p>
+            <p class="game-title">Dernier match</p>
                 <div class=last-game>
                     <div class="time-location">
-                        <p class="time-location">Date/heure/lieu dernier match</p>
+                        <p>07/01/2020 - 21:00</p>
+                        <p>Stade</p>
                     </div>
                     <div class="team-scores">
                         <div class="team">
-                            <img :src="logoRCS" alt="logo-RCS" /> <br>
-                            <p>Racing Club de Strasbourg</p>
+                            <img :src="logoMFC" alt="logo-MFC" /> <br>
+                            <p>Le Mans FC</p>
                         </div>
                         <div class="scores">
                             <p>3 - 2</p>
                         </div>
                         <div class="team">
-                            <img :src="logoOM" alt="logo-OM" /> <br>
-                            <p>Olympique de Marseille</p>
+                            <img :src="logoREDSTAR" alt="logo-redstar" /> <br>
+                            <p>Redstar Football Club</p>
                         </div>
                     </div>
                 </div>
             </div>            
             <div class="game-container">
-            <p class="pt-roboto">Prochain match</p>
+            <p class="game-title">Prochain match</p>
                 <div class=next-game>
                     <div class="time-location">
-                        <p class="time-location">Date/heure/lieu dernier match</p>
+                        <p>12/01/2020 - 21:00</p>
+                        <p>Stade</p>                    
                     </div>
                     <div class="team-scores">
                         <div class="team">
-                            <img :src="logoPSG" alt="logo-PSG" /> <br>
-                            <p>Paris Saint-Germain</p>
+                            <img :src="logoREDSTAR" alt="logo-redstar" /> <br>
+                            <p>Redstar Football Club</p>
                         </div>
                         <div class="VS">
-                            <p class="VS">VS</p>
+                            <p>VS</p>
                         </div>
                         <div class="team">
-                            <img :src="logoTFC" alt="logo-tfc" /> <br>
-                            <p>Toulouse Football Club</p>
-                        </div>
+                            <img :src="logoPARISFC" alt="logo-tfc" /> <br>
+                            <p>Paris Football Club</p>
+                        </div>                       
+                    </div>
+                    <div class="button">
+                        <button type="button">Billets</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="results-container">
-        <p class="month">Novembre</p>
+        <p class="month">Décembre</p>
             <div class="game-results">
-                <div class="date-hour-type">
-                    <p>Date et heure du match</p>
-                    <p>Type de match</p>
+                <div class="date-type">
+                    <p>15/12/19</p>
+                    <p class="hyphen"> - </p>
+                    <p>Amical</p>
                 </div>
-                
-                <div class="team-results">
-                    <img :src="logoRCS" alt="logo-RCS" /> <br>
-                    <p>Racing Club de Strasbourg</p>
+                <div class="team-scores-results">                
+                    <div class="team-results">
+                        <img :src="logoREDSTAR" alt="logo-RCS" /> <br>
+                        <p>Redstar Football Club</p>
+                    </div>
+                    <div class="scores-results">
+                        <p>2 - 1</p>
+                    </div>
+                    <div class="team-results">
+                        <img :src="logoPARISFC" alt="logo-OM" /> <br>
+                        <p>Paris Football Club</p>
+                    </div>
                 </div>
-                <div class="scores-results">
-                    <p>3 - 2</p>
+            </div>
+            <div class="game-results">
+                <div class="date-type">
+                    <p>06/12/19</p>
+                    <p class="hyphen"> - </p>
+                    <p>National</p>
                 </div>
-                <div class="team-results">
-                    <img :src="logoOM" alt="logo-OM" /> <br>
-                    <p>Olympique de Marseille</p>
+                <div class="team-scores-results">                
+                    <div class="team-results">
+                        <img :src="logoMFC" alt="logo-MFC" /> <br>
+                        <p>Le Mans FC</p>
+                    </div>
+                    <div class="scores-results">
+                        <p>3 - 2</p>
+                    </div>
+                    <div class="team-results">
+                        <img :src="logoREDSTAR" alt="logo-RCS" /> <br>
+                        <p>Redstar Football Club</p>
+                    </div>
                 </div>
-            </div>       
+            </div>        
         </div>        
     </div>
 </template>
@@ -74,10 +101,9 @@ export default {
     name: 'Calendrier',
     data(){
         return{
-            logoRCS: require('@/assets/logos-equipes/RCS.svg'),
-            logoPSG: require('@/assets/logos-equipes/PSG.svg'),
-            logoOM: require('@/assets/logos-equipes/OM.svg'),
-            logoTFC: require('@/assets/logos-equipes/TFC.svg')
+            logoMFC: require('@/assets/logos-equipes/MFC.svg'),
+            logoPARISFC: require('@/assets/logos-equipes/ParisFC.svg'),
+            logoREDSTAR: require('@/assets/logored.svg')
         }        
     }
 }
@@ -92,8 +118,8 @@ export default {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 .latest-and-upcoming-games, p{
     font-family: "Roboto Condensed", sans-serif;
@@ -105,27 +131,31 @@ export default {
 }
 
 .last-game{
-    background-color: rgba(12, 68, 55, 0.8);
+    background-color: rgba(12, 68, 55, 0.5);
     border-radius: 10px;
     padding: 50px 30px 50px 30px;
-    width: 500px;
+    width: 600px;
+    height: 320px;
     display: flex;
     flex-direction: column;
-    border:1px solid black
+    border:1px solid black;    
+    font-size: 1.2rem;
 }
 
 .next-game{
     border-radius: 10px;
     padding: 50px;
-    width: 550px;
+    width: 600px;
     display: flex;
     flex-direction: column;
-    border:1px solid black
+    border:2px solid #000000;
+    height: 320px;
+    font-size: 1.2rem;
 }
 
 .time-location{
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -140,8 +170,9 @@ export default {
     justify-content: space-around;
     align-items: center;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 25px;
+    width: 80px;
 }
 
 .team{
@@ -150,53 +181,63 @@ export default {
     flex-direction: column;
     text-transform: uppercase;
     text-align: center;
+    width: 250px;
+
 }
 
-.pt-roboto{
+.game-title{
   font-weight: bold;
-  font-size: 2rem;
-  color: #000;
+  font-size: 1.5rem;
 }
 
 .VS{
     display: flex;
-    justify-content: space-around;
     align-items: center;
     font-weight: bold;
     font-size: 2rem;
     margin-bottom: 15px;
+    width: 70px;
+    flex-direction: column;
+        justify-content: center;
+}
+
+.button{
+    color: white;
+    background-color: #0C4437;
+    border-radius: 10px;
+    width: 80px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    margin: 20px 210px;
 }
 
 
-
+/***** */
 /**RESULTATS */
+/***** */
 
-
-
-
-.month{
-    font-weight: bold;
-    font-size: 2rem;
-    color: #000;
-}
-
-.results-container img {
-  height: 70px;
-}
 .results-container{
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     margin-top: 30px;
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
 
+.results-container img {
+  height: 70px;
 }
 
 .results-container, p{
     font-family: "Roboto Condensed", sans-serif;
 }
 
+.month{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
 
 .game-results{
     border-radius: 10px;
@@ -207,18 +248,30 @@ export default {
     padding: 30px 0px;    
 }
 
-.date-hour-type{
+.date-type{
     margin-bottom: 15px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     display:flex;
     flex-direction: column;
+    margin-left: 40px;
+    justify-content: center;
 }
 
-
-.date-hour-type p:nth-child(1){
+.date-type p:nth-child(1){
     color: #991917;
     font-weight: bold;
 }
+
+.hyphen{
+    display: none;
+}
+
+.team-scores-results{
+    display: flex;
+    justify-content: space-around;
+    width: 600px;
+}
+
 .scores-results{
     display: flex;
     align-items: center;
@@ -233,21 +286,25 @@ export default {
     flex-direction: column;
     text-transform: uppercase;
     text-align: center;
+    width: 200px;
 }
-
 
 
 
 /**RESPONSIVE */
 @media screen and (max-width: 800px){
+       
     .last-game{
         width: 300px;
         margin: auto;
+        font-size: 1rem;
+
     }
 
     .next-game{
         width: 300px;
         margin: auto;
+        font-size: 1rem;
     }
 
     .pt-roboto{
@@ -256,10 +313,49 @@ export default {
     }
     .latest-and-upcoming-games{
         flex-direction: column-reverse;
-        padding-bottom: 15px;
-        padding-top: 15px;
+        margin: 40px;
     }
 
+    .scores{
+        font-size: 1.5rem;
+        width: 150px;
+    }
+     .results-container{
+        margin: 40px;
+    }
+
+    .game-results{
+        flex-direction: column;
+        width: 300px;
+        margin: auto;
+    }
+
+    .month{
+        font-size: 1.5rem;
+    }
+    .team-scores-results{
+        width: 300px;
+    }
+
+    .scores-results{
+        font-size: 1.5rem;
+        width: 150px;
+    }
+
+    .date-type{
+        flex-direction: row;
+        justify-content: flex-start;
+        font-size: 1.3rem;
+    }
+
+    .data-type, p{
+        margin-right: 10px;
+        margin-left: 10px;    }
+
+    .hyphen{
+        display: contents;
+        margin: 10px;
+    }
 }
 
 </style>
