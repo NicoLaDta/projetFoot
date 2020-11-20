@@ -314,11 +314,12 @@ export default {
     .latest-and-upcoming-games{
         flex-direction: column-reverse;
         margin: 40px;
+        text-align: center;
     }
 
     .scores{
         font-size: 1.5rem;
-        width: 150px;
+        width: 200px;
     }
      .results-container{
         margin: 40px;
