@@ -138,6 +138,7 @@ export default {
     height: 320px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     border:1px solid black;    
     font-size: 1.2rem;
 }
@@ -148,6 +149,7 @@ export default {
     width: 600px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     border:2px solid #000000;
     height: 320px;
     font-size: 1.2rem;
@@ -209,7 +211,8 @@ export default {
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
-    margin: 20px 210px;
+
+
 }
 
 
@@ -307,6 +310,10 @@ export default {
         font-size: 1rem;
     }
 
+    .time-location{
+            margin-bottom: 0px;
+
+    }
     .pt-roboto{
         font-size: 1.5rem;
         text-align: center;
@@ -315,6 +322,10 @@ export default {
         flex-direction: column-reverse;
         margin: 40px;
         text-align: center;
+    }
+
+    .team-scores{
+        width: 300px;
     }
 
     .scores{
@@ -339,7 +350,7 @@ export default {
     }
 
     .scores-results{
-        font-size: 1.5rem;
+        font-size: 2rem;
         width: 150px;
     }
 
