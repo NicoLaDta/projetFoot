@@ -138,6 +138,7 @@ export default {
     height: 320px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     border:1px solid black;    
     font-size: 1.2rem;
 }
@@ -148,6 +149,7 @@ export default {
     width: 600px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     border:2px solid #000000;
     height: 320px;
     font-size: 1.2rem;
@@ -198,7 +200,7 @@ export default {
     margin-bottom: 15px;
     width: 70px;
     flex-direction: column;
-        justify-content: center;
+    justify-content: center;
 }
 
 .button{
@@ -209,7 +211,8 @@ export default {
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
-    margin: 20px 210px;
+
+
 }
 
 
@@ -298,27 +301,35 @@ export default {
         width: 300px;
         margin: auto;
         font-size: 1rem;
-
     }
 
     .next-game{
         width: 300px;
         margin: auto;
         font-size: 1rem;
+        margin-bottom: 10px;
     }
 
-    .pt-roboto{
+    .time-location{
+        margin-bottom: 0px;
+    }
+    .game-title{
         font-size: 1.5rem;
         text-align: center;
     }
     .latest-and-upcoming-games{
         flex-direction: column-reverse;
         margin: 40px;
+        text-align: center;
+    }
+
+    .team-scores{
+        width: 300px;
     }
 
     .scores{
         font-size: 1.5rem;
-        width: 150px;
+        width: 200px;
     }
      .results-container{
         margin: 40px;
@@ -338,7 +349,7 @@ export default {
     }
 
     .scores-results{
-        font-size: 1.5rem;
+        font-size: 2rem;
         width: 150px;
     }
 
