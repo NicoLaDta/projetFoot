@@ -2,13 +2,13 @@
     <div class="container-boutique flex flex-wrap justify-center">
 
       <section class="card flex flex-col rounded">
-       <router-link>
+       <router-link to="/VProduct">
         <img src="@/assets/image-boutique/maillot_1.png">
         <div class="presentation flex justify-between m-4">
           <p>Title product</p>
           <p class="text-red-600 font-semibold">19,99 €</p>
         </div>
-       <router-link>
+       </router-link>
       </section>
       <section class="card flex flex-col rounded">
         <img src="@/assets/image-boutique/maillot_1.png">
