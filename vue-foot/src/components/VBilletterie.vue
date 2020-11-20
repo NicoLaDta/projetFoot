@@ -17,15 +17,15 @@
            </div>
          </div>
 
-         <div class="buy-tickets text-center px-3 rounded">
+         <div class="buy-tickets text-center px-3 rounded text-white">
            Billets
          </div>
      </div>
 
     <p class="title font-bold not-italic text-center">Ou nous trouver ?</p>
 
-    <div class="find-us flex">
-      <div class="card bg-green-300 justify-center"></div>
+    <div class="find-us flex justify-center items-center">
+      <div class="map bg-green-300 justify-center"></div>
 
       <div class="adress">
         <p>RedStar Football Club</p>
@@ -68,13 +68,12 @@
 
  .buy-tickets{
    background: rgba(12, 68, 55, 0.9);
-   color: white;
    box-sizing: border-box;
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
    display: inline;
  }
 
- .card{
+ .map{
   width: 574px;
   height: 321px;
  }
