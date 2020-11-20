@@ -1,103 +1,72 @@
 <template>
-  <div>
-    <transition-group name="fade" tag="div">
-      <div v-for="i in [currentIndex]" :key="i">
-        <img :src="currentImg" />
-      </div>
-    </transition-group>
-    <a class="prev" @click="prev" >&#10094; Previous</a>
-    <a class="next" @click="next" >&#10095; Next</a>
-  </div>
+  <hooper class="hooper" :settings="hooperSettings">
+    <slide> 
+    <img class="image1" style="width:100%" :src="actual">
+      <div class="title"><h1>Nom de l'actu</h1></div>
+      
+    </slide>
+    <slide >
+       <img class="image1" style="width:100%" :src="maillot">
+       <div class="title"><h1>Nom de l'actu</h1></div>
+    </slide>
+      <hooper-navigation slot="hooper-addons"></hooper-navigation>
+  </hooper>
 </template>
+ 
 <script>
-export default {
-  name: "Slider",
-  data() {
+  import { Hooper, Slide, Navigation as HooperNavigation } from 'hooper';
+  import 'hooper/dist/hooper.css';
+ 
+  export default {
+    name: 'App',
+    components: {
+      Hooper,
+      Slide,
+      HooperNavigation,
+    },
+    data() {
     return {
-      images: [
-        "https://cdn.pixabay.com/photo/2015/12/12/15/24/amsterdam-1089646_1280.jpg",
-        "https://cdn.pixabay.com/photo/2016/02/17/23/03/usa-1206240_1280.jpg",
-        "https://cdn.pixabay.com/photo/2015/05/15/14/27/eiffel-tower-768501_1280.jpg",
-        "https://cdn.pixabay.com/photo/2016/12/04/19/30/berlin-cathedral-1882397_1280.jpg"
-      ],
-      timer: null,
-      currentIndex: 0
-    };
-  },
-
-  mounted: function() {
-    this.startSlide();
-  },
-
-  methods: {
-    startSlide: function() {
-      this.timer = setInterval(this.next, 5000);
-    },
-
-    next: function() {
-      this.currentIndex += 1;
-    },
-    prev: function() {
-      this.currentIndex -= 1;
+      actual: require("@/assets/image/actual.png"),
+      maillot: require("@/assets/image/maillot.jpg"),
+      partenaires: require("@/assets/image/partenaires.jpg"),
+      hooperSettings: {
+        wheelControl:false,
+        // autoPlay:true,
+        // playSpeed:5000,
+      },
+      
     }
-  },
-
-  computed: {
-    currentImg: function() {
-      return this.images[Math.abs(this.currentIndex) % this.images.length];
     }
   }
-};
 </script>
 
+
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.9s ease;
-  overflow: hidden;
-  visibility: visible;
-  position: absolute;
-  width:100%;
-  opacity: 1;
+.hooper{
+    height: 711px;
 }
 
-.fade-enter,
-.fade-leave-to {
-  visibility: hidden;
-  width:100%;
-  opacity: 0;
+ @media screen and (max-width: 800px) {
+    .hooper{
+    height: 60vh;
+    border: solid red 2px;
+}
+.image1{
+    height: 100%;
+    width:100%
 }
 
-img {
-  height:600px;
-  width:100%
 }
 
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.7s ease;
-  border-radius: 0 4px 4px 0;
-  text-decoration: none;
-  user-select: none;
-}
-
-.next {
-  right: 0;
-}
-
-.prev {
-  left: 0;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.9);
-}
-
+ .title{
+    position: relative;
+    color: white;
+    bottom: 200px;
+    background-color: #991917;
+    width: 690px;
+    height: 117px;
+    font-size: 72px;
+    opacity: 0.9;
+    text-align: center;
+} 
 </style>

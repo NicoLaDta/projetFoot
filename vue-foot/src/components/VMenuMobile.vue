@@ -8,8 +8,6 @@
       <router-link class="link" to="/VClassement">Classement</router-link>
       <router-link class="link" to="/VBillettrie">Billetterie</router-link>
       <router-link class="link" to="/VBoutique">Boutique</router-link>
-
->>>>>>> d7a89a9a33f2ee29db8bf108bd555261c2275c37
     </nav>
     
   </div>
