@@ -1,7 +1,7 @@
 <template>
   <div class="container-actu">
     <div class="actu">
-      <router-link to="/VActu">
+      <router-link to="/VActu/VArticle">
         <div class="actu__bloc hot-news">
           <img :src="img" alt="photo de l'article" />
           <h1 class="pt-roboto-condensed">Title Article</h1>

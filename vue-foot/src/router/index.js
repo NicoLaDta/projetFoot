@@ -6,7 +6,7 @@ import VCalendrier from '../components/VCalendrier.vue'
 import VClassement from '../components/VClassement.vue'
 import VBoutique from '../components/VBoutique.vue'
 import VSlide from '../components/VSlide.vue'
-
+import VArticle from '../components/VArticle.vue'
 
 Vue.use(VueRouter)
 
@@ -40,6 +40,11 @@ const routes = [
     path: '/VBoutique',
     name: 'Boutique',
     component: VBoutique
+  },
+  {
+    path: '/VActu/VArticle',
+    name: 'Article',
+    component: VArticle
   },
 ]
 
