@@ -50,9 +50,7 @@
     <!--        -->
 
     <div id="app">
-      <!-- <v-slide></v-slide> -->
       <router-view />
-      <!-- <v-actu></v-actu> -->
     </div>
 
     <!--        -->
@@ -119,14 +117,10 @@
 
 <script>
 import VMenuMobile from "@/components/VMenuMobile";
-// import VActu from '@/components/VActu'
-// import VSlide from '@/components/VSlide'
 export default {
   name: "App",
   components: {
     VMenuMobile,
-    // VSlide,
-    // VActu
   },
   data() {
     return {
