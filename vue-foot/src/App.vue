@@ -3,7 +3,7 @@
     <!--        -->
     <!-- HEADER -->
     <!--        -->
-    <div class="container-global-nav">
+    <div class="container-global-nav z-10">
       <img class="logo-club" :src="logo" />
       <div class="pt-roboto nav flex">
         <nav class="mx-auto nav-desktop">
