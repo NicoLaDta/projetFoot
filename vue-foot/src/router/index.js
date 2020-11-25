@@ -8,6 +8,8 @@ import VBoutique from '../components/VBoutique.vue'
 import VSlide from '../components/VSlide.vue'
 import VArticle from '../components/VArticle.vue'
 import VLogin from '../components/VLogin.vue'
+import VProduct from '../components/VProduct.vue'
+
 
 Vue.use(VueRouter)
 
@@ -51,6 +53,11 @@ const routes = [
     path: '/VLogin',
     name: 'Login',
     component: VLogin
+  },
+  {
+    path: '/VProduct',
+    name: 'Product',
+    component: VProduct
   },
 ]
 
