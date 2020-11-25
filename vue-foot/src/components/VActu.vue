@@ -98,6 +98,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   margin: auto;
   max-width: 1300px;
 }
@@ -157,6 +158,16 @@
   background-color: #991917;
   border: solid 2px #991917;
   color: #fff;
+}
+
+@media (max-width: 1000px) {
+  /* .actu__bloc{
+    width: 90%;
+  } */
+  .container-actu {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 </style>
