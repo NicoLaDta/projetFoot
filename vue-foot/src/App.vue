@@ -3,12 +3,11 @@
     <!--        -->
     <!-- HEADER -->
     <!--        -->
-    <div class="container-global-nav">
+    <div class="container-global-nav z-10">
       <img class="logo-club" :src="logo" />
       <div class="pt-roboto nav flex">
         <nav class="mx-auto nav-desktop">
-          <router-link class="padding-router color-focus" to="/"
-            >Home</router-link
+          <router-link class="padding-router color-focus" to="/">Home</router-link
           >
           <router-link class="padding-router color-focus" to="/VActu"
             >Actualités</router-link
@@ -44,15 +43,12 @@
       </div>
       <v-menu-mobile v-if="isMenuOpen"></v-menu-mobile>
     </div>
-    
     <!--        -->
     <!-- NOTRE APP -->
     <!--        -->
 
     <div id="app">
-      <!-- <v-slide></v-slide> -->
       <router-view />
-      <!-- <v-actu></v-actu> -->
     </div>
 
     <!--        -->
@@ -119,14 +115,10 @@
 
 <script>
 import VMenuMobile from "@/components/VMenuMobile";
-// import VActu from '@/components/VActu'
-// import VSlide from '@/components/VSlide'
 export default {
   name: "App",
   components: {
     VMenuMobile,
-    // VSlide,
-    // VActu
   },
   data() {
     return {
@@ -201,21 +193,6 @@ export default {
 .logo-club {
   margin: auto;
   margin-bottom: 45px;
-}
-.toogleBurgerSpan1 {
-  transform: rotate(-45deg);
-  margin-left: 0px;
-}
-.toogleBurgerSpan2 {
-  transform: rotate(45deg);
-  margin-right: 27px;
-  margin-top: -8px;
-}
-.toogleBurgerSpan3 {
-  display: none;
-}
-.toogleShow {
-  display: block;
 }
 
 .footer {

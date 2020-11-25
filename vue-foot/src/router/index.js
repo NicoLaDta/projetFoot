@@ -6,6 +6,9 @@ import VCalendrier from '../components/VCalendrier.vue'
 import VClassement from '../components/VClassement.vue'
 import VBoutique from '../components/VBoutique.vue'
 import VSlide from '../components/VSlide.vue'
+import VArticle from '../components/VArticle.vue'
+import VLogin from '../components/VLogin.vue'
+import VProduct from '../components/VProduct.vue'
 
 
 Vue.use(VueRouter)
@@ -41,6 +44,26 @@ const routes = [
     name: 'Boutique',
     component: VBoutique
   },
+  {
+    path: '/VActu/VArticle',
+    name: 'Article',
+    component: VArticle
+  },
+  {
+    path: '/VLogin',
+    name: 'Login',
+    component: VLogin
+  },
+  {
+    path: '/VProduct',
+    name: 'Product',
+    component: VProduct
+  },
+  {
+    path: '/VMenuMobile',
+    name: 'MenuMobile',
+    component: VMenuMobile
+  }
 ]
 
 const router = new VueRouter({
