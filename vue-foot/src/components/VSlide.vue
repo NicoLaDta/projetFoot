@@ -55,7 +55,8 @@
 }
 .imageSlide{
     height: 100%;
-    width:100%
+    width:100%;
+    display: block;
 }
 .title{
     position: relative;
@@ -72,11 +73,7 @@
  @media screen and (max-width: 800px) {
     .hooper{
     height: 60vh;
-    border: solid red 2px;
-}
-.imageSlide{
-    height: 100%;
-    width:100%
+    /* border: solid red 2px; */
 }
 
 .title{
@@ -85,9 +82,7 @@
    font-size: 36px;
    bottom: 150px;
 }
-.cont{
-  z-index: 1;
-}
+
 }
 @media screen and (max-width: 500px) {
 .title{
