@@ -9,6 +9,7 @@ import VSlide from '../components/VSlide.vue'
 import VArticle from '../components/VArticle.vue'
 import VLogin from '../components/VLogin.vue'
 import VProduct from '../components/VProduct.vue'
+import VMenuMobile from '../components/VMenuMobile.vue'
 
 
 Vue.use(VueRouter)
