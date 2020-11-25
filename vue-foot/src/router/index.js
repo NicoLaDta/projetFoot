@@ -59,6 +59,11 @@ const routes = [
     name: 'Product',
     component: VProduct
   },
+  {
+    path: '/VMenuMobile',
+    name: 'MenuMobile',
+    component: VMenuMobile
+  }
 ]
 
 const router = new VueRouter({
