@@ -16,10 +16,11 @@
              <p>Nom Equipe 2</p>
            </div>
          </div>
-
+         <router-link to="/VBilleterieInfo">
          <div class="buy-tickets text-center px-3 rounded text-white">
            Billets
          </div>
+          </router-link>
      </div>
 
     <p class="title font-bold not-italic text-center">Ou nous trouver ?</p>
