@@ -1,6 +1,13 @@
 <template>
   <div class="container-connexion">
     <h1>Connexion</h1>
+    <v-text-field
+    name=""
+    label=""
+    value=""
+    v-model="Name"
+    class=""
+    ></v-text-field>
     <input type="email"
       v-model="Name"
       placeholder="email" required />
