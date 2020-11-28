@@ -11,27 +11,27 @@
     </div>
    </div>
   <h2 class="text-center font-bold mt-2 mb-8">Pour acquérir ce produit, rendez-vous en boutique !</h2>
-    <div class="container-map">
 
-    </div>
+  <div class="container-location flex flex-col md:flex-row">
+    <div class="map">
+
+    </div>     
+    <p class="address">
+      RedStar Footbal Club <br>
+      92 Rue du Dr Bauer <br>
+      93400 Saint-Ouen
+    </p>
+  </div>
  </div>
 </template>
 
 <style lang="postcss">
-  .responsive{
-   /* width: 100%;
-   height: auto; */
-  }
 
   h1{
    font-size: 3rem;
   }
 
-  .container-image, .container-text{
-    /* width: 50% */
-  }
-
-   @media (max-width: 400px) {
+  @media (max-width: 400px) {
     .container-product{
      margin-left: 70px;
      margin-right: 70px;
@@ -45,6 +45,8 @@
      margin-right: 20px;
     }
   }
+
+
 </style>
 
 <script>
