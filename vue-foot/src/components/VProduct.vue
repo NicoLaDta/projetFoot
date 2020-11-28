@@ -10,7 +10,10 @@
      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto enim distinctio placeat accusamus adipisci id magnam harum tempore quaerat unde consequuntur quisquam iure similique, temporibus nobis in sed. Quaerat soluta tempore fuga esse similique nobis, odio reiciendis accusamus earum, atque voluptas. Nostrum voluptates, eaque inventore eius odit animi suscipit voluptatibus laudantium quaerat sint possimus, porro quasi. Voluptatem eum at repudiandae rerum. At neque dignissimos, ullam reiciendis laboriosam rerum alias voluptate amet qui eius fugiat voluptas blanditiis repellat eveniet earum officia?</p>
     </div>
    </div>
-  <h2 class="text-center">Pour acquérir ce produit, rendez-vous en boutique !</h2>
+  <h2 class="text-center font-bold mt-2">Pour acquérir ce produit, rendez-vous en boutique !</h2>
+    <div class="container-map">
+      
+    </div>
  </div>
 </template>
 
@@ -38,8 +41,8 @@
 
   @media (max-width: 400px) {
     .container-product{
-     margin-left: 40px;
-     margin-right: 40px;
+     margin-left: 20px;
+     margin-right: 20px;
     }
   }
 </style>
