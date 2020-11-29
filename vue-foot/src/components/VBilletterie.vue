@@ -96,13 +96,15 @@
       <h1>Où nous trouver ?</h1>
 
       <div class="find-us">
-        <div class="map bg-green-300 justify-center"></div>
+        <div class="map">
+<iframe width="100%" height="300px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/fr/map/boutique-redstar_530423?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=true&datalayersControl=true&onLoadPanel=undefined&captionBar=false&locateControl=true#15/48.9075/2.3430"></iframe>  </div>
 
         <div class="adress">
           <p>RedStar Football Club</p>
           <p>92 Rue du Dr Bauer</p>
           <p>93400 Saint-Ouen</p>
         </div>
+        
       </div>
     </div>
   </div>
