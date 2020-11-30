@@ -6,7 +6,7 @@
       <router-link class="link" to="/VActu">Actualités</router-link>
       <router-link class="link" to="/VCalendrier">Calendrier et résultats</router-link>
       <router-link class="link" to="/VClassement">Classement</router-link>
-      <router-link class="link" to="/VBillettrie">Billetterie</router-link>
+      <router-link class="link" to="/VBilletterie">Billetterie</router-link>
       <router-link class="link" to="/VBoutique">Boutique</router-link>
     </nav>
     

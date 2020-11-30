@@ -18,7 +18,7 @@
           <router-link class="padding-router color-focus" to="/VClassement"
             >Classement</router-link
           >
-          <router-link class="padding-router color-focus" to="/VBillettrie"
+          <router-link class="padding-router color-focus" to="/VBilletterie"
             >Billetterie</router-link
           >
           <router-link class="padding-router color-focus" to="/VBoutique"
