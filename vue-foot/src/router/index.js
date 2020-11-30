@@ -6,6 +6,7 @@ import VCalendrier from '../components/VCalendrier.vue'
 import VClassement from '../components/VClassement.vue'
 import VBoutique from '../components/VBoutique.vue'
 import VSlide from '../components/VSlide.vue'
+import VBilleterieInfo from '../components/VBilleterieInfo.vue'
 import VArticle from '../components/VArticle.vue'
 import VLogin from '../components/VLogin.vue'
 import SignUp from '../components/SignUp.vue'
@@ -27,6 +28,11 @@ const routes = [
     path: '/VActu',
     name: 'Actualités',
     component: VActu
+  },
+  {
+    path: '/VBilleterieInfo',
+    name: 'VBilleterieInfo',
+    component: VBilleterieInfo
   },
   {
     path: '/VBillettrie',
