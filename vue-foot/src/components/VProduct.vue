@@ -18,7 +18,7 @@
 
     <div class="address flex justify-center items-center md:w-6/12 w-full">
       <p>
-      <span class="italic font-bold">RedStar Footbal Club</span> <br>
+      <span class="italic font-bold">RedStar Football Club</span> <br>
        92 Rue du Dr Bauer <br>
        93400 Saint-Ouen
       </p>
