@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="container-billetterie">
     <div class="billetterie">
       <div class="billetterie-bloc">
@@ -73,6 +74,7 @@
           <p>12/01/2020 - 21:00</p>
           <p>Stade4</p>
         </div>
+      </div>
         <div class="team-scores">
           <div class="team">
             <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
@@ -89,6 +91,8 @@
         <div class="button">
           <button type="button">Billets</button>
         </div>
+    </div>
+  </div>
   <div class="container">
     <h1 class="title font-bold not-italic text-center">Prochains match</h1>
      
@@ -138,6 +142,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <style lang="postcss" scoped>
@@ -203,12 +208,11 @@
   justify-content: center;
 }
 
-
 @media screen and (max-width: 800px) {
   .container-billetterie {
     margin: auto;
   }
-  
+
   .billetterie-bloc {
     width: 300px;
     font-size: 1rem;
@@ -224,7 +228,6 @@
     text-align: center;
     font-size: 1rem;
   }
- 
 }
 </style>
 
