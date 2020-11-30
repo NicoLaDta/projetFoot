@@ -23,7 +23,6 @@
           <button type="button">Billets</button>
         </div>
       </div>
-
       <div class="billetterie-bloc">
         <div class="time-location">
           <p>12/01/2020 - 21:00</p>
