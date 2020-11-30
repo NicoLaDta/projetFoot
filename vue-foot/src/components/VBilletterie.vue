@@ -23,7 +23,7 @@
           <button type="button">Billets</button>
         </div>
       </div>
-
+    </div>
       <div class="billetterie-bloc">
         <div class="time-location">
           <p>12/01/2020 - 21:00</p>
@@ -89,6 +89,7 @@
         <div class="button">
           <button type="button">Billets</button>
         </div>
+  </div>
   <div class="container">
     <h1 class="title font-bold not-italic text-center">Prochains match</h1>
      
@@ -203,12 +204,11 @@
   justify-content: center;
 }
 
-
 @media screen and (max-width: 800px) {
   .container-billetterie {
     margin: auto;
   }
-  
+
   .billetterie-bloc {
     width: 300px;
     font-size: 1rem;
@@ -224,7 +224,6 @@
     text-align: center;
     font-size: 1rem;
   }
- 
 }
 </style>
 
