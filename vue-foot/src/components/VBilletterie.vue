@@ -95,16 +95,13 @@
     <div class="find-us-container">
       <h1>Où nous trouver ?</h1>
 
-      <div class="find-us">
-        <div class="map">
-<iframe width="100%" height="300px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/fr/map/boutique-redstar_530423?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=true&datalayersControl=true&onLoadPanel=undefined&captionBar=false&locateControl=true#15/48.9075/2.3430"></iframe>  </div>
-
-        <div class="adress">
-          <p>RedStar Football Club</p>
-          <p>92 Rue du Dr Bauer</p>
-          <p>93400 Saint-Ouen</p>
-        </div>
-        
+      <div class="find-us flex flex-col md:flex-row">
+          <iframe class="md:w-6/12 w-full" height="250px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/fr/map/boutique-redstar_530423?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false&datalayers=1500423#16/48.9067/2.3425"></iframe>  
+        <div class="adress flex justify-center items-center md:w-6/12 w-full">
+          <p><span class="italic font-bold">RedStar Football Club</span><br>
+          92 Rue du Dr Bauer<br>
+          93400 Saint-Ouen</p><br>
+        </div>        
       </div>
     </div>
   </div>
@@ -163,22 +160,16 @@
 }
 
 .find-us {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .map {
-  width: 574px;
-  height: 321px;
+  width: 50%;
+  justify-content: center;
 }
 
-.adress {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 1.3rem;
-}
 
 @media screen and (max-width: 800px) {
   .container-billetterie {
@@ -200,10 +191,7 @@
     text-align: center;
     font-size: 1rem;
   }
-
-  .map {
-    width: 90%;
-  }
+ 
 }
 </style>
 
