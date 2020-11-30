@@ -8,14 +8,18 @@ import VBoutique from '../components/VBoutique.vue'
 import VSlide from '../components/VSlide.vue'
 import VArticle from '../components/VArticle.vue'
 import VLogin from '../components/VLogin.vue'
+import SignUp from '../components/SignUp.vue'
+import Home from '../components/Home.vue'
 import VProduct from '../components/VProduct.vue'
+import VMenuMobile from '../components/VMenuMobile.vue'
+
 
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/slide',
     name: 'VSlide',
     component: VSlide
   },
@@ -50,8 +54,8 @@ const routes = [
     component: VArticle
   },
   {
-    path: '/VLogin',
-    name: 'Login',
+    path: '/login',
+    name: 'login',
     component: VLogin
   },
   {
@@ -63,9 +67,18 @@ const routes = [
     path: '/VMenuMobile',
     name: 'MenuMobile',
     component: VMenuMobile
-  }
+  },
+  {
+    path: "/sign-up",
+    name: "sign-up",
+    component: SignUp
+  },
+  {
+    path: "/",
+    name: "home",
+    component: Home
+  },
 ]
-
 const router = new VueRouter({
   mode: 'history',
   routes

@@ -142,7 +142,7 @@ export default {
     toggleMenu() {
       console.log("menu");
       this.isMenuOpen = !this.isMenuOpen;
-    },
+    }
   },
   watch: {
     $route() {
