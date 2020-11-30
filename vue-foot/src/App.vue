@@ -24,6 +24,14 @@
           <router-link class="padding-router color-focus" to="/VBoutique"
             >Boutique</router-link
           >
+          
+          <!-- À AJOUTER SI NECESSAIRE AVEC LA PARTIE BACK-END -->
+          <!-- <router-link class="padding-router color-focus" to="/VLogin"
+            >Me Connecter</router-link
+          > -->
+           <!-- <router-link class="padding-router color-focus" to="/VLogout"
+            >Me Connecter</router-link
+          > -->
         </nav>
       </div>
       
@@ -311,6 +319,14 @@ export default {
   .container-rs {
     width: 300px;
     margin: auto;
+  }
+  
+}
+
+@media screen and (max-width: 400px) {
+  .logos-sponsors {
+    flex-direction: column;
+    width: 100%;
   }
 }
 </style>

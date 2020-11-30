@@ -125,6 +125,7 @@
 .actu__bloc h1 {
   margin: 10px;
   font-weight: bold;
+  font-size: 1.25rem;
 }
 
 /* ------------- */
