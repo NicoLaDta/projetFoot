@@ -45,10 +45,14 @@
     margin: 0.375rem;
   }
 
-  @media (max-width: 400px) {
-    .container-boutique{
-     margin-left: 70px;
-     margin-right: 70px;
+  @media (min-width: 400px) {
+    .container-product {
+     margin-left: 90px;
+     margin-right: 90px;
+    }
+
+    .container-text {
+     margin-left: 10px;
     }
   }
 
