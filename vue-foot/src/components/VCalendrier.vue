@@ -2,7 +2,7 @@
   <div>
     <div class="latest-and-upcoming-games">
       <div class="game-container">
-        <p class="game-title">Dernier match</p>
+        <h1>Dernier match</h1>
         <div class="last-game">
           <div class="time-location">
             <p>07/01/2020 - 21:00</p>
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="game-container">
-        <p class="game-title">Prochain match</p>
+        <h1>Prochain match</h1>
         <div class="next-game">
           <div class="time-location">
             <p>12/01/2020 - 21:00</p>
@@ -212,6 +212,10 @@ p {
   flex-direction: column;
 }
 
+.game-container h1{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
 .last-game {
   background-color: rgba(12, 68, 55, 0.5);
   border-radius: 10px;
@@ -270,10 +274,7 @@ p {
   width: 250px;
 }
 
-.game-title {
-  font-weight: bold;
-  font-size: 1.5rem;
-}
+
 
 .VS {
   display: flex;
@@ -420,10 +421,12 @@ p {
   .time-location {
     margin-bottom: 0px;
   }
-  .game-title {
+
+  .game-container h1{
     font-size: 1.5rem;
-    text-align: center;
+    text-align: center; 
   }
+
   .latest-and-upcoming-games {
     flex-direction: column-reverse;
     margin: auto;
