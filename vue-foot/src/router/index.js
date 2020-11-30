@@ -16,11 +16,12 @@ import VMenuMobile from '../components/VMenuMobile.vue'
 
 
 
+
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/slide',
+    path: '/',
     name: 'VSlide',
     component: VSlide
   },
