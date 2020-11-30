@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VActu from '../components/VActu.vue'
-import VBillettrie from '../components/VBilletterie.vue'
+import VBilletterie from '../components/VBilletterie.vue'
 import VCalendrier from '../components/VCalendrier.vue'
 import VClassement from '../components/VClassement.vue'
 import VBoutique from '../components/VBoutique.vue'
@@ -35,9 +35,9 @@ const routes = [
     component: VBilleterieInfo
   },
   {
-    path: '/VBillettrie',
+    path: '/VBilletterie',
     name: 'Billetterie',
-    component: VBillettrie
+    component: VBilletterie
   },
   {
     path: '/VCalendrier',
