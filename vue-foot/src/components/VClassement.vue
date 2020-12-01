@@ -121,9 +121,14 @@
 </template>
 
 <style lang="postcss" scoped>
-.container-classement h1{
-    font-size: 1.5rem;
-    font-weight: bold;
+.container-classement {
+  width: 100%;
+  overflow: scroll;
+}
+
+.container-classement h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 table {
   margin: auto;
@@ -135,7 +140,7 @@ tr {
   border: solid 1px #eeeeee;
 }
 td {
-    padding: 5px;
+  padding: 5px;
 }
 
 @media (max-width: 800px) {

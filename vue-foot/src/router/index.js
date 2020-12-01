@@ -6,7 +6,7 @@ import VCalendrier from '../components/VCalendrier.vue'
 import VClassement from '../components/VClassement.vue'
 import VBoutique from '../components/VBoutique.vue'
 import VSlide from '../components/VSlide.vue'
-import VBilleterieInfo from '../components/VBilleterieInfo.vue'
+import VBilletterieInfo from '../components/VBilletterieInfo.vue'
 import VArticle from '../components/VArticle.vue'
 import VLogin from '../components/VLogin.vue'
 import SignUp from '../components/SignUp.vue'
@@ -14,6 +14,10 @@ import Home from '../components/Home.vue'
 import VProduct from '../components/VProduct.vue'
 import VMenuMobile from '../components/VMenuMobile.vue'
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d7decf8170e0582ab94f31889d1befc29bdbed2d
 Vue.use(VueRouter)
 
 const routes = [
@@ -28,12 +32,12 @@ const routes = [
     component: VActu
   },
   {
-    path: '/VBilleterieInfo',
-    name: 'VBilleterieInfo',
-    component: VBilleterieInfo
+    path: '/VBilletterieInfo',
+    name: 'VBilletterieInfo',
+    component: VBilletterieInfo
   },
   {
-    path: '/VBillettrie',
+    path: '/VBilletterie',
     name: 'Billetterie',
     component: VBilletterie
   },
@@ -78,7 +82,7 @@ const routes = [
     component: SignUp
   },
   {
-    path: "/",
+    path: "/home",
     name: "home",
     component: Home
   },

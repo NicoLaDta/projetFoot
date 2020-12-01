@@ -7,7 +7,7 @@
       <img class="logo-club" :src="logo" />
       <div class="pt-roboto nav flex">
         <nav class="mx-auto nav-desktop">
-          <router-link class="padding-router color-focus" to="/">Home</router-link
+          <router-link class="padding-router color-focus" to="/slide">Home</router-link
           >
           <router-link class="padding-router color-focus" to="/VActu"
             >Actualités</router-link
@@ -18,7 +18,7 @@
           <router-link class="padding-router color-focus" to="/VClassement"
             >Classement</router-link
           >
-          <router-link class="padding-router color-focus" to="/VBillettrie"
+          <router-link class="padding-router color-focus" to="/VBilletterie"
             >Billetterie</router-link
           >
           <router-link class="padding-router color-focus" to="/VBoutique"
@@ -26,11 +26,11 @@
           >
           
           <!-- À AJOUTER SI NECESSAIRE AVEC LA PARTIE BACK-END -->
-          <!-- <router-link class="padding-router color-focus" to="/VLogin"
+          <!-- <router-link class="padding-router color-focus" to="/login"
             >Me Connecter</router-link
           > -->
            <!-- <router-link class="padding-router color-focus" to="/VLogout"
-            >Me Connecter</router-link
+            >Me Déconnecter</router-link
           > -->
         </nav>
       </div>
