@@ -90,7 +90,6 @@
   margin-right: 100px;
   margin-left: 100px;
   display: flex;
-  margin-bottom: 40px;
   flex-direction: column;
 }
 
