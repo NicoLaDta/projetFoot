@@ -15,7 +15,6 @@ import VProduct from '../components/VProduct.vue'
 import VMenuMobile from '../components/VMenuMobile.vue'
 
 
-
 Vue.use(VueRouter)
 
 const routes = [
@@ -80,7 +79,7 @@ const routes = [
     component: SignUp
   },
   {
-    path: "/",
+    path: "/home",
     name: "home",
     component: Home
   },
