@@ -22,7 +22,9 @@
             </div>
           </div>
           <div class="button">
-            <button type="button">Billets</button>
+            <router-link to="/VBilletterieInfo">
+              <button type="button">Billets</button>
+            </router-link>
           </div>
         </div>
 
@@ -45,7 +47,9 @@
             </div>
           </div>
           <div class="button">
-            <button type="button">Billets</button>
+            <router-link to="/VBilletterieInfo">
+              <button type="button">Billets</button>
+            </router-link>
           </div>
         </div>
 
@@ -68,7 +72,9 @@
             </div>
           </div>
           <div class="button">
-            <button type="button">Billets</button>
+            <router-link to="/VBilletterieInfo">
+              <button type="button">Billets</button>
+            </router-link>
           </div>
         </div>
 
@@ -91,7 +97,9 @@
             </div>
           </div>
           <div class="button">
-            <button type="button">Billets</button>
+            <router-link to="/VBilletterieInfo">
+              <button type="button">Billets</button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -189,7 +197,6 @@
   text-align: center;
 }
 
-
 .map {
   width: 50%;
   justify-content: center;
@@ -219,7 +226,6 @@
     align-items: center;
     margin-bottom: 40px;
   }
-
 }
 @media screen and (max-width: 700px) {
   .billetterie-bloc {
