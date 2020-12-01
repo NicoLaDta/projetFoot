@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VActu from '../components/VActu.vue'
-import VBillettrie from '../components/VBilletterie.vue'
+import VBilletterie from '../components/VBilletterie.vue'
 import VCalendrier from '../components/VCalendrier.vue'
 import VClassement from '../components/VClassement.vue'
 import VBoutique from '../components/VBoutique.vue'
@@ -13,8 +13,6 @@ import SignUp from '../components/SignUp.vue'
 import Home from '../components/Home.vue'
 import VProduct from '../components/VProduct.vue'
 import VMenuMobile from '../components/VMenuMobile.vue'
-
-
 
 Vue.use(VueRouter)
 
@@ -37,7 +35,7 @@ const routes = [
   {
     path: '/VBillettrie',
     name: 'Billetterie',
-    component: VBillettrie
+    component: VBilletterie
   },
   {
     path: '/VCalendrier',
