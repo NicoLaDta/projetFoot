@@ -45,6 +45,10 @@
     margin: 0.375rem;
   }
 
+  .presentation p {
+    font-weight: bold;
+  font-size: 1.25rem;
+  }
   @media (min-width: 400px) {
     .container-product {
      margin-left: 90px;
