@@ -26,11 +26,11 @@
           >
           
           <!-- À AJOUTER SI NECESSAIRE AVEC LA PARTIE BACK-END -->
-          <!-- <router-link class="padding-router color-focus" to="/VLogin"
+          <!-- <router-link class="padding-router color-focus" to="/login"
             >Me Connecter</router-link
           > -->
            <!-- <router-link class="padding-router color-focus" to="/VLogout"
-            >Me Connecter</router-link
+            >Me Déconnecter</router-link
           > -->
         </nav>
       </div>
