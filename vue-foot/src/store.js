@@ -2,11 +2,14 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import Axios from 'axios';
 import createPersistedState from 'vuex-persistedstate';
+
 Vue.use(Vuex);
+
 const getDefaultState = () => {
   return {
     token: '',
-    user: {}
+    user: {},
+    isLoggedIn: false
   };
 };
 export default new Vuex.Store({
@@ -24,6 +27,11 @@ export default new Vuex.Store({
   mutations: {
     SET_TOKEN: (state, token) => {
       state.token = token;
+      if (token){
+        state.isLoggedIn = true
+      }else{
+        state.isLoggedIn = false
+      }
     },
     SET_USER: (state, user) => {
       state.user = user;

@@ -7,7 +7,7 @@
       <img class="logo-club" :src="logo" />
       <div class="pt-roboto nav flex">
         <nav class="mx-auto nav-desktop">
-          <router-link class="padding-router color-focus" to="/slide">Home</router-link
+          <router-link class="padding-router color-focus" to="/">Home</router-link
           >
           <router-link class="padding-router color-focus" to="/VActu"
             >Actualités</router-link
@@ -26,12 +26,19 @@
           >
           
           <!-- À AJOUTER SI NECESSAIRE AVEC LA PARTIE BACK-END -->
-          <!-- <router-link class="padding-router color-focus" to="/login"
-            >Me Connecter</router-link
-          > -->
-           <!-- <router-link class="padding-router color-focus" to="/VLogout"
-            >Me Déconnecter</router-link
-          > -->
+          <router-link class="padding-router color-focus" to="/login"
+            v-if="!$store.state.isLoggedIn"
+            flat
+            dark
+          >Connexion</router-link>
+          <v-input type="button" value="Logout" @click="logout"
+           onclick="return confirm('Êtes-vous sûrs de vouloir vous deconnectez ?')"
+            v-if="$store.state.isLoggedIn"
+            flat
+            dark
+          >Deconnexion</v-input> 
+
+
         </nav>
       </div>
       
@@ -128,6 +135,9 @@ export default {
   components: {
     VMenuMobile,
   },
+  mounted(){
+    console.log("toz")
+  },
   data() {
     return {
       logo: require("@/assets/logored.svg"),
@@ -150,6 +160,10 @@ export default {
     toggleMenu() {
       console.log("menu");
       this.isMenuOpen = !this.isMenuOpen;
+    },
+    logout() {
+      this.$store.dispatch('logout');
+      this.$router.push('/login');
     }
   },
   watch: {

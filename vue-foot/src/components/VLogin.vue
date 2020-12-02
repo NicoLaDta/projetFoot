@@ -4,7 +4,7 @@
     <h1 class="title font-bold not-italic text-center">Login</h1>
     <div class="form-login">
       <input type="text" placeholder="Username" v-model="username" />
-      <input type="text" placeholder="Password" v-model="password" />
+      <input type="password" placeholder="Password" v-model="password" />
       <input type="button" @click="login" value="Connexion" />
     </div>
     <p v-if="msg">{{ msg }}</p>
@@ -76,7 +76,7 @@ export default {
         const token = response.token;
         const user = response.user;
         this.$store.dispatch("login", { token, user });
-        this.$router.push("/");
+        this.$router.push("/home");
       } catch (error) {
         this.msg = error.response.data.msg;
       }

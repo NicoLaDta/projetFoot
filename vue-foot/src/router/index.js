@@ -14,16 +14,12 @@ import Home from '../components/Home.vue'
 import VProduct from '../components/VProduct.vue'
 import VMenuMobile from '../components/VMenuMobile.vue'
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d7decf8170e0582ab94f31889d1befc29bdbed2d
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/slide',
-    name: 'VSlide',
+    path: '/',
+    name: 'App',
     component: VSlide
   },
   {
