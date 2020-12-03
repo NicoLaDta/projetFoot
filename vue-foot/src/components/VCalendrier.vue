@@ -152,8 +152,12 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import { theSportsDB } from "thesportsdb";
 import axios from "axios";
+=======
+import SportApi from '@/services/SportApi.js';
+>>>>>>> 98a65c84ac8a1bf034148fb2e362e119dc14bd71
 export default {
   name: "Calendrier",
   theSportsDB,
@@ -164,7 +168,15 @@ export default {
       logoREDSTAR: require("@/assets/logored.svg"),
     };
   },
+<<<<<<< HEAD
 
+=======
+  async created() {
+    SportApi.setApiKey(1) //defaults to 1, set for Patreon
+    var nextEvents = await SportApi.getNext5EventsByTeamId(135467)
+    console.log(nextEvents)
+  },
+>>>>>>> 98a65c84ac8a1bf034148fb2e362e119dc14bd71
   mounted() {
     let button = document.querySelector("#add-more-button");
     // let elementsAugust = document.querySelector('.august');

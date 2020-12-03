@@ -37,8 +37,6 @@
             flat
             dark
           >Deconnexion</v-input> 
-
-
         </nav>
       </div>
       
