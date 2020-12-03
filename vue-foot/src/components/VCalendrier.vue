@@ -148,11 +148,14 @@
         value="Voir plus"
       />
     </div>
+    <div>
+      {{ result }}
+    </div>
   </div>
 </template>
 
 <script>
-import SportApi from '@/services/SportApi.js';
+import SportApi from "@/services/SportApi.js";
 export default {
   name: "Calendrier",
   data() {
@@ -160,13 +163,16 @@ export default {
       logoMFC: require("@/assets/logos-equipes/MFC.svg"),
       logoPARISFC: require("@/assets/logos-equipes/ParisFC.svg"),
       logoREDSTAR: require("@/assets/logored.svg"),
+      result: null,
     };
   },
   async created() {
-    SportApi.setApiKey(1) //defaults to 1, set for Patreon
-    var nextEvents = await SportApi.getNext5EventsByTeamId(135467)
-    console.log(nextEvents)
+    SportApi.setApiKey(1); //defaults to 1, set for Patreon
+    let nextEvents = await SportApi.getNext5EventsByTeamId(135467);
+    console.log(nextEvents);
+    this.result = nextEvents;
   },
+
   mounted() {
     let button = document.querySelector("#add-more-button");
     // let elementsAugust = document.querySelector('.august');
