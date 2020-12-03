@@ -45,7 +45,8 @@ export default {
     },
     getLeagueList() {
         return ApiFoot()
-            .get(`${apiKey}/all_leagues.php`).data;
+            .get(`${apiKey}/all_leagues.php`)
+            .then(response => response.data);
     },
     getCountryList() {
         return ApiFoot()
@@ -89,7 +90,8 @@ export default {
     },
     getLeagueDetailsById(id) {
         return ApiFoot()
-            .get(`${apiKey}/lookupleague.php?id=${id}`).data;
+            .get(`${apiKey}/lookupleague.php?id=${id}`)
+            .then(response => response.data);
     },
     getTeamDetailsById(id) {
         return ApiFoot()
@@ -125,19 +127,22 @@ export default {
     },
     getLookupTableByLeagueIdAndSeason(id, season) {
         return ApiFoot()
-            .get(`${apiKey}/lookuptable.php?l=${id}&s=${season}`).data;
+            .get(`${apiKey}/lookuptable.php?l=${id}&s=${season}`)
+            .then(response => response.data);
     },
     getNext5EventsByTeamId(id) {
         return ApiFoot()
-            .get(`${apiKey}/eventsnext.php?id=${id}`).data;
+            .get(`${apiKey}/eventsnext.php?id=${id}`)
+            .then(response => response.data);
     },
     getNext15EventsByLeagueId(id) {
         return ApiFoot()
-            .get(`${apiKey}/eventsnext.php?id=${id}`).data;
+            .get(`${apiKey}/eventsnext.php?id=${id}`)
     },
     getPast5EventsByTeamId(id) {
         return ApiFoot()
-            .get(`${apiKey}/eventslast.php?id=${id}`).data;
+            .get(`${apiKey}/eventslast.php?id=${id}`)
+            .then(response => response.data);
     },
     getPast15EventsByLeagueId(id) {
         return ApiFoot()
