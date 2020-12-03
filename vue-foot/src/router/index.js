@@ -13,6 +13,7 @@ import SignUp from '../components/SignUp.vue'
 import Home from '../components/Home.vue'
 import VProduct from '../components/VProduct.vue'
 import VMenuMobile from '../components/VMenuMobile.vue'
+import VAdmin from '../components/VAdmin.vue'
 
 Vue.use(VueRouter)
 
@@ -82,6 +83,12 @@ const routes = [
     name: "home",
     component: Home
   },
+  {
+    path: "/Admin",
+    name: "Admin",
+    component: VAdmin
+  },
+
 ]
 const router = new VueRouter({
   mode: 'history',
