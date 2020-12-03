@@ -155,7 +155,6 @@
 import SportApi from '@/services/SportApi.js';
 export default {
   name: "Calendrier",
-  theSportsDB,
   data() {
     return {
       logoMFC: require("@/assets/logos-equipes/MFC.svg"),
