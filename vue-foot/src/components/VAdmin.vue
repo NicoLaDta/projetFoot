@@ -30,6 +30,10 @@
           <input type="text" placeholder="Nom du produit" />
         </div>
         <div class="flex flex-col m-2">
+          <label for="">Prix</label>
+          <input type="text" placeholder="Prix en €" />
+        </div>
+        <div class="flex flex-col m-2">
           <label for="">Image du produit</label>
           <input type="file" />
         </div>
