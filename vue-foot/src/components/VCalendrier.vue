@@ -152,6 +152,7 @@
 </template>
 
 <script>
+import SportApi from '@/services/SportApi.js';
 export default {
   name: "Calendrier",
   data() {
@@ -160,6 +161,11 @@ export default {
       logoPARISFC: require("@/assets/logos-equipes/ParisFC.svg"),
       logoREDSTAR: require("@/assets/logored.svg"),
     };
+  },
+  async created() {
+    SportApi.setApiKey(1) //defaults to 1, set for Patreon
+    var nextEvents = await SportApi.getNext5EventsByTeamId(135467)
+    console.log(nextEvents)
   },
   mounted() {
     let button = document.querySelector("#add-more-button");
