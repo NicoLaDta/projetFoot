@@ -14,13 +14,12 @@ import Home from '../components/Home.vue'
 import VProduct from '../components/VProduct.vue'
 import VMenuMobile from '../components/VMenuMobile.vue'
 
-
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'VSlide',
+    name: 'App',
     component: VSlide
   },
   {
@@ -88,5 +87,4 @@ const router = new VueRouter({
   mode: 'history',
   routes
 })
-
 export default router

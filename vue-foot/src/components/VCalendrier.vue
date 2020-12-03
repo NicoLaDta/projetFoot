@@ -152,8 +152,11 @@
 </template>
 
 <script>
+import { theSportsDB } from "thesportsdb";
+import axios from "axios";
 export default {
   name: "Calendrier",
+  theSportsDB,
   data() {
     return {
       logoMFC: require("@/assets/logos-equipes/MFC.svg"),
@@ -161,26 +164,25 @@ export default {
       logoREDSTAR: require("@/assets/logored.svg"),
     };
   },
+
   mounted() {
     let button = document.querySelector("#add-more-button");
-    console.log(button);
     // let elementsAugust = document.querySelector('.august');
     // let elementsSeptember = document.querySelector('.september');
     // let elementsOctober = document.querySelector('.october');
-    let elementsNovember = document.querySelector('.november');
-    
-    elementsNovember.classList.add('displayNone')
+    let elementsNovember = document.querySelector(".november");
+
+    elementsNovember.classList.add("displayNone");
     // elementsOctober.classList.add('displayNone')
     // elementsSeptember.classList.add('displayNone')
     // elementsAugust.classList.add('displayNone')
-    
-    button.addEventListener("click", () => {      
-    
-    elementsNovember.classList.toggle("displayNone")
-    // elementsOctober.classList.toggle("displayNone")
-    // elementsSeptember.classList.toggle("displayNone")
-    // elementsAugust.classList.toggle("displayNone")
-        
+
+    button.addEventListener("click", () => {
+      elementsNovember.classList.toggle("displayNone");
+      // elementsOctober.classList.toggle("displayNone")
+      // elementsSeptember.classList.toggle("displayNone")
+      // elementsAugust.classList.toggle("displayNone")
+
       if (button.value === "Voir plus") {
         button.value = "Voir moins";
       } else {
@@ -204,7 +206,7 @@ export default {
   display: flex;
   justify-content: space-between;
   margin-left: 100px;
-  margin-right: 100px; 
+  margin-right: 100px;
   flex-wrap: nowrap;
 }
 .latest-and-upcoming-games,
@@ -222,7 +224,7 @@ p {
   border-radius: 20px;
 }
 
-.game-container h1{
+.game-container h1 {
   font-weight: bold;
   font-size: 1.5rem;
 }
@@ -284,8 +286,6 @@ p {
   text-align: center;
   width: 45%;
 }
-
-
 
 .VS {
   display: flex;
@@ -425,9 +425,9 @@ p {
   }
   .latest-and-upcoming-games {
     margin-left: 0;
-    margin-right: 0; 
+    margin-right: 0;
   }
-   .latest-and-upcoming-games {
+  .latest-and-upcoming-games {
     flex-direction: column-reverse;
     margin: auto;
     text-align: center;
@@ -459,7 +459,7 @@ p {
   }
   .latest-and-upcoming-games {
     margin-left: 0;
-    margin-right: 0; 
+    margin-right: 0;
   }
   .game-container {
     width: 100%;
@@ -482,9 +482,9 @@ p {
     margin-bottom: 0px;
   } */
 
-  .game-container h1{
+  .game-container h1 {
     font-size: 1.5rem;
-    text-align: center; 
+    text-align: center;
   }
 
   .team-scores {
@@ -498,7 +498,7 @@ p {
   .results-container {
     margin: 0;
     width: 100%;
-  } 
+  }
   .mouth-div {
     width: 100%;
     margin-top: 20px;
