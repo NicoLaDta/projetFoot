@@ -7,7 +7,7 @@
       <img class="logo-club" :src="logo" />
       <div class="pt-roboto nav flex">
         <nav class="mx-auto nav-desktop">
-          <router-link class="padding-router color-focus" to="/slide">Home</router-link
+          <router-link class="padding-router color-focus" to="/">Home</router-link
           >
           <router-link class="padding-router color-focus" to="/VActu"
             >Actualités</router-link
