@@ -169,8 +169,10 @@ export default {
   async created() {
     SportApi.setApiKey(1); //defaults to 1, set for Patreon
     let nextEvents = await SportApi.getNext5EventsByTeamId(135467);
+    let pastEvents = await SportApi.getPast5EventsByTeamId(135467);
     console.log(nextEvents);
-    this.result = nextEvents;
+    console.log(pastEvents);
+    this.result = nextEvents
   },
 
   mounted() {

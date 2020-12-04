@@ -235,5 +235,18 @@
 </style>
 
 <script>
-export default {};
+import SportApi from "@/services/SportApi.js";
+export default {
+  data(){
+    return{
+      result: null
+    }
+  },
+  async created() {
+    SportApi.setApiKey(1); //defaults to 1, set for Patreon
+    let nextEvents = await SportApi.getNext5EventsByTeamId(135467);
+    console.log(nextEvents);
+    this.result = nextEvents
+  },
+};
 </script>
