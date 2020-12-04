@@ -165,7 +165,7 @@ export default {
   },
   async created() {
     SportApi.setApiKey(1); //defaults to 1, set for Patreon
-    let leaguelist = await SportApi.getLookupTableByLeagueIdAndSeason("4401", "2020-2021");
+    let leaguelist = await SportApi.getLookupTableByLeagueIdAndSeason("4637", "2020-2021");
     console.log(leaguelist)
     this.result = leaguelist
   },
