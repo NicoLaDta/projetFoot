@@ -90,14 +90,13 @@
   margin-right: 100px;
   margin-left: 100px;
   display: flex;
-  margin-bottom: 40px;
   flex-direction: column;
 }
 
 .actu {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   margin: auto;
   max-width: 1300px;
@@ -110,17 +109,20 @@
 /* ------------- */
 /* ACTU BLOC */
 /* ------------- */
+a {
+  margin: 10px;
+}
 .actu__bloc {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  width: 350px;
-  margin: 10px;
+  width: 400px;
   padding-bottom: 15px;
 }
 .actu__bloc img {
   width: 100%;
   height: 200px;
   border-radius: 20px 20px 0px 0px;
+  object-fit: cover;
 }
 .actu__bloc h1 {
   margin: 10px;
@@ -161,10 +163,10 @@
   color: #fff;
 }
 
-@media (max-width: 1000px) {
-  /* .actu__bloc{
-    width: 90%;
-  } */
+@media (max-width: 1044px) {
+  .actu__bloc{
+    width: 100%;
+  }
   .container-actu {
     margin-left: 20px;
     margin-right: 20px;

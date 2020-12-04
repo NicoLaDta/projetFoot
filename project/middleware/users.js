@@ -1,3 +1,5 @@
+const jwt = require('jsonwebtoken');
+
 module.exports = {
     validateRegister: (req, res, next) => {
         // username min length 3
