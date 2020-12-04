@@ -5,20 +5,20 @@
         <h1>Dernier match</h1>
         <div class="last-game">
           <div class="time-location">
-            <p>07/01/2020 - 21:00</p>
-            <p>Stade</p>
+            <p>{{past.results[0].dateEvent}} - {{past.results[0].strTime}}</p>
+            <p>{{past.results[0].strVenue}}</p>
           </div>
           <div class="team-scores">
             <div class="team">
-              <img :src="logoMFC" alt="logo-MFC" /> <br />
-              <p>Le Mans FC</p>
+              <!-- <img :src="logoMFC" alt="logo-MFC" /> <br /> -->
+              <p>{{past.results[0].strHomeTeam}}</p>
             </div>
             <div class="scores">
-              <p>3 - 2</p>
+              <p>{{past.results[0].intHomeScore}} - {{past.results[0].intAwayScore}}</p>
             </div>
             <div class="team">
-              <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-              <p>Redstar Football Club</p>
+              <!-- <img :src="logoREDSTAR" alt="logo-redstar" /> <br /> -->
+              <p>{{past.results[0].strAwayTeam}}</p>
             </div>
           </div>
         </div>
@@ -27,20 +27,20 @@
         <h1>Prochain match</h1>
         <div class="next-game">
           <div class="time-location">
-            <p>12/01/2020 - 21:00</p>
-            <p>Stade</p>
+            <p>{{next.events[0].dateEvent}} - {{next.events[0].strTime}}</p>
+            <p>{{next.events[0].strVenue}}</p>
           </div>
           <div class="team-scores">
             <div class="team">
-              <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-              <p>Redstar Football Club</p>
+              <!-- <img :src="logoREDSTAR" alt="logo-redstar" /> <br /> -->
+              <p>{{next.events[0].strHomeTeam}}</p>
             </div>
             <div class="VS">
               <p>VS</p>
             </div>
             <div class="team">
-              <img :src="logoPARISFC" alt="logo-tfc" /> <br />
-              <p>Paris Football Club</p>
+              <!-- <img :src="logoPARISFC" alt="logo-tfc" /> <br /> -->
+              <p>{{next.events[0].strAwayTeam}}</p>
             </div>
           </div>
           <div class="button">
@@ -52,105 +52,103 @@
 
     <div class="results-container">
       <div class="december mouth-div">
-        <p class="month">Décembre</p>
+        <!-- <p class="month">Décembre</p> -->
         <div class="game-results">
           <div class="date-type">
-            <p>15/12/19</p>
-            <p class="hyphen">-</p>
-            <p>Amical</p>
+            <p>{{past.results[1].dateEvent}}</p>
+            <!-- <p class="hyphen">-</p> -->
+            <p>{{past.results[1].strLeague}}</p>
           </div>
           <div class="team-scores-results">
             <div class="team-results">
-              <img :src="logoREDSTAR" alt="logo-RCS" /> <br />
-              <p>Redstar Football Club</p>
+              <!-- <img :src="logoREDSTAR" alt="logo du club" /> <br /> -->
+              <p>{{past.results[1].strHomeTeam}}</p>
             </div>
             <div class="scores-results">
-              <p>2 - 1</p>
+              <p>{{past.results[1].intHomeScore}} - {{past.results[1].intAwayScore}}</p>
             </div>
             <div class="team-results">
-              <img :src="logoPARISFC" alt="logo-OM" /> <br />
-              <p>Paris Football Club</p>
+              <!-- <img :src="logoPARISFC" alt="logo du club" /> <br /> -->
+              <p>{{past.results[1].strAwayTeam}}</p>
             </div>
           </div>
         </div>
         <div class="game-results">
           <div class="date-type">
-            <p>06/12/19</p>
-            <p class="hyphen">-</p>
-            <p>National</p>
+            <p>{{past.results[2].dateEvent}}</p>
+            <!-- <p class="hyphen">-</p> -->
+            <p>{{past.results[2].strLeague}}</p>
           </div>
           <div class="team-scores-results">
             <div class="team-results">
-              <img :src="logoMFC" alt="logo-MFC" /> <br />
-              <p>Le Mans FC</p>
+              <!-- <img :src="logoMFC" alt="logo du club" /> <br /> -->
+              <p>{{past.results[2].strHomeTeam}}</p>
             </div>
             <div class="scores-results">
-              <p>3 - 2</p>
+              <p>{{past.results[2].intHomeScore}} - {{past.results[2].intAwayScore}}</p>
             </div>
             <div class="team-results">
-              <img :src="logoREDSTAR" alt="logo-RCS" /> <br />
-              <p>Redstar Football Club</p>
+              <!-- <img :src="logoREDSTAR" alt="logo du club" /> <br /> -->
+              <p>{{past.results[2].strAwayTeam}}</p>
             </div>
           </div>
         </div>
       </div>
 
       <div class="november mouth-div">
-        <p class="month">Novembre</p>
+        <!-- <p class="month">Novembre</p> -->
         <div class="game-results">
           <div class="date-type">
-            <p>15/12/19</p>
-            <p class="hyphen">-</p>
-            <p>Amical</p>
+            <p>{{past.results[3].dateEvent}}</p>
+            <!-- <p class="hyphen">-</p> -->
+            <p>{{past.results[3].strLeague}}</p>
           </div>
           <div class="team-scores-results">
             <div class="team-results">
-              <img :src="logoREDSTAR" alt="logo-RCS" /> <br />
-              <p>Redstar Football Club</p>
+              <!-- <img :src="logoREDSTAR" alt="logo du club" /> <br /> -->
+              <p>{{past.results[3].strHomeTeam}}</p>
             </div>
             <div class="scores-results">
-              <p>2 - 1</p>
+              <p>{{past.results[3].intHomeScore}} - {{past.results[3].intAwayScore}}</p>
             </div>
             <div class="team-results">
-              <img :src="logoPARISFC" alt="logo-OM" /> <br />
-              <p>Paris Football Club</p>
+              <!-- <img :src="logoPARISFC" alt="logo du club" /> <br /> -->
+              <p>{{past.results[3].strAwayTeam}}</p>
             </div>
           </div>
         </div>
         <div class="game-results">
           <div class="date-type">
-            <p>06/12/19</p>
-            <p class="hyphen">-</p>
-            <p>National</p>
+            <p>{{past.results[4].dateEvent}}</p>
+            <!-- <p class="hyphen">-</p> -->
+            <p>{{past.results[4].strLeague}}</p>
           </div>
           <div class="team-scores-results">
             <div class="team-results">
-              <img :src="logoMFC" alt="logo-MFC" /> <br />
-              <p>Le Mans FC</p>
+              <!-- <img :src="logoMFC" alt="logo-MFC" /> <br /> -->
+              <p>{{past.results[4].strHomeTeam}}</p>
             </div>
             <div class="scores-results">
-              <p>3 - 2</p>
+              <p>{{past.results[4].intHomeScore}} - {{past.results[4].intAwayScore}}</p>
             </div>
             <div class="team-results">
-              <img :src="logoREDSTAR" alt="logo-RCS" /> <br />
-              <p>Redstar Football Club</p>
+              <!-- <img :src="logoREDSTAR" alt="logo-RCS" /> <br /> -->
+              <p>{{past.results[4].strAwayTeam}}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="add-more">
+    <!-- <div class="add-more">
       <input
         type="button"
         id="add-more-button"
         class="add-more__button"
         value="Voir plus"
       />
-    </div>
-    <div>
-      {{ result }}
-    </div>
+    </div> -->
+    
   </div>
 </template>
 
@@ -160,19 +158,17 @@ export default {
   name: "Calendrier",
   data() {
     return {
-      logoMFC: require("@/assets/logos-equipes/MFC.svg"),
-      logoPARISFC: require("@/assets/logos-equipes/ParisFC.svg"),
-      logoREDSTAR: require("@/assets/logored.svg"),
-      result: null,
+      next: null,
+      past: null,
     };
   },
   async created() {
     SportApi.setApiKey(1); //defaults to 1, set for Patreon
     let nextEvents = await SportApi.getNext5EventsByTeamId(135467);
     let pastEvents = await SportApi.getPast5EventsByTeamId(135467);
-    console.log(nextEvents);
-    console.log(pastEvents);
-    this.result = nextEvents
+   
+    this.next = nextEvents
+    this.past = pastEvents
   },
 
   mounted() {
