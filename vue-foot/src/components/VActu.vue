@@ -82,6 +82,9 @@
         value="Voir plus"
       />
     </div>
+    <div>
+      {{result}}
+    </div>
   </div>
 </template>
 
@@ -176,12 +179,19 @@ a {
 </style>
 
 <script>
+import AuthService from '@/services/AuthService.js';
 export default {
   name: "Actualités",
   data() {
     return {
       img: require("@/assets/img-article/img-1.jpg"),
+      result: null
     };
+  },
+  async article() {
+    let getArticle = await AuthService.getArticle();
+    console.log(getArticle)
+    this.result = getArticle
   },
   mounted() {
     let button = document.querySelector("#add-more-button");

@@ -24,6 +24,9 @@
           <p class="text-red-600 font-semibold">19,99 €</p>
         </div>
       </section>
+      <div>
+      {{ getproduct }}
+    </div>
 
     </div>
 </template>
@@ -70,7 +73,17 @@
 </style>
 
 <script>
+import AuthService from '@/services/AuthService.js';
 export default {
     name: "Boutique",
+    data(){
+      return {
+        getproduct: null
+      }
+    },
+    async produit() {
+      this.getproduct = await AuthService.getProduct();
+    },
 }
+
 </script>

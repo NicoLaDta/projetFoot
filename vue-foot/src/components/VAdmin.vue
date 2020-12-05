@@ -6,7 +6,7 @@
       <form action="">
         <div class="flex flex-col m-2">
           <label for="">Titre de l'article</label>
-          <input type="text" placeholder="Titre" />
+          <input type="text" placeholder="Titre" v-model="title"/>
         </div>
         <div class="flex flex-col m-2">
           <label for="">Image</label>
@@ -14,10 +14,10 @@
         </div>
         <div class="flex flex-col m-2">
           <label for="">Texte de l'article</label>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <textarea v-model="description" name="" id="" cols="30" rows="10" ></textarea>
         </div>
         <div class="flex flex-col m-2">
-          <input type="submit" />
+          <input type="submit" @click="articleAdd" value="Submit"/>
         </div>
       </form>
     </div>
@@ -27,11 +27,11 @@
       <form action="">
         <div class="flex flex-col m-2">
           <label for="">Nom du produit</label>
-          <input type="text" placeholder="Nom du produit" />
+          <input type="text" placeholder="Nom du produit" v-model="nomproduit"/>
         </div>
         <div class="flex flex-col m-2">
           <label for="">Prix</label>
-          <input type="text" placeholder="Prix en €" />
+          <input type="text" placeholder="Prix en €" v-model="prix"/>
         </div>
         <div class="flex flex-col m-2">
           <label for="">Image du produit</label>
@@ -39,10 +39,10 @@
         </div>
         <div class="flex flex-col m-2">
           <label for="">Description</label>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <textarea v-model="descriptions" name="" id="" cols="30" rows="10" ></textarea>
         </div>
         <div class="flex flex-col m-2">
-          <input type="submit" />
+          <input type="submit" @click="productAdd" value="Submit"/>
         </div>
       </form>
     </div>
@@ -117,7 +117,46 @@ input[type="submit"] {
 </style>
 
 <script>
+import AuthService from '@/services/AuthService.js';
 export default {
   name: "Admin",
+  data(){
+    return {
+      title: "",
+      nomproduit: "",
+      prix: null,
+      description: "",
+      descriptions: "",
+    };
+  },
+  methods: { 
+    async articleAdd() {
+      try {
+        const credentials = {
+          title: this.title,
+          images: this.images,
+          description: this.description
+        };
+        const response = await AuthService.articleAdd(credentials);
+        this.msg = response.msg;
+      } catch (error) {
+        this.msg = error.response.data.msg;
+      }
+    },
+    async productAdd() {
+      try {
+        const credentials = {
+          nomproduit: this.nomproduit,
+          prix: this.prix,
+          image: this.image,
+          descriptions: this.descriptions
+        };
+        const response = await AuthService.productAdd(credentials);
+        this.msg = response.msg;
+      } catch (error) {
+        this.msg = error.response.data.msg;
+      }
+    },
+  },
 };
 </script>

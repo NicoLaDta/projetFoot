@@ -42,7 +42,7 @@ module.exports = {
     },
     validateAddProduct: (req, res, next) => {
         // username min length 3
-        if (!req.body.nomProduit || req.body.nomProduit.length < 3) {
+        if (!req.body.nomproduit || req.body.nomproduit.length < 3) {
             return res.status(400).send({
                 msg: 'Please enter a product name with min. 3 chars'
             });

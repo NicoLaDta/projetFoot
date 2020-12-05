@@ -106,17 +106,18 @@ router.get('/secret-route', userMiddleware.isLoggedIn, (req, res, next) => {
 
 router.get('/article', (req, res) => {
     db.query(
-        `SELECT * FROM article`, (err, rows, fields)=>{
-            if(!err)
-            res.send(rows)
-            else
-            console.log(err);
+        `SELECT * FROM article`, (err, rows, fields) => {
+            if(!err){
+                res.send(rows);
+            } else {
+                console.log(err);
+            }
         })
 });
 
 router.post('/articleAdd', userMiddleware.validateAdd, (req, res, next) => {
     db.query(
-        `INSERT INTO article (idArticle, title, images, description) VALUES ('${uuid.v4()}',${db.escape(req.body.title)} ,${db.escape(req.body.images)}, ${db.escape(req.body.description)})`,
+        `INSERT INTO article (id, title, images, description) VALUES ('${uuid.v4()}',${db.escape(req.body.title)} ,${db.escape(req.body.images)}, ${db.escape(req.body.description)});`,
         (err, result) => {
             if (err) {
                 throw err;
@@ -134,16 +135,17 @@ router.post('/articleAdd', userMiddleware.validateAdd, (req, res, next) => {
 router.get('/product', (req, res) => {
     db.query(
         `SELECT * FROM product`, (err, rows, fields)=>{
-            if(!err)
-            res.send(rows)
-            else
-            console.log(err);
+            if(!err){
+                res.send(rows);
+            } else {
+                console.log(err);
+            }
         })
 });
 
 router.post('/productAdd', userMiddleware.validateAddProduct, (req, res, next) => {
     db.query(
-        `INSERT INTO article (idproduct, nomProduit, prix, images, descritpion) VALUES ('${uuid.v4()}', ${db.escape(req.body.nomProduit)}, ${db.escape(req.body.prix)}, ${db.escape(req.body.images)}, ${db.escape(req.body.description)})`,
+        `INSERT INTO product (id, nomproduit, prix, image, descriptions) VALUES ('${uuid.v4()}', ${db.escape(req.body.nomproduit)}, ${db.escape(req.body.prix)}, ${db.escape(req.body.image)}, ${db.escape(req.body.descriptions)});`,
         (err, result) => {
             if (err) {
                 throw err;
