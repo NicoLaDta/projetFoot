@@ -82,9 +82,6 @@
         value="Voir plus"
       />
     </div>
-    <div>
-      {{result}}
-    </div>
   </div>
 </template>
 
