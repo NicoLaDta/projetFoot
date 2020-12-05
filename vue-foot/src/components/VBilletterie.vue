@@ -5,20 +5,20 @@
       <div class="billetterie">
         <div class="billetterie-bloc">
           <div class="time-location">
-            <p>12/01/2020 - 21:00</p>
-            <p>Stade1</p>
+            <p> {{result.events[0].dateEvent}} - {{result.events[0].strTime}}</p>
+            <p>{{ result.events[0].strVenue }}</p>
           </div>
           <div class="team-scores">
             <div class="team">
               <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-              <p>Redstar Football Club</p>
+              <p>{{result.events[0].strHomeTeam}}</p>
             </div>
             <div class="VS">
               <p>VS</p>
             </div>
             <div class="team">
               <img :src="logoPARISFC" alt="logo-tfc" /> <br />
-              <p>Paris Football Club</p>
+              <p>{{result.events[0].strAwayTeam}}</p>
             </div>
           </div>
           <div class="button">
@@ -30,20 +30,20 @@
 
         <div class="billetterie-bloc">
           <div class="time-location">
-            <p>12/01/2020 - 21:00</p>
-            <p>Stade2</p>
+            <p>{{result.events[1].dateEvent}} - {{result.events[1].strTime}}</p>
+            <p>{{ result.events[1].strVenue }}</p>
           </div>
           <div class="team-scores">
             <div class="team">
               <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-              <p>Redstar Football Club</p>
+              <p>{{result.events[1].strHomeTeam}}</p>
             </div>
             <div class="VS">
               <p>VS</p>
             </div>
             <div class="team">
               <img :src="logoPARISFC" alt="logo-tfc" /> <br />
-              <p>Paris Football Club</p>
+              <p>{{result.events[1].strAwayTeam}}</p>
             </div>
           </div>
           <div class="button">
@@ -55,20 +55,20 @@
 
         <div class="billetterie-bloc">
           <div class="time-location">
-            <p>12/01/2020 - 21:00</p>
-            <p>Stade3</p>
+            <p>{{result.events[2].dateEvent}} - {{result.events[2].strTime}}</p>
+            <p>{{ result.events[2].strVenue }}</p>
           </div>
           <div class="team-scores">
             <div class="team">
               <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-              <p>Redstar Football Club</p>
+              <p>{{result.events[2].strHomeTeam}}</p>
             </div>
             <div class="VS">
               <p>VS</p>
             </div>
             <div class="team">
               <img :src="logoPARISFC" alt="logo-tfc" /> <br />
-              <p>Paris Football Club</p>
+              <p>{{result.events[2].strAwayTeam}}</p>
             </div>
           </div>
           <div class="button">
@@ -80,20 +80,20 @@
 
         <div class="billetterie-bloc">
           <div class="time-location">
-            <p>12/01/2020 - 21:00</p>
-            <p>Stade4</p>
+            <p>{{result.events[3].dateEvent}} - {{result.events[3].strTime}}</p>
+            <p>{{ result.events[3].strVenue }}</p>
           </div>
           <div class="team-scores">
             <div class="team">
               <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-              <p>Redstar Football Club</p>
+              <p>{{result.events[3].strHomeTeam}}</p>
             </div>
             <div class="VS">
               <p>VS</p>
             </div>
             <div class="team">
               <img :src="logoPARISFC" alt="logo-tfc" /> <br />
-              <p>Paris Football Club</p>
+              <p>{{result.events[3].strAwayTeam}}</p>
             </div>
           </div>
           <div class="button">
