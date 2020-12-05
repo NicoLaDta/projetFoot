@@ -198,9 +198,6 @@
         </div>
       </div>
     </div>
-    <div>
-      {{ logo }}
-    </div>
   </div>
 </template>
 
