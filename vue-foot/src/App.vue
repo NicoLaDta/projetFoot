@@ -31,6 +31,11 @@
             flat
             dark
           >Connexion</router-link>
+          <router-link class="padding-router color-focus" to="/Admin"
+            v-if="$store.state.isLoggedIn"
+            flat
+            dark
+          >Ajout</router-link>&emsp;
           <v-input type="button" value="Logout" @click="logout"
            onclick="return confirm('Êtes-vous sûrs de vouloir vous deconnectez ?')"
             v-if="$store.state.isLoggedIn"

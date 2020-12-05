@@ -6,6 +6,7 @@ const uuid = require('uuid');
 const jwt = require('jsonwebtoken');
 
 const db = require('../config/db.config.js');
+
 const userMiddleware = require('../middleware/users.js');
 
 router.post('/sign-up', userMiddleware.validateRegister, (req, res, next) => {
@@ -101,6 +102,60 @@ router.post('/login', (req, res, next) => {
 router.get('/secret-route', userMiddleware.isLoggedIn, (req, res, next) => {
     console.log(req.userData);
     res.send('This is the secret content. Only logged in users can see that!');
+});
+
+router.get('/article', (req, res) => {
+    db.query(
+        `SELECT * FROM article`, (err, rows, fields)=>{
+            if(!err)
+            res.send(rows)
+            else
+            console.log(err);
+        })
+});
+
+router.post('/articleAdd', userMiddleware.validateAdd, (req, res, next) => {
+    db.query(
+        `INSERT INTO article (idArticle, title, images, description) VALUES ('${uuid.v4()}',${db.escape(req.body.title)} ,${db.escape(req.body.images)}, ${db.escape(req.body.description)})`,
+        (err, result) => {
+            if (err) {
+                throw err;
+                return res.status(400).send({
+                    msg: err
+                });
+            }
+            return res.status(201).send({
+                msg: 'Inserted!'
+            });
+        }
+    );
+});
+
+router.get('/product', (req, res) => {
+    db.query(
+        `SELECT * FROM product`, (err, rows, fields)=>{
+            if(!err)
+            res.send(rows)
+            else
+            console.log(err);
+        })
+});
+
+router.post('/productAdd', userMiddleware.validateAddProduct, (req, res, next) => {
+    db.query(
+        `INSERT INTO article (idproduct, nomProduit, prix, images, descritpion) VALUES ('${uuid.v4()}', ${db.escape(req.body.nomProduit)}, ${db.escape(req.body.prix)}, ${db.escape(req.body.images)}, ${db.escape(req.body.description)})`,
+        (err, result) => {
+            if (err) {
+                throw err;
+                return res.status(400).send({
+                    msg: err
+                });
+            }
+            return res.status(201).send({
+                msg: 'Inserted!'
+            });
+        }
+    );
 });
 
 module.exports = router;

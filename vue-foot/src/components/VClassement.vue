@@ -1,6 +1,6 @@
 <template>
   <div class="container-classement">
-    <h1 class="text-center mb-5 mt-0">Classement à la {{result.table[0].played}}ème journée : </h1>
+    <h1 class="text-center mb-5 mt-0">Classement à la {{result.table[0].played}}ème journée </h1>
     <table>
       <tr>
         <th>Place</th>

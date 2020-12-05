@@ -11,6 +11,13 @@ export default {
       .then(response => response.data);
   },
   getSecretContent() {
-    return Api().get('secret-route/').then(response => response.data);
+    return Api()
+      .get('secret-route/')
+      .then(response => response.data);
+  },
+  getArticle() {
+    return Api()
+      .get('article/')
+      .then(response => response.data);
   }
 };
