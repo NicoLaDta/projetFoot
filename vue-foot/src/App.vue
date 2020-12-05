@@ -13,7 +13,7 @@
             >Actualités</router-link
           >
           <router-link class="padding-router color-focus" to="/VCalendrier"
-            >Calendrier et résultats</router-link
+            >Résultats</router-link
           >
           <router-link class="padding-router color-focus" to="/VClassement"
             >Classement</router-link
