@@ -15,7 +15,6 @@ import VProduct from '../components/VProduct.vue'
 import VMenuMobile from '../components/VMenuMobile.vue'
 import VAdmin from '../components/VAdmin.vue'
 
-
 Vue.use(VueRouter)
 
 const routes = [
