@@ -1,24 +1,37 @@
 <template>
-  <div>
+  <div class="big-container mb-5">
     <div class="latest-and-upcoming-games">
       <div class="game-container">
         <h1>Dernier match</h1>
         <div class="last-game">
           <div class="time-location">
-            <p>07/01/2020 - 21:00</p>
-            <p>Stade</p>
+            <p>
+              {{ past.results[0].dateEvent }} - {{ past.results[0].strTime }}
+            </p>
+            <p>{{ past.results[0].strVenue }}</p>
           </div>
           <div class="team-scores">
             <div class="team">
-              <img :src="logoMFC" alt="logo-MFC" /> <br />
-              <p>Le Mans FC</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoHomeTeam2}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{ past.results[0].strHomeTeam }}</p>
             </div>
             <div class="scores">
-              <p>3 - 2</p>
+              <p>
+                {{ past.results[0].intHomeScore }} -
+                {{ past.results[0].intAwayScore }}
+              </p>
             </div>
             <div class="team">
-              <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-              <p>Redstar Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoAwayTeam2}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{ past.results[0].strAwayTeam }}</p>
             </div>
           </div>
         </div>
@@ -27,20 +40,28 @@
         <h1>Prochain match</h1>
         <div class="next-game">
           <div class="time-location">
-            <p>12/01/2020 - 21:00</p>
-            <p>Stade</p>
+            <p>{{ next.events[0].dateEvent }} - {{ next.events[0].strTime }}</p>
+            <p>{{ next.events[0].strVenue }}</p>
           </div>
           <div class="team-scores">
             <div class="team">
-              <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-              <p>Redstar Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoHomeTeam1}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{ next.events[0].strHomeTeam }}</p>
             </div>
             <div class="VS">
               <p>VS</p>
             </div>
             <div class="team">
-              <img :src="logoPARISFC" alt="logo-tfc" /> <br />
-              <p>Paris Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoAwayTeam1}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{ next.events[0].strAwayTeam }}</p>
             </div>
           </div>
           <div class="button">
@@ -51,196 +72,247 @@
     </div>
 
     <div class="results-container">
-      <div class="december">
-        <p class="month">Décembre</p>
+      <div class="december mouth-div">
         <div class="game-results">
           <div class="date-type">
-            <p>15/12/19</p>
-            <p class="hyphen">-</p>
-            <p>Amical</p>
+            <p>{{ past.results[1].dateEvent }}</p>
+            <p>{{ past.results[1].strLeague }}</p>
           </div>
           <div class="team-scores-results">
             <div class="team-results">
-              <img :src="logoREDSTAR" alt="logo-RCS" /> <br />
-              <p>Redstar Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoHomeTeam3}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{ past.results[1].strHomeTeam }}</p>
             </div>
             <div class="scores-results">
-              <p>2 - 1</p>
+              <p>
+                {{ past.results[1].intHomeScore }} -
+                {{ past.results[1].intAwayScore }}
+              </p>
             </div>
             <div class="team-results">
-              <img :src="logoPARISFC" alt="logo-OM" /> <br />
-              <p>Paris Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoAwayTeam3}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{ past.results[1].strAwayTeam }}</p>
             </div>
           </div>
         </div>
         <div class="game-results">
           <div class="date-type">
-            <p>06/12/19</p>
-            <p class="hyphen">-</p>
-            <p>National</p>
+            <p>{{ past.results[2].dateEvent }}</p>
+            <p>{{ past.results[2].strLeague }}</p>
           </div>
           <div class="team-scores-results">
             <div class="team-results">
-              <img :src="logoMFC" alt="logo-MFC" /> <br />
-              <p>Le Mans FC</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoHomeTeam4}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{ past.results[2].strHomeTeam }}</p>
             </div>
             <div class="scores-results">
-              <p>3 - 2</p>
+              <p>
+                {{ past.results[2].intHomeScore }} -
+                {{ past.results[2].intAwayScore }}
+              </p>
             </div>
             <div class="team-results">
-              <img :src="logoREDSTAR" alt="logo-RCS" /> <br />
-              <p>Redstar Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoAwayTeam4}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{ past.results[2].strAwayTeam }}</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="november">
-        <p class="month">Novembre</p>
+      <div class="november mouth-div">
         <div class="game-results">
           <div class="date-type">
-            <p>15/12/19</p>
-            <p class="hyphen">-</p>
-            <p>Amical</p>
+            <p>{{ past.results[3].dateEvent }}</p>
+            <p>{{ past.results[3].strLeague }}</p>
           </div>
           <div class="team-scores-results">
             <div class="team-results">
-              <img :src="logoREDSTAR" alt="logo-RCS" /> <br />
-              <p>Redstar Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoHomeTeam5}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{ past.results[3].strHomeTeam }}</p>
             </div>
             <div class="scores-results">
-              <p>2 - 1</p>
+              <p>
+                {{ past.results[3].intHomeScore }} -
+                {{ past.results[3].intAwayScore }}
+              </p>
             </div>
             <div class="team-results">
-              <img :src="logoPARISFC" alt="logo-OM" /> <br />
-              <p>Paris Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoAwayTeam5}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{ past.results[3].strAwayTeam }}</p>
             </div>
           </div>
         </div>
         <div class="game-results">
           <div class="date-type">
-            <p>06/12/19</p>
-            <p class="hyphen">-</p>
-            <p>National</p>
+            <p>{{ past.results[4].dateEvent }}</p>
+            <p>{{ past.results[4].strLeague }}</p>
           </div>
           <div class="team-scores-results">
             <div class="team-results">
-              <img :src="logoMFC" alt="logo-MFC" /> <br />
-              <p>Le Mans FC</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoHomeTeam6}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{ past.results[4].strHomeTeam }}</p>
             </div>
             <div class="scores-results">
-              <p>3 - 2</p>
+              <p>
+                {{ past.results[4].intHomeScore }} -
+                {{ past.results[4].intAwayScore }}
+              </p>
             </div>
             <div class="team-results">
-              <img :src="logoREDSTAR" alt="logo-RCS" /> <br />
-              <p>Redstar Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoAwayTeam6}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{ past.results[4].strAwayTeam }}</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="add-more">
-      <input
-        type="button"
-        id="add-more-button"
-        class="add-more__button"
-        value="Voir plus"
-      />
     </div>
   </div>
 </template>
 
 <script>
+import SportApi from "@/services/SportApi.js";
 export default {
   name: "Calendrier",
   data() {
     return {
-      logoMFC: require("@/assets/logos-equipes/MFC.svg"),
-      logoPARISFC: require("@/assets/logos-equipes/ParisFC.svg"),
       logoREDSTAR: require("@/assets/logored.svg"),
+      next: null,
+      past: null,
+
+      logoAwayTeam1: null,
+      logoAwayTeam2: null,
+      logoAwayTeam3: null,
+      logoAwayTeam4: null,
+      logoAwayTeam5: null,
+      logoAwayTeam6: null,
+
+      logoHomeTeam1: null,
+      logoHomeTeam2: null,
+      logoHomeTeam3: null,
+      logoHomeTeam4: null,
+      logoHomeTeam5: null,
+      logoHomeTeam6: null,
     };
   },
-  mounted() {
-    let button = document.querySelector("#add-more-button");
-    console.log(button);
-    // let elementsAugust = document.querySelector('.august');
-    // let elementsSeptember = document.querySelector('.september');
-    // let elementsOctober = document.querySelector('.october');
-    let elementsNovember = document.querySelector('.november');
-    
-    elementsNovember.classList.add('displayNone')
-    // elementsOctober.classList.add('displayNone')
-    // elementsSeptember.classList.add('displayNone')
-    // elementsAugust.classList.add('displayNone')
-    
-    button.addEventListener("click", () => {      
-    
-    elementsNovember.classList.toggle("displayNone")
-    // elementsOctober.classList.toggle("displayNone")
-    // elementsSeptember.classList.toggle("displayNone")
-    // elementsAugust.classList.toggle("displayNone")
-        
-      if (button.value === "Voir plus") {
-        button.value = "Voir moins";
-      } else {
-        button.value = "Voir plus";
-      }
-    });
+  async created() {
+    SportApi.setApiKey(1); //defaults to 1, set for Patreon
+    let nextEvents = await SportApi.getNext5EventsByTeamId(135467);
+    let pastEvents = await SportApi.getPast5EventsByTeamId(135467);
+
+    this.next = nextEvents;
+    this.past = pastEvents;
+
+    // ADD LINK LOGO
+    // --------------------------
+    //AWAY TEAM
+    this.logoAwayTeam1 = nextEvents.events[0].strAwayTeam;
+    this.logoAwayTeam2 = pastEvents.results[0].strAwayTeam;
+    this.logoAwayTeam3 = pastEvents.results[1].strAwayTeam;
+    this.logoAwayTeam4 = pastEvents.results[2].strAwayTeam;
+    this.logoAwayTeam5 = pastEvents.results[3].strAwayTeam;
+    this.logoAwayTeam6 = pastEvents.results[4].strAwayTeam;
+    // HOME TEAM
+    this.logoHomeTeam1 = nextEvents.events[0].strHomeTeam;
+    this.logoHomeTeam2 = pastEvents.results[0].strHomeTeam;
+    this.logoHomeTeam3 = pastEvents.results[1].strHomeTeam;
+    this.logoHomeTeam4 = pastEvents.results[2].strHomeTeam;
+    this.logoHomeTeam5 = pastEvents.results[3].strHomeTeam;
+    this.logoHomeTeam6 = pastEvents.results[4].strHomeTeam;
   },
 };
 </script>
 
 <style>
+.big-container {
+  margin-left: 100px;
+  margin-right: 100px;
+  max-width: 2500px;
+}
 .latest-and-upcoming-games img {
   height: 70px;
 }
 .latest-and-upcoming-games {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
   margin-left: 100px;
   margin-right: 100px;
+  flex-wrap: nowrap;
 }
 .latest-and-upcoming-games,
 p {
   font-family: "Roboto Condensed", sans-serif;
 }
 
+/* ——————————————————— */
+/* CASES MATCHS */
+/* ——————————————————— */
 .game-container {
   display: flex;
   flex-direction: column;
+  width: 45%;
+  border-radius: 20px;
 }
 
-.game-container h1{
+.game-container h1 {
   font-weight: bold;
   font-size: 1.5rem;
 }
 .last-game {
   background-color: rgba(12, 68, 55, 0.5);
-  border-radius: 10px;
   padding: 50px 30px 50px 30px;
-  width: 600px;
-  height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid black;
   font-size: 1.2rem;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  height: 310px;
 }
 
 .next-game {
-  border-radius: 10px;
-  padding: 50px;
-  width: 600px;
+  border-radius: 20px;
+  padding: 50px 30px 50px 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 2px solid #000000;
   height: 320px;
   font-size: 1.2rem;
+  border: 2px solid #000000;
+  height: 310px;
 }
 
 .time-location {
@@ -253,6 +325,7 @@ p {
 .team-scores {
   display: flex;
   justify-content: space-around;
+  width: 100%;
 }
 
 .scores {
@@ -260,9 +333,10 @@ p {
   justify-content: space-around;
   align-items: center;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 25px;
   width: 80px;
+  height: 100%;
 }
 
 .team {
@@ -271,10 +345,8 @@ p {
   flex-direction: column;
   text-transform: uppercase;
   text-align: center;
-  width: 250px;
+  width: 45%;
 }
-
-
 
 .VS {
   display: flex;
@@ -283,6 +355,7 @@ p {
   font-size: 2rem;
   margin-bottom: 15px;
   width: 70px;
+  height: 100%;
   flex-direction: column;
   justify-content: center;
 }
@@ -290,6 +363,7 @@ p {
 .button {
   color: white;
   background-color: #0c4437;
+  margin-top: 10px;
   border-radius: 10px;
   width: 80px;
   font-size: 1.5rem;
@@ -387,6 +461,7 @@ p {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 .add-more__button {
   background: none;
@@ -404,32 +479,72 @@ p {
 }
 
 /**RESPONSIVE */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
+  .big-container {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  .latest-and-upcoming-games {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .latest-and-upcoming-games {
+    flex-direction: column-reverse;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+  }
+
+  .game-container {
+    width: 100%;
+  }
+
   .last-game {
-    width: 300px;
+    width: 100%;
     margin: auto;
     font-size: 1rem;
   }
 
   .next-game {
-    width: 300px;
+    width: 100%;
+    margin: auto;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .big-container {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .latest-and-upcoming-games {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .game-container {
+    width: 100%;
+  }
+
+  .last-game {
+    width: 100%;
+    margin: auto;
+    font-size: 1rem;
+  }
+
+  .next-game {
+    width: 100%;
     margin: auto;
     font-size: 1rem;
     margin-bottom: 10px;
   }
 
-  .time-location {
+  /* .time-location {
     margin-bottom: 0px;
-  }
+  } */
 
-  .game-container h1{
+  .game-container h1 {
     font-size: 1.5rem;
-    text-align: center; 
-  }
-
-  .latest-and-upcoming-games {
-    flex-direction: column-reverse;
-    margin: auto;
     text-align: center;
   }
 
@@ -442,13 +557,20 @@ p {
     width: 200px;
   }
   .results-container {
-    margin: 40px;
+    margin: 0;
+    width: 100%;
+  }
+  .mouth-div {
+    width: 100%;
+    margin-top: 20px;
   }
 
   .game-results {
     flex-direction: column;
-    width: 300px;
+    width: 100%;
     margin: auto;
+    justify-content: center;
+    align-items: center;
   }
 
   .month {
@@ -477,18 +599,6 @@ p {
   .hyphen {
     display: contents;
     margin: 10px;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .latest-and-upcoming-games {
-    flex-direction: column-reverse;
-    margin: auto;
-    text-align: center;
-  }
-
-  .game-container {
-    margin: auto;
   }
 }
 </style>

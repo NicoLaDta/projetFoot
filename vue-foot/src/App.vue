@@ -13,7 +13,7 @@
             >Actualités</router-link
           >
           <router-link class="padding-router color-focus" to="/VCalendrier"
-            >Calendrier et résultats</router-link
+            >Résultats</router-link
           >
           <router-link class="padding-router color-focus" to="/VClassement"
             >Classement</router-link
@@ -26,12 +26,22 @@
           >
           
           <!-- À AJOUTER SI NECESSAIRE AVEC LA PARTIE BACK-END -->
-          <!-- <router-link class="padding-router color-focus" to="/VLogin"
-            >Me Connecter</router-link
-          > -->
-           <!-- <router-link class="padding-router color-focus" to="/VLogout"
-            >Me Connecter</router-link
-          > -->
+          <router-link class="padding-router color-focus" to="/login"
+            v-if="!$store.state.isLoggedIn"
+            flat
+            dark
+          >Connexion</router-link>
+          <router-link class="padding-router color-focus" to="/Admin"
+            v-if="$store.state.isLoggedIn"
+            flat
+            dark
+          >Ajout</router-link>&emsp;
+          <v-input type="button" value="Logout" @click="logout"
+           onclick="return confirm('Êtes-vous sûrs de vouloir vous deconnectez ?')"
+            v-if="$store.state.isLoggedIn"
+            flat
+            dark
+          >Deconnexion</v-input> 
         </nav>
       </div>
       
@@ -150,6 +160,10 @@ export default {
     toggleMenu() {
       console.log("menu");
       this.isMenuOpen = !this.isMenuOpen;
+    },
+    logout() {
+      this.$store.dispatch('logout');
+      this.$router.push('/login');
     }
   },
   watch: {

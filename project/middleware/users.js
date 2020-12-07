@@ -1,3 +1,5 @@
+const jwt = require('jsonwebtoken');
+
 module.exports = {
     validateRegister: (req, res, next) => {
         // username min length 3
@@ -28,7 +30,25 @@ module.exports = {
                 msg: 'Your session is not valid!'
             });
         }
-    }
+    },
+    validateAdd: (req, res, next) => {
+        // username min length 3
+        if (!req.body.title || req.body.title.length < 3) {
+            return res.status(400).send({
+                msg: 'Please enter a title with min. 3 chars'
+            });
+        }
+        next();
+    },
+    validateAddProduct: (req, res, next) => {
+        // username min length 3
+        if (!req.body.nomproduit || req.body.nomproduit.length < 3) {
+            return res.status(400).send({
+                msg: 'Please enter a product name with min. 3 chars'
+            });
+        }
+        next();
+    },
 };
 
 

@@ -1,84 +1,163 @@
 <template>
+<<<<<<< HEAD
   <div>
     <div class="container-billetterie">
-      <h1 class="title font-bold not-italic text-center">Prochains matches</h1>
+      <h1 class="title font-bold not-italic text-center">Prochains matchs</h1>
       <div class="billetterie">
         <div class="billetterie-bloc">
           <div class="time-location">
-            <p>12/01/2020 - 21:00</p>
-            <p>Stade1</p>
+            <p> {{result.events[0].dateEvent}} - {{result.events[0].strTime}}</p>
+            <p>{{ result.events[0].strVenue }}</p>
+=======
+<div>
+  <div class="container-billetterie">
+    <div class="billetterie">
+      <div class="billetterie-bloc">
+        <div class="time-location">
+          <p>12/01/2020 - 21:00</p>
+          <p>Stade1</p>
+        </div>
+        <div class="team-scores">
+          <div class="team">
+            <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
+            <p>Redstar Football Club</p>
+>>>>>>> 71820dba1e4c47261d359f1206ccdbdc9a5c9875
           </div>
           <div class="team-scores">
             <div class="team">
-              <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-              <p>Redstar Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoHomeTeam1}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[0].strHomeTeam}}</p>
             </div>
             <div class="VS">
               <p>VS</p>
             </div>
             <div class="team">
-              <img :src="logoPARISFC" alt="logo-tfc" /> <br />
-              <p>Paris Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoAwayTeam1}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[0].strAwayTeam}}</p>
             </div>
           </div>
           <div class="button">
-            <button type="button">Billets</button>
+            <router-link to="/VBilletterieInfo">
+              <button type="button">Billets</button>
+            </router-link>
+          </div>
+        </div>
+<<<<<<< HEAD
+=======
+        <div class="button">
+           <router-link to="/VBilleterieInfo">
+          <button type="button">Billets</button>
+           </router-link>
+        </div>
+      </div>
+>>>>>>> 71820dba1e4c47261d359f1206ccdbdc9a5c9875
+
+        <div class="billetterie-bloc">
+          <div class="time-location">
+            <p>{{result.events[1].dateEvent}} - {{result.events[1].strTime}}</p>
+            <p>{{ result.events[1].strVenue }}</p>
+          </div>
+          <div class="team-scores">
+            <div class="team">
+              <img
+                :src="require(`@/assets/logos-equipes/${logoHomeTeam2}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[1].strHomeTeam}}</p>
+            </div>
+            <div class="VS">
+              <p>VS</p>
+            </div>
+            <div class="team">
+              <img
+                :src="require(`@/assets/logos-equipes/${logoAwayTeam2}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[1].strAwayTeam}}</p>
+            </div>
+          </div>
+          <div class="button">
+            <router-link to="/VBilletterieInfo">
+              <button type="button">Billets</button>
+            </router-link>
           </div>
         </div>
 
         <div class="billetterie-bloc">
           <div class="time-location">
-            <p>12/01/2020 - 21:00</p>
-            <p>Stade2</p>
+            <p>{{result.events[2].dateEvent}} - {{result.events[2].strTime}}</p>
+            <p>{{ result.events[2].strVenue }}</p>
           </div>
           <div class="team-scores">
             <div class="team">
-              <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-              <p>Redstar Football Club</p>
+             <img
+                :src="require(`@/assets/logos-equipes/${logoHomeTeam3}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[2].strHomeTeam}}</p>
             </div>
             <div class="VS">
               <p>VS</p>
             </div>
             <div class="team">
-              <img :src="logoPARISFC" alt="logo-tfc" /> <br />
-              <p>Paris Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoAwayTeam3}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[2].strAwayTeam}}</p>
             </div>
           </div>
           <div class="button">
-            <button type="button">Billets</button>
+            <router-link to="/VBilletterieInfo">
+              <button type="button">Billets</button>
+            </router-link>
           </div>
         </div>
+
         <div class="billetterie-bloc">
           <div class="time-location">
-            <p>12/01/2020 - 21:00</p>
-            <p>Stade3</p>
+            <p>{{result.events[3].dateEvent}} - {{result.events[3].strTime}}</p>
+            <p>{{ result.events[3].strVenue }}</p>
           </div>
           <div class="team-scores">
             <div class="team">
-              <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-              <p>Redstar Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoHomeTeam4}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[3].strHomeTeam}}</p>
             </div>
             <div class="VS">
               <p>VS</p>
             </div>
             <div class="team">
-              <img :src="logoPARISFC" alt="logo-tfc" /> <br />
-              <p>Paris Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoAwayTeam4}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[3].strAwayTeam}}</p>
             </div>
           </div>
           <div class="button">
-            <button type="button">Billets</button>
+            <router-link to="/VBilletterieInfo">
+              <button type="button">Billets</button>
+            </router-link>
           </div>
         </div>
-        <div class="billetterie-bloc">
-          <div class="time-location">
-            <p>12/01/2020 - 21:00</p>
-            <p>Stade4</p>
-          </div>
-        </div>
-        <!-- <div class="button">
-          <button type="button">Billets</button>
-        </div> -->
       </div>
     </div>
 
@@ -88,7 +167,7 @@
       <div class="find-us flex flex-col md:flex-row">
         <iframe
           class="md:w-6/12 w-full"
-          height="250px"
+          height="350px"
           frameborder="0"
           allowfullscreen
           src="//umap.openstreetmap.fr/fr/map/boutique-redstar_530423?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false&datalayers=1500423#16/48.9067/2.3425"
@@ -104,6 +183,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <style lang="postcss" scoped>
@@ -115,19 +195,23 @@
   margin-bottom: 40px;
   flex-direction: column;
 }
-
+.container-billetterie h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 .billetterie {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: auto;
   max-width: 1300px;
+  width: 100%;
 }
 
 .billetterie-bloc {
   border-radius: 10px;
   padding: 50px;
-  width: 550px;
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -142,26 +226,32 @@
   font-style: normal;
 }
 
-.team-img {
+.team img {
   width: 100px;
   height: 100px;
 }
 
+/* ———————————————— */
+/* OU NOUS TROUVER */
+/* ———————————————— */
 .find-us-container {
   display: flex;
   flex-direction: column;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-bottom: 40px;
 }
 
 .find-us-container h1 {
   font-size: 1.5rem;
+  font-family: Roboto Condensed;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 20px;
 }
-
-.find-us {
-  /* display: flex;
-  flex-direction: row;
-  justify-content: center; */
+.find-us-container p {
+  font-size: 1.25rem;
+  text-align: center;
 }
 
 .map {
@@ -169,18 +259,23 @@
   justify-content: center;
 }
 
+<<<<<<< HEAD
+@media screen and (max-width: 1000px) {
+=======
 @media screen and (max-width: 800px) {
+>>>>>>> 71820dba1e4c47261d359f1206ccdbdc9a5c9875
   .container-billetterie {
     margin: auto;
   }
 
   .billetterie-bloc {
-    width: 300px;
+    width: 80%;
     font-size: 1rem;
   }
 
   .find-us-container {
-    margin: auto;
+    margin: 0;
+    with: 100%;
   }
 
   .find-us {
@@ -188,11 +283,58 @@
     margin: auto;
     text-align: center;
     font-size: 1rem;
+    width: 95%;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .billetterie-bloc {
+    width: 90%;
   }
 }
 </style>
 
 <script>
-export default {};
-</script>
+import SportApi from "@/services/SportApi.js";
+export default {
+  data(){
+    return{
+      result: null,
 
+
+      logoAwayTeam1: null,
+      logoAwayTeam2: null,
+      logoAwayTeam3: null,
+      logoAwayTeam4: null,
+
+      logoHomeTeam1: null,
+      logoHomeTeam2: null,
+      logoHomeTeam3: null,
+      logoHomeTeam4: null,
+
+
+    }
+  },
+  async created() {
+    SportApi.setApiKey(1); //defaults to 1, set for Patreon
+    let nextEvents = await SportApi.getNext5EventsByTeamId(135467);
+    this.result = nextEvents
+
+    // ADD LINK LOGO
+    // --------------------------
+    //AWAY TEAM
+    this.logoAwayTeam1 = nextEvents.events[0].strAwayTeam;
+    this.logoAwayTeam2 = nextEvents.events[1].strAwayTeam;
+    this.logoAwayTeam3 = nextEvents.events[2].strAwayTeam;
+    this.logoAwayTeam4 = nextEvents.events[3].strAwayTeam;
+
+    // HOME TEAM
+    this.logoHomeTeam1 = nextEvents.events[0].strHomeTeam;
+    this.logoHomeTeam2 = nextEvents.events[1].strHomeTeam;
+    this.logoHomeTeam3 = nextEvents.events[2].strHomeTeam;
+    this.logoHomeTeam4 = nextEvents.events[3].strHomeTeam;
+
+  },
+};
+</script>

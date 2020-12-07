@@ -6,21 +6,21 @@ import VCalendrier from '../components/VCalendrier.vue'
 import VClassement from '../components/VClassement.vue'
 import VBoutique from '../components/VBoutique.vue'
 import VSlide from '../components/VSlide.vue'
-import VBilleterieInfo from '../components/VBilleterieInfo.vue'
+import VBilletterieInfo from '../components/VBilletterieInfo.vue'
 import VArticle from '../components/VArticle.vue'
 import VLogin from '../components/VLogin.vue'
 import SignUp from '../components/SignUp.vue'
 import Home from '../components/Home.vue'
 import VProduct from '../components/VProduct.vue'
 import VMenuMobile from '../components/VMenuMobile.vue'
-
+import VAdmin from '../components/VAdmin.vue'
 
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/slide',
+    path: '/',
     name: 'VSlide',
     component: VSlide
   },
@@ -30,9 +30,9 @@ const routes = [
     component: VActu
   },
   {
-    path: '/VBilleterieInfo',
-    name: 'VBilleterieInfo',
-    component: VBilleterieInfo
+    path: '/VBilletterieInfo',
+    name: 'VBilletterieInfo',
+    component: VBilletterieInfo
   },
   {
     path: '/VBilletterie',
@@ -80,14 +80,19 @@ const routes = [
     component: SignUp
   },
   {
-    path: "/",
+    path: "/home",
     name: "home",
     component: Home
   },
+  {
+    path: "/Admin",
+    name: "Admin",
+    component: VAdmin
+  },
+
 ]
 const router = new VueRouter({
   mode: 'history',
   routes
 })
-
 export default router

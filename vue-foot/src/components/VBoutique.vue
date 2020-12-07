@@ -24,6 +24,9 @@
           <p class="text-red-600 font-semibold">19,99 €</p>
         </div>
       </section>
+      <div>
+      {{ getproduct }}
+    </div>
 
     </div>
 </template>
@@ -45,6 +48,10 @@
     margin: 0.375rem;
   }
 
+  .presentation p {
+    font-weight: bold;
+  font-size: 1.25rem;
+  }
   @media (min-width: 400px) {
     .container-product {
      margin-left: 90px;
@@ -66,7 +73,17 @@
 </style>
 
 <script>
+import AuthService from '@/services/AuthService.js';
 export default {
     name: "Boutique",
+    data(){
+      return {
+        getproduct: null
+      }
+    },
+    async produit() {
+      this.getproduct = await AuthService.getProduct();
+    },
 }
+
 </script>
