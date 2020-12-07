@@ -32,10 +32,6 @@
       </div>
     </div>
 
-    <div class="div-input-mail">
-     
-    </div>
-
     <div class="submit-button">
       <p>Votre sélection :
         <ul>
