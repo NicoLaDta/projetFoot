@@ -7,30 +7,35 @@
       <img class="imageStade" :src="stade" alt="photo de l'article" />
     </div>
 
-    <form action="" method="post">
+    <form>
     <div class="div-categorie">
       <div class="categorie cat1">
           <p>CATEGORIE 1</p>
           <p style="color: #d8c508; font-weight: bold">19€</p>
             <p>Nombre de billets souhaités :</p>
-            <p class="little">xxx / xxx restants</p>
+            <p class="little">{{nbCat1}} / {{nbMaxCat1}} restants</p>
             <input type="number" min="0" max="10" value="0" id="numberCat1" v-model.number="cat1">
       </div>
       <div class="categorie cat2">
           <p>CATEGORIE 2</p>
           <p style="color: #8d0506; font-weight: bold">12€</p>
           <p>Nombre de billets souhaités :</p>
-          <p class="little">xxx / xxx restants</p>
+          <p class="little">{{nbCat2}} / {{nbMaxCat2}} restants</p>
             <input type="number" min="0" max="10" value="0" id="numberCat2" v-model.number="cat2">
       </div>
       <div class="categorie cat3">
           <p>CATEGORIE 3</p>
           <p style="color: #156654; font-weight: bold">7€</p>
           <p>Nombre de billets souhaités :</p>
-          <p class="little">xxx / xxx restants</p>
+          <p class="little">{{nbCat3}} / {{nbMaxCat3}} restants</p>
             <input type="number" min="0" max="10" value="0" id="numberCat3" v-model.number="cat3">
       </div>
     </div>
+
+    <div class="div-input-mail">
+     
+    </div>
+
     <div class="submit-button">
       <p>Votre sélection :
         <ul>
@@ -39,6 +44,8 @@
            <li>{{cat3}} place(s) en catégorie 3</li> 
         </ul>
       </p>
+      <label class="mt-3">Entrez votre email pour confirmer</label>
+      <input type="email" name="user_email" v-model="email" required>
       <input type="submit" value="Valider">
     </div>
     </form>
@@ -76,8 +83,30 @@ export default {
       cat1: 0,
       cat2: 0,
       cat3: 0,
+
+      nbMaxCat1 : 1000,
+      nbMaxCat2 : 3000,
+      nbMaxCat3 : 5000,
+
+      nbCat1 : 1000,
+      nbCat2 : 3000,
+      nbCat3 : 5000,
+
+      email: "",
+      username: "",
+
+      message:{
+        from : "mail",
+        to : this.email,
+      }
     };
   },
+  methods: {
+
+  },
+  mounted(){
+
+  }
 };
 </script> 
 
@@ -123,11 +152,11 @@ export default {
   box-shadow: 0px 4px 4px 0px #d8c508;
   border: solid 1px #d8c508;
 }
-.cat2{
+.cat2 {
   box-shadow: 0px 4px 4px 0px #8d0506;
   border: solid 1px #8d0506;
 }
-.cat3{
+.cat3 {
   box-shadow: 0px 4px 4px 0px #156654;
   border: solid 1px #156654;
 }
@@ -145,10 +174,10 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-.submit-button p{
+.submit-button p {
   font-size: 1.1rem;
 }
-input[type="submit"]{
+input[type="submit"] {
   background: none;
   border: solid 2px #000;
   border-radius: 5px;
@@ -156,18 +185,21 @@ input[type="submit"]{
   cursor: pointer;
   margin-top: 20px;
 }
-input[type="submit"]:hover{
+input[type="submit"]:hover {
   background-color: #991917;
   border: solid 2px #991917;
   color: #fff;
 }
-input[type="number"]{
+input[type="number"] {
   text-align: center;
 }
-input[type=number]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-inner-spin-button {
   opacity: 1;
 }
-
+input[type="email"]{
+    border: solid 1px #000;
+    padding: 5px;
+}
 /* ———————————————— */
 /* OU NOUS TROUVER */
 /* ———————————————— */
