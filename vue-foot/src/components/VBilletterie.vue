@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div>
     <div class="container-billetterie">
       <h1 class="title font-bold not-italic text-center">Prochains matchs</h1>
@@ -8,20 +7,6 @@
           <div class="time-location">
             <p> {{result.events[0].dateEvent}} - {{result.events[0].strTime}}</p>
             <p>{{ result.events[0].strVenue }}</p>
-=======
-<div>
-  <div class="container-billetterie">
-    <div class="billetterie">
-      <div class="billetterie-bloc">
-        <div class="time-location">
-          <p>12/01/2020 - 21:00</p>
-          <p>Stade1</p>
-        </div>
-        <div class="team-scores">
-          <div class="team">
-            <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-            <p>Redstar Football Club</p>
->>>>>>> 71820dba1e4c47261d359f1206ccdbdc9a5c9875
           </div>
           <div class="team-scores">
             <div class="team">
@@ -50,15 +35,6 @@
             </router-link>
           </div>
         </div>
-<<<<<<< HEAD
-=======
-        <div class="button">
-           <router-link to="/VBilleterieInfo">
-          <button type="button">Billets</button>
-           </router-link>
-        </div>
-      </div>
->>>>>>> 71820dba1e4c47261d359f1206ccdbdc9a5c9875
 
         <div class="billetterie-bloc">
           <div class="time-location">
@@ -183,7 +159,6 @@
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <style lang="postcss" scoped>
