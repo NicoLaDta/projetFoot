@@ -138,9 +138,6 @@ export default {
   components: {
     VMenuMobile,
   },
-  mounted(){
-    console.log("toz")
-  },
   data() {
     return {
       logo: require("@/assets/logored.svg"),
