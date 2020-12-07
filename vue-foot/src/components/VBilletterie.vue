@@ -234,11 +234,7 @@
   justify-content: center;
 }
 
-<<<<<<< HEAD
 @media screen and (max-width: 1000px) {
-=======
-@media screen and (max-width: 800px) {
->>>>>>> 71820dba1e4c47261d359f1206ccdbdc9a5c9875
   .container-billetterie {
     margin: auto;
   }
