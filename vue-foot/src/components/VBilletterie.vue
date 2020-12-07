@@ -5,20 +5,28 @@
       <div class="billetterie">
         <div class="billetterie-bloc">
           <div class="time-location">
-            <p>12/01/2020 - 21:00</p>
-            <p>Stade1</p>
+            <p> {{result.events[0].dateEvent}} - {{result.events[0].strTime}}</p>
+            <p>{{ result.events[0].strVenue }}</p>
           </div>
           <div class="team-scores">
             <div class="team">
-              <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-              <p>Redstar Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoHomeTeam1}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[0].strHomeTeam}}</p>
             </div>
             <div class="VS">
               <p>VS</p>
             </div>
             <div class="team">
-              <img :src="logoPARISFC" alt="logo-tfc" /> <br />
-              <p>Paris Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoAwayTeam1}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[0].strAwayTeam}}</p>
             </div>
           </div>
           <div class="button">
@@ -30,20 +38,28 @@
 
         <div class="billetterie-bloc">
           <div class="time-location">
-            <p>12/01/2020 - 21:00</p>
-            <p>Stade2</p>
+            <p>{{result.events[1].dateEvent}} - {{result.events[1].strTime}}</p>
+            <p>{{ result.events[1].strVenue }}</p>
           </div>
           <div class="team-scores">
             <div class="team">
-              <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-              <p>Redstar Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoHomeTeam2}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[1].strHomeTeam}}</p>
             </div>
             <div class="VS">
               <p>VS</p>
             </div>
             <div class="team">
-              <img :src="logoPARISFC" alt="logo-tfc" /> <br />
-              <p>Paris Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoAwayTeam2}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[1].strAwayTeam}}</p>
             </div>
           </div>
           <div class="button">
@@ -55,20 +71,28 @@
 
         <div class="billetterie-bloc">
           <div class="time-location">
-            <p>12/01/2020 - 21:00</p>
-            <p>Stade3</p>
+            <p>{{result.events[2].dateEvent}} - {{result.events[2].strTime}}</p>
+            <p>{{ result.events[2].strVenue }}</p>
           </div>
           <div class="team-scores">
             <div class="team">
-              <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-              <p>Redstar Football Club</p>
+             <img
+                :src="require(`@/assets/logos-equipes/${logoHomeTeam3}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[2].strHomeTeam}}</p>
             </div>
             <div class="VS">
               <p>VS</p>
             </div>
             <div class="team">
-              <img :src="logoPARISFC" alt="logo-tfc" /> <br />
-              <p>Paris Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoAwayTeam3}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[2].strAwayTeam}}</p>
             </div>
           </div>
           <div class="button">
@@ -80,20 +104,28 @@
 
         <div class="billetterie-bloc">
           <div class="time-location">
-            <p>12/01/2020 - 21:00</p>
-            <p>Stade4</p>
+            <p>{{result.events[3].dateEvent}} - {{result.events[3].strTime}}</p>
+            <p>{{ result.events[3].strVenue }}</p>
           </div>
           <div class="team-scores">
             <div class="team">
-              <img :src="logoREDSTAR" alt="logo-redstar" /> <br />
-              <p>Redstar Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoHomeTeam4}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[3].strHomeTeam}}</p>
             </div>
             <div class="VS">
               <p>VS</p>
             </div>
             <div class="team">
-              <img :src="logoPARISFC" alt="logo-tfc" /> <br />
-              <p>Paris Football Club</p>
+              <img
+                :src="require(`@/assets/logos-equipes/${logoAwayTeam4}.png`)"
+                alt="logo du club"
+              />
+              <br />
+              <p>{{result.events[3].strAwayTeam}}</p>
             </div>
           </div>
           <div class="button">
@@ -169,7 +201,7 @@
   font-style: normal;
 }
 
-.team-img {
+.team img {
   width: 100px;
   height: 100px;
 }
@@ -239,14 +271,41 @@ import SportApi from "@/services/SportApi.js";
 export default {
   data(){
     return{
-      result: null
+      result: null,
+
+
+      logoAwayTeam1: null,
+      logoAwayTeam2: null,
+      logoAwayTeam3: null,
+      logoAwayTeam4: null,
+
+      logoHomeTeam1: null,
+      logoHomeTeam2: null,
+      logoHomeTeam3: null,
+      logoHomeTeam4: null,
+
+
     }
   },
   async created() {
     SportApi.setApiKey(1); //defaults to 1, set for Patreon
     let nextEvents = await SportApi.getNext5EventsByTeamId(135467);
-    console.log(nextEvents);
     this.result = nextEvents
+
+    // ADD LINK LOGO
+    // --------------------------
+    //AWAY TEAM
+    this.logoAwayTeam1 = nextEvents.events[0].strAwayTeam;
+    this.logoAwayTeam2 = nextEvents.events[1].strAwayTeam;
+    this.logoAwayTeam3 = nextEvents.events[2].strAwayTeam;
+    this.logoAwayTeam4 = nextEvents.events[3].strAwayTeam;
+
+    // HOME TEAM
+    this.logoHomeTeam1 = nextEvents.events[0].strHomeTeam;
+    this.logoHomeTeam2 = nextEvents.events[1].strHomeTeam;
+    this.logoHomeTeam3 = nextEvents.events[2].strHomeTeam;
+    this.logoHomeTeam4 = nextEvents.events[3].strHomeTeam;
+
   },
 };
 </script>
