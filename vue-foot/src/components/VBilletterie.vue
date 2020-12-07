@@ -159,7 +159,7 @@
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->
 </template>
 
 <style lang="postcss" scoped>
@@ -270,10 +270,9 @@
 <script>
 import SportApi from "@/services/SportApi.js";
 export default {
-  data(){
-    return{
+  data() {
+    return {
       result: null,
-
 
       logoAwayTeam1: null,
       logoAwayTeam2: null,
@@ -284,14 +283,12 @@ export default {
       logoHomeTeam2: null,
       logoHomeTeam3: null,
       logoHomeTeam4: null,
-
-
-    }
+    };
   },
   async created() {
     SportApi.setApiKey(1); //defaults to 1, set for Patreon
     let nextEvents = await SportApi.getNext5EventsByTeamId(135467);
-    this.result = nextEvents
+    this.result = nextEvents;
 
     // ADD LINK LOGO
     // --------------------------
@@ -306,7 +303,6 @@ export default {
     this.logoHomeTeam2 = nextEvents.events[1].strHomeTeam;
     this.logoHomeTeam3 = nextEvents.events[2].strHomeTeam;
     this.logoHomeTeam4 = nextEvents.events[3].strHomeTeam;
-
   },
 };
 </script>
