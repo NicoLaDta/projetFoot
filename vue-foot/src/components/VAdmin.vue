@@ -10,7 +10,7 @@
         </div>
         <div class="flex flex-col m-2">
           <label for="">Image</label>
-          <input type="file" accept="image/png, image/jpeg" />
+          <input type="file" accept="image/png, image/jpeg" @change="Onchange"/>
         </div>
         <div class="flex flex-col m-2">
           <label for="">Texte de l'article</label>
@@ -35,7 +35,7 @@
         </div>
         <div class="flex flex-col m-2">
           <label for="">Image du produit</label>
-          <input type="file" />
+          <input type="file" accept="image/png, image/jpeg" />
         </div>
         <div class="flex flex-col m-2">
           <label for="">Description</label>
@@ -122,19 +122,22 @@ export default {
   name: "Admin",
   data(){
     return {
-      title: "",
-      nomproduit: "",
+      title:"",
+      nomproduit:"",
       prix: null,
-      description: "",
-      descriptions: "",
+      images: [],
+      description:"",
+      descriptions:"",
     };
   },
   methods: { 
+    Onchange(e){
+       this.images = e.target.files[0]
+    },
     async articleAdd() {
       try {
         const credentials = {
           title: this.title,
-          images: this.images,
           description: this.description
         };
         const response = await AuthService.articleAdd(credentials);
