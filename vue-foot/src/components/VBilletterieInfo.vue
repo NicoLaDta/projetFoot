@@ -13,21 +13,21 @@
           <p>CATEGORIE 1</p>
           <p style="color: #d8c508; font-weight: bold">19€</p>
             <p>Nombre de billets souhaités :</p>
-            <p class="little">{{nbCat1}} / {{nbMaxCat1}} restants</p>
+            <p class="little">{{nbCat1 - cat1}} / {{nbMaxCat1}} restants</p>
             <input type="number" min="0" max="10" value="0" id="numberCat1" v-model.number="cat1">
       </div>
       <div class="categorie cat2">
           <p>CATEGORIE 2</p>
           <p style="color: #8d0506; font-weight: bold">12€</p>
           <p>Nombre de billets souhaités :</p>
-          <p class="little">{{nbCat2}} / {{nbMaxCat2}} restants</p>
+          <p class="little">{{nbCat2 - cat2}} / {{nbMaxCat2}} restants</p>
             <input type="number" min="0" max="10" value="0" id="numberCat2" v-model.number="cat2">
       </div>
       <div class="categorie cat3">
           <p>CATEGORIE 3</p>
           <p style="color: #156654; font-weight: bold">7€</p>
           <p>Nombre de billets souhaités :</p>
-          <p class="little">{{nbCat3}} / {{nbMaxCat3}} restants</p>
+          <p class="little" >{{nbCat3 - cat3}} / {{nbMaxCat3}} restants</p>
             <input type="number" min="0" max="10" value="0" id="numberCat3" v-model.number="cat3">
       </div>
     </div>
@@ -42,7 +42,7 @@
       </p>
       <label class="mt-3">Entrez votre email pour confirmer</label>
       <input type="email" name="user_email" v-model="email" required>
-      <input type="submit" value="Valider">
+      <input type="submit" value="Valider" onclick="return confirm(`L'email de confirmation vous a bien était envoyé !`)">
     </div>
     </form>
 
@@ -81,11 +81,11 @@ export default {
       cat3: 0,
 
       nbMaxCat1 : 1000,
-      nbMaxCat2 : 3000,
+      nbMaxCat2 : 4000,
       nbMaxCat3 : 5000,
 
       nbCat1 : 1000,
-      nbCat2 : 3000,
+      nbCat2 : 4000,
       nbCat3 : 5000,
 
       email: "",
