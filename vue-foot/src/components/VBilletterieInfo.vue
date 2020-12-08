@@ -77,7 +77,7 @@ export default {
   data() {
     return {
       stade: require("@/assets/image-billeterie/stade.svg"),
-      cat1: 0,
+      cat1: null,
       cat2: 0,
       cat3: 0,
 
@@ -102,13 +102,13 @@ export default {
       }
     };
   },
-   methods: {
-     update: function(){
-        this.majNbCat1 = this.nbCat1 - this.cat1
+  methods: {
+    update: function(){
+      this.nbCat1 = this.majNbCat1
+      this.majNbCat1 = this.nbCat1 - this.cat1
     },
     collect : function(){
       this.majNbCat1 = this.nbCat1
-      this.nbCat1 = this.majNbCat1
     }
   },
   mounted(){
