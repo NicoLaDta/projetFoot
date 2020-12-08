@@ -104,9 +104,8 @@ export default {
   },
   methods: {
     update: function(){
-      this.nbCat1 = this.majNbCat1
       this.majNbCat1 = this.nbCat1 - this.cat1
-      
+      this.nbCat1 = this.majNbCat1
     },
     collect : function(){
       this.majNbCat1 = this.nbCat1
