@@ -7,7 +7,7 @@
       <img class="imageStade" :src="stade" alt="photo de l'article" />
     </div>
 
-    <form>
+    <form @submit="checkForm">
     <div class="div-categorie">
       <div class="categorie cat1">
           <p>CATEGORIE 1</p>
