@@ -7,13 +7,14 @@
       <img class="imageStade" :src="stade" alt="photo de l'article" />
     </div>
 
-    <form @submit="checkForm">
+    <form v-on:click="update">
     <div class="div-categorie">
       <div class="categorie cat1">
           <p>CATEGORIE 1</p>
           <p style="color: #d8c508; font-weight: bold">19€</p>
             <p>Nombre de billets souhaités :</p>
-            <p class="little">{{nbCat1 - cat1}} / {{nbMaxCat1}} restants</p>
+            <!-- <p class="little">{{nbCat1 - cat1}} / {{nbMaxCat1}} restants</p> -->
+            <p class="little">{{majNbCat1}} / {{nbMaxCat1}} restants</p>
             <input type="number" min="0" max="10" value="0" id="numberCat1" v-model.number="cat1">
       </div>
       <div class="categorie cat2">
@@ -42,7 +43,7 @@
       </p>
       <label class="mt-3">Entrez votre email pour confirmer</label>
       <input type="email" name="user_email" v-model="email" required>
-      <input type="submit" value="Valider" onclick="return confirm(`L'email de confirmation vous a bien était envoyé !`)">
+      <input type="submit" value="Valider" onclick="return confirm(`L'email de confirmation vous a bien était envoyé !`)"  v-on:click="collect">
     </div>
     </form>
 
@@ -81,13 +82,17 @@ export default {
       cat3: 0,
 
       nbMaxCat1 : 1000,
-      nbMaxCat2 : 4000,
+      nbMaxCat2 : 3000,
       nbMaxCat3 : 5000,
 
       nbCat1 : 1000,
-      nbCat2 : 4000,
+      nbCat2 : 3000,
       nbCat3 : 5000,
 
+      majNbCat1 : null,
+      majNbCat2 : null,
+      majNbCat3 : null,
+      
       email: "",
       username: "",
 
@@ -97,11 +102,26 @@ export default {
       }
     };
   },
-  methods: {
-
+   methods: {
+     update: function(){
+        this.majNbCat1 = this.nbCat1 - this.cat1
+    },
+    collect : function(){
+      this.majNbCat1 = this.nbCat1
+      this.nbCat1 = this.majNbCat1
+    }
   },
   mounted(){
-
+    // CAT 1
+    if (localStorage.majNbCat1) {
+      this.majNbCat1 = localStorage.majNbCat1;
+    }
+  },
+  watch: {
+    // CAT 1
+    majNbCat1(newMaj) {
+      localStorage.majNbCat1 = newMaj;
+    },
   }
 };
 </script> 
