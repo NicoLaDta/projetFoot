@@ -3,7 +3,7 @@
 
       <section class="card flex flex-col rounded">
        <router-link to="/VProduct">
-        <img src="@/assets/image-boutique/maillot_1.png">
+        <img class="item-img rounded-t-lg" src="@/assets/image-boutique/survet.jpg">
         <div class="presentation flex justify-between m-4">
           <p>{{ getproduct[0].nomproduit }}</p>
           <p class="text-red-600 font-semibold">{{ getproduct[0].prix }} €</p>
@@ -12,7 +12,7 @@
       </section>
       <section class="card flex flex-col rounded">
        <router-link to="/VProduct">
-        <img src="@/assets/image-boutique/maillot_1.png">
+        <img class="item-img rounded-t-lg" src="@/assets/image-boutique/maillot_r.jpg">
         <div class="presentation flex justify-between m-4">
           <p>{{ getproduct[1].nomproduit }}</p>
           <p class="text-red-600 font-semibold">{{ getproduct[1].prix }} €</p>
@@ -21,7 +21,7 @@
       </section>
       <section class="card flex flex-col rounded">
        <router-link to="/VProduct">
-        <img src="@/assets/image-boutique/maillot_1.png">
+        <img class="item-img rounded-t-lg" src="@/assets/image-boutique/maillot_1.png">
         <div class="presentation flex justify-between m-4">
           <p>{{ getproduct[2].nomproduit }}</p>
           <p class="text-red-600 font-semibold">{{ getproduct[2].prix }} €</p>
@@ -54,6 +54,13 @@
   .presentation p {
     font-weight: bold;
   font-size: 1.25rem;
+  }
+
+  .item-img{
+    /* max-height: 400px; */
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
   }
   @media (min-width: 400px) {
     .container-product {
