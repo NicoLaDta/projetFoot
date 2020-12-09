@@ -1,10 +1,21 @@
 <template>
   <div class="container-actu">
+    <!-- <div class="pop-up-update">
+      <form class="pop-up__form">
+        <p class="mb-3">Update</p>
+        <label>XXX</label>
+        <input type="text">
+        <label>XXX</label>
+        <input type="text">
+        <input type="submit">
+        <button>Close</button>
+      </form>
+    </div> -->
     <div class="actu">
       <router-link to="/VActu/VArticle">
         <div class="actu__bloc hot-news">
           <div class="div-picto">
-            <button>
+            <button id="buttonUpdate">
               <img :src="pictoUpdate" alt="picto Update" />
             </button>
             <button>
@@ -275,6 +286,28 @@ a {
   color: #fff;
 }
 
+/* ------------- */
+/* POPUP */
+/* ------------- */
+.pop-up-update {
+  background-color: rgba(138, 135, 135, 0.993);
+  position: absolute;
+  z-index: 2;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  display: none;
+}
+.pop-up__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
 @media (max-width: 1044px) {
   .actu__bloc{
     width: 100%;
@@ -326,6 +359,13 @@ export default {
         button.value = "Voir plus";
       }
     });
+
+    // let update = document.querySelector('#buttonUpdate');
+    // update.addEventListener('click', function(){
+    //   let popup = document.querySelector('.pop-up-update');
+    //   popup.style.display = "block"
+    //   console.log('clic', popup)
+    // })
   },
 };
 </script>
