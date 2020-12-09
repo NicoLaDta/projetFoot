@@ -41,7 +41,11 @@
             v-if="$store.state.isLoggedIn"
             flat
             dark
-          >Deconnexion</v-input> 
+          >Deconnexion</v-input>
+          <!-- <h3 v-if="$store.state.isLoggedIn"
+            flat
+            dark
+          > Admin : {{ username }} </h3> -->
         </nav>
       </div>
       
@@ -155,6 +159,9 @@ export default {
       logoTwitter: require("@/assets/logos-rs/twitter.svg"),
       isMenuOpen: false,
     };
+  },
+  async created(){
+    this.username = this.$store.getters.getUser.username;
   },
   methods: {
     toggleMenu() {

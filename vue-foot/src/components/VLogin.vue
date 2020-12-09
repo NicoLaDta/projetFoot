@@ -76,7 +76,7 @@ export default {
         const token = response.token;
         const user = response.user;
         this.$store.dispatch("login", { token, user });
-        this.$router.push("/home");
+        this.$router.push("/Admin");
       } catch (error) {
         this.msg = error.response.data.msg;
       }
