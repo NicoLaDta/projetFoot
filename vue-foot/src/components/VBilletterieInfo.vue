@@ -6,26 +6,46 @@
     <div class="stade">
       <img class="imageStade" :src="stade" alt="photo de l'article" />
     </div>
+
+    <form>
     <div class="div-categorie">
-      <div class="categorie">
-        <div class="mt-5">
+      <div class="categorie cat1">
           <p>CATEGORIE 1</p>
           <p style="color: #d8c508; font-weight: bold">19€</p>
-        </div>
+            <p>Nombre de billets souhaités :</p>
+            <!-- <p class="little">{{nbCat1 - cat1}} / {{nbMaxCat1}} restants</p> -->
+            <p class="little"> {{majNbCat1}} / {{nbMaxCat1}} restants</p>
+            <input type="number" min="0" max="10" value="0" id="numberCat1" v-model.number="cat1" v-on:click="update">
       </div>
-      <div class="categorie">
-        <div class="mt-5">
+      <div class="categorie cat2">
           <p>CATEGORIE 2</p>
           <p style="color: #8d0506; font-weight: bold">12€</p>
-        </div>
+          <p>Nombre de billets souhaités :</p>
+          <p class="little">{{nbCat2 - cat2}} / {{nbMaxCat2}} restants</p>
+            <input type="number" min="0" max="10" value="0" id="numberCat2" v-model.number="cat2">
       </div>
-      <div class="categorie">
-        <div class="mt-5">
+      <div class="categorie cat3">
           <p>CATEGORIE 3</p>
           <p style="color: #156654; font-weight: bold">7€</p>
-        </div>
+          <p>Nombre de billets souhaités :</p>
+          <p class="little" >{{nbCat3 - cat3}} / {{nbMaxCat3}} restants</p>
+            <input type="number" min="0" max="10" value="0" id="numberCat3" v-model.number="cat3">
       </div>
     </div>
+
+    <div class="submit-button">
+      <p>Votre sélection :
+        <ul>
+           <li>{{cat1}} place(s) en catégorie 1</li>
+           <li>{{cat2}} place(s) en catégorie 2 </li>
+           <li>{{cat3}} place(s) en catégorie 3</li> 
+        </ul>
+      </p>
+      <label class="mt-3">Entrez votre email pour confirmer</label>
+      <input type="email" name="user_email" v-model="email" required>
+      <input type="submit" value="Valider" onclick="return confirm(`L'email de confirmation vous a bien était envoyé !`)"  v-on:click="collect">
+    </div>
+    </form>
 
     <div class="find-us-container">
       <h1>Pour acquérir vos billets, rendez-vous en boutique !</h1>
@@ -57,8 +77,51 @@ export default {
   data() {
     return {
       stade: require("@/assets/image-billeterie/stade.svg"),
+      cat1: 0,
+      cat2: 0,
+      cat3: 0,
+
+      nbMaxCat1 : 1000,
+      nbMaxCat2 : 3000,
+      nbMaxCat3 : 5000,
+
+      nbCat1 : 1000,
+      nbCat2 : 3000,
+      nbCat3 : 5000,
+
+      majNbCat1 : null,
+      majNbCat2 : null,
+      majNbCat3 : null,
+      
+      email: "",
+      username: "",
+
+      message:{
+        from : "mail",
+        to : this.email,
+      }
     };
   },
+  methods: {
+    update: function(){
+      this.majNbCat1 = this.nbCat1 - this.cat1
+    },
+    collect : function(){
+      this.nbCat1 = this.majNbCat1 + this.cat1
+    }
+  },
+  mounted(){
+    // CAT 1
+    if (localStorage.nbCat1) {
+      this.nbCat1 = localStorage.nbCat1;
+    }
+  },
+  watch: {
+    // CAT 1
+    majNbCat1(newMaj) {
+      localStorage.nbCat1 = newMaj;
+    },
+  }
 };
 </script> 
 
@@ -94,12 +157,64 @@ export default {
 .categorie {
   border-radius: 10px;
   width: 30%;
+  padding: 5px;
   text-align: center;
   font-size: 24px;
   justify-content: space-between;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  align-items: center;
+}
+.cat1 {
+  box-shadow: 0px 4px 4px 0px #d8c508;
+  border: solid 1px #d8c508;
+}
+.cat2 {
+  box-shadow: 0px 4px 4px 0px #8d0506;
+  border: solid 1px #8d0506;
+}
+.cat3 {
+  box-shadow: 0px 4px 4px 0px #156654;
+  border: solid 1px #156654;
+}
+.little {
+  font-size: 0.9rem;
 }
 
+/* ———————————————— */
+/* INPUTS */
+/* ———————————————— */
+.submit-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+.submit-button p {
+  font-size: 1.1rem;
+}
+input[type="submit"] {
+  background: none;
+  border: solid 2px #000;
+  border-radius: 5px;
+  transition: ease 0.3s;
+  cursor: pointer;
+  margin-top: 20px;
+}
+input[type="submit"]:hover {
+  background-color: #991917;
+  border: solid 2px #991917;
+  color: #fff;
+}
+input[type="number"] {
+  text-align: center;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  opacity: 1;
+}
+input[type="email"]{
+    border: solid 1px #000;
+    padding: 5px;
+}
 /* ———————————————— */
 /* OU NOUS TROUVER */
 /* ———————————————— */
