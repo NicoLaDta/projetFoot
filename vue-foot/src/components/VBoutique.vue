@@ -5,29 +5,32 @@
        <router-link to="/VProduct">
         <img src="@/assets/image-boutique/maillot_1.png">
         <div class="presentation flex justify-between m-4">
-          <p>Title product</p>
-          <p class="text-red-600 font-semibold">19,99 €</p>
+          <p>{{ getproduct[0].nomproduit }}</p>
+          <p class="text-red-600 font-semibold">{{ getproduct[0].prix }} €</p>
         </div>
        </router-link>
       </section>
       <section class="card flex flex-col rounded">
+       <router-link to="/VProduct">
         <img src="@/assets/image-boutique/maillot_1.png">
         <div class="presentation flex justify-between m-4">
-          <p>Title product</p>
-          <p class="text-red-600 font-semibold">19,99 €</p>
+          <p>{{ getproduct[1].nomproduit }}</p>
+          <p class="text-red-600 font-semibold">{{ getproduct[1].prix }} €</p>
         </div>
+       </router-link>
       </section>
       <section class="card flex flex-col rounded">
+       <router-link to="/VProduct">
         <img src="@/assets/image-boutique/maillot_1.png">
         <div class="presentation flex justify-between m-4">
-          <p>Title product</p>
-          <p class="text-red-600 font-semibold">19,99 €</p>
+          <p>{{ getproduct[2].nomproduit }}</p>
+          <p class="text-red-600 font-semibold">{{ getproduct[2].prix }} €</p>
         </div>
+       </router-link>
       </section>
-      <div>
-      {{ getproduct }}
-    </div>
-
+      
+     <!-- Templating -->
+     <!-- <div v-for=""></div> -->
     </div>
 </template>
 
@@ -78,12 +81,14 @@ export default {
   name: "Boutique",
   data(){
     return {
-      getproduct: null
+      getproduct: null,
+      
     };
   },
     async created() {
       let product = await AuthService.getProduct();
       console.log(product)
+      this.getproduct = product
     },
 }
 
