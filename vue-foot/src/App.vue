@@ -7,35 +7,35 @@
       <img class="logo-club" :src="logo" />
       <div class="pt-roboto nav flex">
         <nav class="mx-auto nav-desktop">
-          <router-link class="padding-router color-focus" to="/">Home</router-link
+          <router-link class="padding-router color-focus hover" to="/">Home</router-link
           >
-          <router-link class="padding-router color-focus" to="/VActu"
+          <router-link class="padding-router color-focus hover" to="/VActu"
             >Actualités</router-link
           >
-          <router-link class="padding-router color-focus" to="/VCalendrier"
+          <router-link class="padding-router color-focus hover" to="/VCalendrier"
             >Résultats</router-link
           >
-          <router-link class="padding-router color-focus" to="/VClassement"
+          <router-link class="padding-router color-focus hover" to="/VClassement"
             >Classement</router-link
           >
-          <router-link class="padding-router color-focus" to="/VBilletterie"
+          <router-link class="padding-router color-focus hover" to="/VBilletterie"
             >Billetterie</router-link
           >
-          <router-link class="padding-router color-focus" to="/VBoutique"
+          <router-link class="padding-router color-focus hover" to="/VBoutique"
             >Boutique</router-link
           >
           
           <!-- À AJOUTER SI NECESSAIRE AVEC LA PARTIE BACK-END -->
-          <router-link class="padding-router color-focus" to="/login"
+          <router-link class="padding-router connexion" to="/login"
             v-if="!$store.state.isLoggedIn"
             flat
             dark
-          >Connexion</router-link>
-          <router-link class="padding-router color-focus" to="/Admin"
+          ><img :src="imgUser" alt="img-user" />Connexion</router-link>
+          <router-link class="padding-router color-focus hover" to="/Admin"
             v-if="$store.state.isLoggedIn"
             flat
             dark
-          >Ajout</router-link>&emsp;
+          ><img :src="imgAdd" alt="img-add" />Ajout</router-link>&emsp;
           <v-input type="button" value="Logout" @click="logout"
            onclick="return confirm('Êtes-vous sûrs de vouloir vous deconnectez ?')"
             v-if="$store.state.isLoggedIn"
@@ -157,6 +157,8 @@ export default {
       logoInstagram: require("@/assets/logos-rs/instagram.svg"),
       logoYoutube: require("@/assets/logos-rs/youtube.svg"),
       logoTwitter: require("@/assets/logos-rs/twitter.svg"),
+      imgUser: require("@/assets/image/user.svg"),
+      imgAdd: require("@/assets/image/add.svg"),
       isMenuOpen: false,
     };
   },
@@ -216,6 +218,29 @@ export default {
   color: #991917;
   font-weight: bold;
 }
+
+.hover:hover{
+  color:#991917;
+  text-decoration: underline;
+}
+
+.connexion{
+
+background-color: #991917;
+color: white;
+padding:10px;
+//width: 160px;
+}
+
+.connexion img{
+  width: 20px;
+  background-color: #991917;
+}
+
+.admin img{
+  widows: 20px;
+}
+
 .container-menu-mobile {
   display: none;
 }
