@@ -5,7 +5,7 @@
     <!--        -->
     <div class="container-global-nav z-10">
       <img class="logo-club" :src="logo" />
-      <div class="pt-roboto nav flex">
+      <div class="pt-roboto nav flex ">
         <nav class="mx-auto nav-desktop">
           <router-link class="padding-router color-focus hover" to="/">Home</router-link
           >
@@ -36,7 +36,7 @@
             flat
             dark
           ><img :src="imgAdd" alt="img-add" />Ajout</router-link>&emsp;
-          <v-input type="button" value="Logout" @click="logout"
+          <v-input class="connexion" type="button" value="Logout" @click="logout"
            onclick="return confirm('Êtes-vous sûrs de vouloir vous deconnectez ?')"
             v-if="$store.state.isLoggedIn"
             flat
@@ -149,7 +149,7 @@ export default {
       logoGennevilliers: require("@/assets/logos-sponsors/gennevilliers.svg"),
       logoIDF: require("@/assets/logos-sponsors/idf.svg"),
       logoPh: require("@/assets/logos-sponsors/ph.svg"),
-      logoRealites: require("@/assets/logos-sponsors/realites.svg"),
+      logoRealites: require("@/assets/logos-sponsors/realites.png"),
       logoSeineSaintDenis: require("@/assets/logos-sponsors/saint-denis.svg"),
       logoSaintOuen: require("@/assets/logos-sponsors/saint-ouen.svg"),
       logoVice: require("@/assets/logos-sponsors/vice.svg"),
@@ -219,22 +219,54 @@ export default {
   font-weight: bold;
 }
 
+.hover {
+  text-transform: uppercase;
+  color: #000;
+  display: inline-block;
+  padding: 5px 10px;
+  position: relative;
+}
 .hover:hover{
   color:#991917;
-  text-decoration: underline;
+  /* text-decoration: underline; */
+}
+.hover:after{
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 3px;
+  left: 50%;
+  position: absolute;
+  background: #991917;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.hover:hover:after {
+ width: 100%; 
+  left: 0; 
 }
 
 .connexion{
-
-background-color: #991917;
-color: white;
-padding:10px;
-//width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #991917;
+  color: white;
+  border-radius: 5px;
+  padding:8px;
+  width: 150px;
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  transition: ease 0.3s;
+}
+.connexion:hover{
+    background-color: #5a0e0d;
 }
 
 .connexion img{
   width: 20px;
-  background-color: #991917;
 }
 
 .admin img{
@@ -294,7 +326,13 @@ padding:10px;
   transform: scale(1.2);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
+  .connexion {
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 950px) {
   /* Menu Mobile */
   .logo-club {
     width: 60px;
