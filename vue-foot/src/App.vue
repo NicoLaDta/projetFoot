@@ -271,7 +271,6 @@ export default {
 
 .ajout{
   display: flex;
-  align-items: center;
   justify-content: space-between;
   width: 150px;
 }
