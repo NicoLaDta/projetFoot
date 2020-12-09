@@ -65,7 +65,9 @@
             </div>
           </div>
           <div class="button">
-            <button type="button">Billets</button>
+            <router-link to="/VBilletterieInfo">
+              <button type="button">Billets</button>
+            </router-link>
           </div>
         </div>
       </div>
