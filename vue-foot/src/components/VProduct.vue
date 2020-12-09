@@ -156,7 +156,17 @@ h1 {
 </style>
 
 <script>
+import AuthService from '@/services/AuthService.js';
 export default {
   name: "Product",
+  data(){
+    return{
+      product:''
+    };
+  },
+  async created() {
+    let product = await AuthService.getProduct();
+    console.log(product)
+  },
 };
 </script>

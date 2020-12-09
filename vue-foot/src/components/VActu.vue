@@ -1,6 +1,9 @@
 <template>
   <div class="container-actu">
     <div class="actu">
+      <div>
+        {{article}}
+      </div>
       <router-link to="/VActu/VArticle">
         <div class="actu__bloc hot-news">
           <img :src="img" alt="photo de l'article" />
@@ -84,6 +87,45 @@
     </div>
   </div>
 </template>
+
+<script>
+import AuthService from '@/services/AuthService.js';
+export default {
+  name: "Actualités",
+  data() {
+    return {
+      img: require("@/assets/img-article/img-1.jpg"),
+    };
+  },
+  async created() {
+    let article = await AuthService.getArticle();
+    console.log(article)
+  },
+  mounted() {
+    let button = document.querySelector("#add-more-button");
+    //Je réccupère tous les éléments à partir du 7ème
+      let elements = document.querySelectorAll(".actu :nth-child(n + 7)");
+
+    //Add display none
+      for (var i=0; i<elements.length; i++){
+         elements[i].classList.add('displayNone')
+      }
+
+    button.addEventListener("click", () => {
+      
+      for (var i=0; i<elements.length; i++){
+         elements[i].classList.toggle("displayNone")
+      }
+
+      if (button.value === "Voir plus") {
+        button.value = "Voir moins";
+      } else {
+        button.value = "Voir plus";
+      }
+    });
+  },
+};
+</script>
 
 <style lang="postcss" scoped>
 .container-actu {
@@ -172,46 +214,4 @@ a {
     margin-right: 20px;
   }
 }
-
 </style>
-
-<script>
-import AuthService from '@/services/AuthService.js';
-export default {
-  name: "Actualités",
-  data() {
-    return {
-      img: require("@/assets/img-article/img-1.jpg"),
-      result: null
-    };
-  },
-  async article() {
-    let getArticle = await AuthService.getArticle();
-    console.log(getArticle)
-    this.result = getArticle
-  },
-  mounted() {
-    let button = document.querySelector("#add-more-button");
-    //Je réccupère tous les éléments à partir du 7ème
-      let elements = document.querySelectorAll(".actu :nth-child(n + 7)");
-
-    //Add display none
-      for (var i=0; i<elements.length; i++){
-         elements[i].classList.add('displayNone')
-      }
-
-    button.addEventListener("click", () => {
-      
-      for (var i=0; i<elements.length; i++){
-         elements[i].classList.toggle("displayNone")
-      }
-
-      if (button.value === "Voir plus") {
-        button.value = "Voir moins";
-      } else {
-        button.value = "Voir plus";
-      }
-    });
-  },
-};
-</script>
