@@ -75,14 +75,15 @@
 <script>
 import AuthService from '@/services/AuthService.js';
 export default {
-    name: "Boutique",
-    data(){
-      return {
-        getproduct: null
-      }
-    },
-    async produit() {
-      this.getproduct = await AuthService.getProduct();
+  name: "Boutique",
+  data(){
+    return {
+      getproduct: null
+    };
+  },
+    async created() {
+      let product = await AuthService.getProduct();
+      console.log(product)
     },
 }
 
