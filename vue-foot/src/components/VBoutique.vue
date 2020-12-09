@@ -4,10 +4,18 @@
       <router-link to="/VProduct" class="relative">
         <div class="div-picto">
           <button>
-            <img :src="pictoUpdate" alt="picto Update" />
+            <img :src="pictoUpdate" 
+              v-if="$store.state.isLoggedIn"
+              flat
+              dark
+            alt="picto Update" />
           </button>
           <button>
-            <img :src="pictoTrash" alt="picto Trash" />
+            <img :src="pictoTrash" 
+              v-if="$store.state.isLoggedIn"
+              flat
+              dark
+            alt="picto Trash" />
           </button>
         </div>
         <img src="@/assets/image-boutique/maillot_1.png" />
@@ -22,10 +30,18 @@
        <router-link to="/VProduct" class="relative">
        <div class="div-picto">
           <button>
-            <img :src="pictoUpdate" alt="picto Update" />
+            <img :src="pictoUpdate" 
+              v-if="$store.state.isLoggedIn"
+              flat
+              dark
+            alt="picto Update" />
           </button>
           <button>
-            <img :src="pictoTrash" alt="picto Trash" />
+            <img :src="pictoTrash" 
+              v-if="$store.state.isLoggedIn"
+              flat
+              dark
+            alt="picto Trash" />
           </button>
         </div>
       <img src="@/assets/image-boutique/maillot_1.png" />
@@ -40,10 +56,18 @@
       <router-link to="/VProduct" class="relative">
        <div class="div-picto">
           <button>
-            <img :src="pictoUpdate" alt="picto Update" />
+            <img :src="pictoUpdate" 
+              v-if="$store.state.isLoggedIn"
+              flat
+              dark
+            alt="picto Update" />
           </button>
           <button>
-            <img :src="pictoTrash" alt="picto Trash" />
+            <img :src="pictoTrash" 
+              v-if="$store.state.isLoggedIn"
+              flat
+              dark
+            alt="picto Trash" />
           </button>
         </div>
       <img src="@/assets/image-boutique/maillot_1.png" />

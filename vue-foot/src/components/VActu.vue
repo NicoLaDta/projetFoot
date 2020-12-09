@@ -5,24 +5,18 @@
         <div class="actu__bloc hot-news">
           <div class="div-picto">
             <button>
-              <img :src="pictoUpdate" alt="picto Update" />
+              <img :src="pictoUpdate"
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Update" />
             </button>
             <button>
-              <img :src="pictoTrash" alt="picto Trash" />
-            </button>
-          </div>
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <div class="div-picto">
-            <button>
-              <img :src="pictoUpdate" alt="picto Update" />
-            </button>
-            <button>
-              <img :src="pictoTrash" alt="picto Trash" />
+              <img :src="pictoTrash"
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark 
+              alt="picto Trash" />
             </button>
           </div>
           <img :src="img" alt="photo de l'article" />
@@ -33,24 +27,18 @@
         <div class="actu__bloc">
           <div class="div-picto">
             <button>
-              <img :src="pictoUpdate" alt="picto Update" />
+              <img :src="pictoUpdate"
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark 
+              alt="picto Update" />
             </button>
             <button>
-              <img :src="pictoTrash" alt="picto Trash" />
-            </button>
-          </div>
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <div class="div-picto">
-            <button>
-              <img :src="pictoUpdate" alt="picto Update" />
-            </button>
-            <button>
-              <img :src="pictoTrash" alt="picto Trash" />
+              <img :src="pictoTrash"
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark 
+              alt="picto Trash" />
             </button>
           </div>
           <img :src="img" alt="photo de l'article" />
@@ -61,24 +49,18 @@
         <div class="actu__bloc">
           <div class="div-picto">
             <button>
-              <img :src="pictoUpdate" alt="picto Update" />
+              <img :src="pictoUpdate" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Update" />
             </button>
             <button>
-              <img :src="pictoTrash" alt="picto Trash" />
-            </button>
-          </div>
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <div class="div-picto">
-            <button>
-              <img :src="pictoUpdate" alt="picto Update" />
-            </button>
-            <button>
-              <img :src="pictoTrash" alt="picto Trash" />
+              <img :src="pictoTrash" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Trash" />
             </button>
           </div>
           <img :src="img" alt="photo de l'article" />
@@ -89,24 +71,18 @@
         <div class="actu__bloc">
           <div class="div-picto">
             <button>
-              <img :src="pictoUpdate" alt="picto Update" />
+              <img :src="pictoUpdate" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Update" />
             </button>
             <button>
-              <img :src="pictoTrash" alt="picto Trash" />
-            </button>
-          </div>
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <div class="div-picto">
-            <button>
-              <img :src="pictoUpdate" alt="picto Update" />
-            </button>
-            <button>
-              <img :src="pictoTrash" alt="picto Trash" />
+              <img :src="pictoTrash" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Trash" />
             </button>
           </div>
           <img :src="img" alt="photo de l'article" />
@@ -117,10 +93,106 @@
         <div class="actu__bloc">
           <div class="div-picto">
             <button>
-              <img :src="pictoUpdate" alt="picto Update" />
+              <img :src="pictoUpdate" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Update" />
             </button>
             <button>
-              <img :src="pictoTrash" alt="picto Trash" />
+              <img :src="pictoTrash" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Trash" />
+            </button>
+          </div>
+          <img :src="img" alt="photo de l'article" />
+          <h1 class="pt-roboto-condensed">Title Article</h1>
+        </div>
+      </router-link>
+      <router-link to="/VActu">
+        <div class="actu__bloc">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Trash" />
+            </button>
+          </div>
+          <img :src="img" alt="photo de l'article" />
+          <h1 class="pt-roboto-condensed">Title Article</h1>
+        </div>
+      </router-link>
+      <router-link to="/VActu">
+        <div class="actu__bloc">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Trash" />
+            </button>
+          </div>
+          <img :src="img" alt="photo de l'article" />
+          <h1 class="pt-roboto-condensed">Title Article</h1>
+        </div>
+      </router-link>
+      <router-link to="/VActu">
+        <div class="actu__bloc">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Trash" />
+            </button>
+          </div>
+          <img :src="img" alt="photo de l'article" />
+          <h1 class="pt-roboto-condensed">Title Article</h1>
+        </div>
+      </router-link>
+      <router-link to="/VActu">
+        <div class="actu__bloc">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Trash" />
             </button>
           </div>
           <img :src="img" alt="photo de l'article" />
@@ -131,24 +203,18 @@
         <div class="actu__bloc add">
           <div class="div-picto">
             <button>
-              <img :src="pictoUpdate" alt="picto Update" />
+              <img :src="pictoUpdate" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Update" />
             </button>
             <button>
-              <img :src="pictoTrash" alt="picto Trash" />
-            </button>
-          </div>
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc add">
-          <div class="div-picto">
-            <button>
-              <img :src="pictoUpdate" alt="picto Update" />
-            </button>
-            <button>
-              <img :src="pictoTrash" alt="picto Trash" />
+              <img :src="pictoTrash" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Trash" />
             </button>
           </div>
           <img :src="img" alt="photo de l'article" />
@@ -159,10 +225,40 @@
         <div class="actu__bloc add">
           <div class="div-picto">
             <button>
-              <img :src="pictoUpdate" alt="picto Update" />
+              <img :src="pictoUpdate" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Update" />
             </button>
             <button>
-              <img :src="pictoTrash" alt="picto Trash" />
+              <img :src="pictoTrash" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Trash" />
+            </button>
+          </div>
+          <img :src="img" alt="photo de l'article" />
+          <h1 class="pt-roboto-condensed">Title Article</h1>
+        </div>
+      </router-link>
+      <router-link to="/VActu">
+        <div class="actu__bloc add">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Trash" />
             </button>
           </div>
           <img :src="img" alt="photo de l'article" />
@@ -189,6 +285,8 @@ export default {
     return {
       img: require("@/assets/img-article/img-1.jpg"),
       getarticle: '', 
+      pictoUpdate: require("@/assets/image/update.png"),
+      pictoTrash: require("@/assets/image/trash.png"),
     };
   },
   async created() {

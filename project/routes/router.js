@@ -117,7 +117,7 @@ router.get('/article', (req, res) => {
 
 router.post('/articleAdd', userMiddleware.validateAdd, (req, res, next) => {
     db.query(
-        `INSERT INTO article (id, title, images, description) VALUES ('${uuid.v4()}',${db.escape(req.body.title)} ,${db.escape(req.body.images)}, ${db.escape(req.body.description)});`,
+        `INSERT INTO article (id, title, images, description) VALUES (${db.escape(req.body.id)},${db.escape(req.body.title)} ,${db.escape(req.body.images)}, ${db.escape(req.body.description)});`,
         (err, result) => {
             if (err) {
                 throw err;
@@ -145,7 +145,7 @@ router.get('/product', (req, res) => {
 
 router.post('/productAdd', userMiddleware.validateAddProduct, (req, res, next) => {
     db.query(
-        `INSERT INTO product (id, nomproduit, prix, image, descriptions) VALUES ('${uuid.v4()}', ${db.escape(req.body.nomproduit)}, ${db.escape(req.body.prix)}, ${db.escape(req.body.image)}, ${db.escape(req.body.descriptions)});`,
+        `INSERT INTO product (id, nomproduit, prix, image, descriptions) VALUES (${db.escape(req.body.id)}, ${db.escape(req.body.nomproduit)}, ${db.escape(req.body.prix)}, ${db.escape(req.body.image)}, ${db.escape(req.body.descriptions)});`,
         (err, result) => {
             if (err) {
                 throw err;
