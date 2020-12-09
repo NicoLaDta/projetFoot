@@ -1,17 +1,39 @@
-import axios from 'axios';
-const url = 'http://localhost:8000/api/';
+import Api from '@/services/Api'
+
 export default {
   login(credentials) {
-    return axios
-      .post(url + 'login/', credentials)
+    return Api()
+      .post('login/', credentials)
       .then(response => response.data);
   },
   signUp(credentials) {
-    return axios
-      .post(url + 'sign-up/', credentials)
+    return Api()
+      .post('sign-up/', credentials)
       .then(response => response.data);
   },
   getSecretContent() {
-    return axios.get(url + 'secret-route/').then(response => response.data);
-  }
+    return Api()
+      .get('secret-route/')
+      .then(response => response.data);
+  },
+  getArticle() {
+    return Api()
+      .get('article/')
+      .then(response => response.data);
+  },
+  getProduct() {
+    return Api()
+      .get('product/')
+      .then(response => response.data);
+  },
+  articleAdd(credentials) {
+    return Api()
+      .post('articleAdd/', credentials)
+      .then(response => response.data);
+  },
+  productAdd(credentials) {
+    return Api()
+      .post('productAdd/', credentials)
+      .then(response => response.data);
+  },
 };
