@@ -7,28 +7,28 @@
       <img class="imageStade" :src="stade" alt="photo de l'article" />
     </div>
 
-    <form>
-    <div class="div-categorie">
-      <div class="categorie cat1">
+    <form v-show="update">
+    <div class="div-categorie" >
+      <div class="categorie cat1" @click="update">
           <p>CATEGORIE 1</p>
           <p style="color: #d8c508; font-weight: bold">19€</p>
             <p>Nombre de billets souhaités :</p>
             <!-- <p class="little">{{nbCat1 - cat1}} / {{nbMaxCat1}} restants</p> -->
             <p class="little"> {{majNbCat1}} / {{nbMaxCat1}} restants</p>
-            <input type="number" min="0" max="10" value="0" id="numberCat1" v-model.number="cat1" v-on:click="update">
+            <input type="number" min="0" max="10" value="0" id="numberCat1" v-model.number="cat1">
       </div>
-      <div class="categorie cat2">
+      <div class="categorie cat2" @click="update">
           <p>CATEGORIE 2</p>
           <p style="color: #8d0506; font-weight: bold">12€</p>
           <p>Nombre de billets souhaités :</p>
-          <p class="little">{{nbCat2 - cat2}} / {{nbMaxCat2}} restants</p>
+          <p class="little">{{majNbCat2}} / {{nbMaxCat2}} restants</p>
             <input type="number" min="0" max="10" value="0" id="numberCat2" v-model.number="cat2">
       </div>
-      <div class="categorie cat3">
+      <div class="categorie cat3" @click="update">
           <p>CATEGORIE 3</p>
           <p style="color: #156654; font-weight: bold">7€</p>
           <p>Nombre de billets souhaités :</p>
-          <p class="little" >{{nbCat3 - cat3}} / {{nbMaxCat3}} restants</p>
+          <p class="little" >{{majNbCat3}} / {{nbMaxCat3}} restants</p>
             <input type="number" min="0" max="10" value="0" id="numberCat3" v-model.number="cat3">
       </div>
     </div>
@@ -105,9 +105,13 @@ export default {
   methods: {
     update: function(){
       this.majNbCat1 = this.nbCat1 - this.cat1
+      this.majNbCat2 = this.nbCat2 - this.cat2
+      this.majNbCat3 = this.nbCat3 - this.cat3
     },
     collect : function(){
       this.nbCat1 = this.majNbCat1 + this.cat1
+      this.nbCat2 = this.majNbCat2 + this.cat2
+      this.nbCat3 = this.majNbCat3 + this.cat3
     }
   },
   mounted(){
@@ -115,11 +119,23 @@ export default {
     if (localStorage.nbCat1) {
       this.nbCat1 = localStorage.nbCat1;
     }
+    if (localStorage.nbCat2) {
+      this.nbCat2 = localStorage.nbCat2;
+    }
+    if (localStorage.nbCat3) {
+      this.nbCat3 = localStorage.nbCat3;
+    }
   },
   watch: {
     // CAT 1
     majNbCat1(newMaj) {
       localStorage.nbCat1 = newMaj;
+    },
+    majNbCat2(newMaj1) {
+      localStorage.nbCat2 = newMaj1;
+    },
+    majNbCat3(newMaj2) {
+      localStorage.nbCat3 = newMaj2;
     },
   }
 };
