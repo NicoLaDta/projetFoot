@@ -31,11 +31,11 @@
             flat
             dark
           ><img :src="imgUser" alt="img-user" />Connexion</router-link>
-          <router-link class="padding-router color-focus hover ajout" to="/Admin"
+          <router-link class="padding-router color-focus link-add" to="/Admin"
             v-if="$store.state.isLoggedIn"
             flat
             dark
-          ><img :src="imgAdd" alt="img-add" />Ajout</router-link>
+          ><img :src="imgAdd" alt="img-add"/>Ajout</router-link>&emsp;
           <v-input class="connexion" type="button" value="Logout" @click="logout"
            onclick="return confirm('Êtes-vous sûrs de vouloir vous deconnectez ?')"
             v-if="$store.state.isLoggedIn"
@@ -269,14 +269,29 @@ export default {
   width: 20px;
 }
 
-.ajout{
+.link-add {
   display: flex;
-  justify-content: space-between;
+  position: absolute;
+  top: 100px;
+  right: 60px;
+  transition: ease 0.3s;
+  border-radius: 5px;
+  background-color: #185f4b;
+  color: white;
+  padding: 8px;
   width: 150px;
+  justify-content: space-between;
+}
+.link-add:hover{
+  background-color: #0f3a2e;
+}
+.link-add img {
+  width: 30px;
+  margin-right: 5px;
 }
 
-.ajout img{
-  width: 20px;
+.admin img{
+  widows: 20px;
 }
 
 .container-menu-mobile {
@@ -333,7 +348,7 @@ export default {
 }
 
 @media screen and (max-width: 1100px) {
-  .connexion {
+  .connexion, .link-add  {
     right: 10px;
   }
 }

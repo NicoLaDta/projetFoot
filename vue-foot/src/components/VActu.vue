@@ -1,9 +1,6 @@
 <template>
   <div class="container-actu">
     <div class="actu">
-      <div>
-        {{article}}
-      </div>
       <router-link to="/VActu/VArticle">
         <div class="actu__bloc hot-news">
           <img :src="img" alt="photo de l'article" />
@@ -36,7 +33,7 @@
       </router-link>
       <router-link to="/VActu">
         <div class="actu__bloc">
-          <img :src="img" alt="photo de l'article" />
+          <img :src="getarticle[0].images" alt="photo de l'article" />
           <h1 class="pt-roboto-condensed">Title Article</h1>
         </div>
       </router-link>
@@ -95,11 +92,11 @@ export default {
   data() {
     return {
       img: require("@/assets/img-article/img-1.jpg"),
+      getarticle: '', 
     };
   },
   async created() {
-    let article = await AuthService.getArticle();
-    console.log(article)
+    this.getarticle = await AuthService.getArticle();
   },
   mounted() {
     let button = document.querySelector("#add-more-button");
