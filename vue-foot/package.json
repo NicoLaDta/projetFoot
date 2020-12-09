@@ -12,6 +12,7 @@
     "@splidejs/vue-splide": "^0.3.5",
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
+    "emailjs-com": "^2.6.4",
     "gsap": "^3.5.1",
     "hooper": "^0.3.4",
     "mapbox-gl": "^1.13.0",
