@@ -6,16 +6,13 @@
     <div class="stade">
       <img class="imageStade" :src="stade" alt="photo de l'article" />
     </div>
-
-  <!-- À REMETTRE AVANT PRODUCTION  -->
+    
     <form @submit.prevent="sendEmail" v-on:click="update">
-    <!-- <form> -->
     <div class="div-categorie">
       <div class="categorie cat1">
           <p>CATEGORIE 1</p>
           <p style="color: #d8c508; font-weight: bold">19€</p>
             <p>Nombre de billets souhaités :</p>
-            <!-- <p class="little">{{nbCat1 - cat1}} / {{nbMaxCat1}} restants</p> -->
             <p class="little">{{majNbCat1}} / {{nbMaxCat1}} restants</p>
             <input type="number" min="0" max="10" value="0" id="numberCat1" name="cat1" v-model.number="cat1" v-on:click="update">
       </div>
