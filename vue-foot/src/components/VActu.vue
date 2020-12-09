@@ -3,72 +3,168 @@
     <div class="actu">
       <router-link to="/VActu/VArticle">
         <div class="actu__bloc hot-news">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" alt="picto Trash" />
+            </button>
+          </div>
           <img :src="img" alt="photo de l'article" />
           <h1 class="pt-roboto-condensed">Title Article</h1>
         </div>
       </router-link>
       <router-link to="/VActu">
         <div class="actu__bloc">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" alt="picto Trash" />
+            </button>
+          </div>
           <img :src="img" alt="photo de l'article" />
           <h1 class="pt-roboto-condensed">Title Article</h1>
         </div>
       </router-link>
       <router-link to="/VActu">
         <div class="actu__bloc">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" alt="picto Trash" />
+            </button>
+          </div>
           <img :src="img" alt="photo de l'article" />
           <h1 class="pt-roboto-condensed">Title Article</h1>
         </div>
       </router-link>
       <router-link to="/VActu">
         <div class="actu__bloc">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" alt="picto Trash" />
+            </button>
+          </div>
           <img :src="img" alt="photo de l'article" />
           <h1 class="pt-roboto-condensed">Title Article</h1>
         </div>
       </router-link>
       <router-link to="/VActu">
         <div class="actu__bloc">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" alt="picto Trash" />
+            </button>
+          </div>
           <img :src="img" alt="photo de l'article" />
           <h1 class="pt-roboto-condensed">Title Article</h1>
         </div>
       </router-link>
       <router-link to="/VActu">
         <div class="actu__bloc">
-          <img :src="getarticle[0].images" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" alt="picto Trash" />
+            </button>
+          </div>
           <img :src="img" alt="photo de l'article" />
           <h1 class="pt-roboto-condensed">Title Article</h1>
         </div>
       </router-link>
       <router-link to="/VActu">
         <div class="actu__bloc">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" alt="picto Trash" />
+            </button>
+          </div>
           <img :src="img" alt="photo de l'article" />
           <h1 class="pt-roboto-condensed">Title Article</h1>
         </div>
       </router-link>
       <router-link to="/VActu">
         <div class="actu__bloc">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" alt="picto Trash" />
+            </button>
+          </div>
+          <img :src="img" alt="photo de l'article" />
+          <h1 class="pt-roboto-condensed">Title Article</h1>
+        </div>
+      </router-link>
+      <router-link to="/VActu">
+        <div class="actu__bloc">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" alt="picto Trash" />
+            </button>
+          </div>
           <img :src="img" alt="photo de l'article" />
           <h1 class="pt-roboto-condensed">Title Article</h1>
         </div>
       </router-link>
       <router-link to="/VActu">
         <div class="actu__bloc add">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" alt="picto Trash" />
+            </button>
+          </div>
           <img :src="img" alt="photo de l'article" />
           <h1 class="pt-roboto-condensed">Title Article</h1>
         </div>
       </router-link>
       <router-link to="/VActu">
         <div class="actu__bloc add">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" alt="picto Trash" />
+            </button>
+          </div>
           <img :src="img" alt="photo de l'article" />
           <h1 class="pt-roboto-condensed">Title Article</h1>
         </div>
       </router-link>
       <router-link to="/VActu">
         <div class="actu__bloc add">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" alt="picto Trash" />
+            </button>
+          </div>
           <img :src="img" alt="photo de l'article" />
           <h1 class="pt-roboto-condensed">Title Article</h1>
         </div>
@@ -156,6 +252,7 @@ a {
   border-radius: 20px;
   width: 400px;
   padding-bottom: 15px;
+  position: relative;
 }
 .actu__bloc img {
   width: 100%;
@@ -169,6 +266,21 @@ a {
   font-size: 1.25rem;
 }
 
+/* ------------- */
+/* PICTO IN ACTUBLOC */
+/* ------------- */
+.div-picto {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  background-color: #FFF;
+  padding: 2px;
+}
+.div-picto img {
+  width: 20px;
+  height: 20px;
+}
 /* ------------- */
 /* ADD MORE */
 /* ------------- */
