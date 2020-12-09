@@ -161,7 +161,9 @@ export default {
   name: "Product",
   data(){
     return{
-      product:''
+      product:'',
+      Product: {},
+      title: this.$route.params.title
     };
   },
   async created() {
