@@ -31,7 +31,7 @@
             flat
             dark
           ><img :src="imgUser" alt="img-user" />Connexion</router-link>
-          <router-link class="padding-router color-focus hover" to="/Admin"
+          <router-link class="padding-router color-focus hover ajout" to="/Admin"
             v-if="$store.state.isLoggedIn"
             flat
             dark
@@ -269,8 +269,15 @@ export default {
   width: 20px;
 }
 
-.admin img{
-  widows: 20px;
+.ajout{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.ajout img{
+  width: 20px;
 }
 
 .container-menu-mobile {

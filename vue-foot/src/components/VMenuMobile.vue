@@ -13,7 +13,7 @@
             flat
             dark
           >Connexion</router-link>
-      <router-link class="padding-router color-focus hover" to="/Admin"
+      <router-link class="link" to="/Admin"
             v-if="$store.state.isLoggedIn"
             flat
             dark
