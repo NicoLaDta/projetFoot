@@ -2,8 +2,8 @@
     <div class="container-boutique flex flex-wrap justify-center">
 
       <section class="card flex flex-col rounded">
-       <!-- <router-link to="/VProduct?name=" > -->
-       <router-link :to="{ path: 'VProduct', params: {title: 'survet'} }" >
+       <router-link to="/VProduct?title=test" >
+       <!-- <router-link :to="{ path: 'VProduct', params: {title: 'survet'} }" > -->
         <img class="item-img rounded-t-lg" src="@/assets/image-boutique/survet.jpg">
         <div class="presentation flex justify-between m-4">
           <p>{{ getproduct[0].nomproduit }}</p>
@@ -29,7 +29,6 @@
         </div>
        </router-link>
       </section>
-      
     </div>
 </template>
 
