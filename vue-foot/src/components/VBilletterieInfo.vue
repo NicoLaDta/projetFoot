@@ -7,7 +7,7 @@
       <img class="imageStade" :src="stade" alt="photo de l'article" />
     </div>
 
-    <form>
+    <form @submit.prevent="sendEmail">
     <div class="div-categorie">
       <div class="categorie cat1">
           <p>CATEGORIE 1</p>
@@ -15,7 +15,7 @@
             <p>Nombre de billets souhaités :</p>
             <!-- <p class="little">{{nbCat1 - cat1}} / {{nbMaxCat1}} restants</p> -->
             <p class="little">{{majNbCat1}} / {{nbMaxCat1}} restants</p>
-            <input type="number" min="0" max="10" value="0" id="numberCat1" v-model.number="cat1" v-on:click="update">
+            <input type="number" min="0" max="10" value="0" id="numberCat1" name="cat1" v-model.number="cat1" v-on:click="update">
       </div>
       <div class="categorie cat2">
           <p>CATEGORIE 2</p>
@@ -41,9 +41,11 @@
            <li>{{cat3}} place(s) en catégorie 3</li> 
         </ul>
       </p>
+      <label class="mt-3">Entrez votre nom</label>
+      <input type="text" name="username" v-model="username" required>
       <label class="mt-3">Entrez votre email pour confirmer</label>
-      <input type="email" name="user_email" v-model="email" required>
-      <input type="submit" value="Valider" onclick="return confirm(`L'email de confirmation vous a bien était envoyé !`)"  v-on:click="collect">
+      <input type="email" name="email" v-model="email" required>
+      <input type="submit" value="Valider"  v-on:click="collect">
     </div>
     </form>
 
@@ -72,6 +74,8 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
+
 export default {
   name: "BilleterieInfo",
   data() {
@@ -96,10 +100,6 @@ export default {
       email: "",
       username: "",
 
-      message:{
-        from : "mail",
-        to : this.email,
-      }
     };
   },
   methods: {
@@ -108,7 +108,26 @@ export default {
     },
     collect : function(){
       this.nbCat1 = this.majNbCat1 + this.cat1
-    }
+    },
+    sendEmail(e) {
+      try {
+        emailjs.sendForm('service_d258rig', 'template_kaz9kwr', e.target,
+        'user_cuX0tTERXsnjRTqwjPSHW', {
+          cat1: this.cat1,
+          cat2: this.cat2,
+          cat3: this.cat3,
+          username: this.username,
+          email: this.email,
+          })
+
+      } catch(error) {
+          console.log({error})
+      }
+      // Reset form field
+      this.username = ''
+      this.email = ''
+    },
+    
   },
   mounted(){
     // CAT 1
