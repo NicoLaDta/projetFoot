@@ -29,8 +29,6 @@
        </router-link>
       </section>
       
-     <!-- Templating -->
-     <!-- <div v-for=""></div> -->
     </div>
 </template>
 
@@ -89,7 +87,10 @@ export default {
   data(){
     return {
       getproduct: null,
-      
+      // info: {
+      //   image: '',
+
+      // }
     };
   },
     async created() {
@@ -97,6 +98,20 @@ export default {
       console.log(product)
       this.getproduct = product
     },
+  //   method: {
+  //     getInfo() {
+  //       this.info.image = response.data.result[0].image
+  //     },
+  //   },
+  // computed : {
+  //   dataUrl(){
+  //       return 'data:image/jpeg.png;base64,' + btoa(
+  //           new Uint8Array(this.info.image)
+  //           .reduce((data, byte) => data + String.fromCharCode(byte), '')
+  //       );
+  //   }
+  // }
 }
+
 
 </script>
