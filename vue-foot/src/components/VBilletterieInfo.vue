@@ -6,14 +6,13 @@
     <div class="stade">
       <img class="imageStade" :src="stade" alt="photo de l'article" />
     </div>
-
-    <form @submit.prevent="sendEmail">
+    
+    <form @submit.prevent="sendEmail" v-on:click="update">
     <div class="div-categorie">
       <div class="categorie cat1">
           <p>CATEGORIE 1</p>
           <p style="color: #d8c508; font-weight: bold">19€</p>
             <p>Nombre de billets souhaités :</p>
-            <!-- <p class="little">{{nbCat1 - cat1}} / {{nbMaxCat1}} restants</p> -->
             <p class="little">{{majNbCat1}} / {{nbMaxCat1}} restants</p>
             <input type="number" min="0" max="10" value="0" id="numberCat1" name="cat1" v-model.number="cat1" v-on:click="update">
       </div>
@@ -22,14 +21,14 @@
           <p style="color: #8d0506; font-weight: bold">12€</p>
           <p>Nombre de billets souhaités :</p>
           <p class="little">{{majNbCat2}} / {{nbMaxCat2}} restants</p>
-            <input type="number" min="0" max="10" value="0" id="numberCat2" v-model.number="cat2">
+            <input type="number" min="0" max="10" value="0" id="numberCat2" name="cat2" v-model.number="cat2" v-on:click="update">
       </div>
       <div class="categorie cat3" @click="update">
           <p>CATEGORIE 3</p>
           <p style="color: #156654; font-weight: bold">7€</p>
           <p>Nombre de billets souhaités :</p>
           <p class="little" >{{majNbCat3}} / {{nbMaxCat3}} restants</p>
-            <input type="number" min="0" max="10" value="0" id="numberCat3" v-model.number="cat3">
+            <input type="number" min="0" max="10" value="0" id="numberCat3" name="cat3" v-model.number="cat3" >
       </div>
     </div>
 
@@ -97,44 +96,35 @@ export default {
       majNbCat2 : null,
       majNbCat3 : null,
       
-      email: "",
-      username: "",
+      email: '',
+      username: '',
 
     };
   },
-  methods: {
+methods: {
     update: function(){
       this.majNbCat1 = this.nbCat1 - this.cat1
       this.majNbCat2 = this.nbCat2 - this.cat2
       this.majNbCat3 = this.nbCat3 - this.cat3
-
     },
     collect : function(){
       this.nbCat1 = this.majNbCat1 + this.cat1
-      this.nbCat1 = this.majNbCat2 + this.cat2
-      this.nbCat1 = this.majNbCat3 + this.cat3
+      this.nbCat2 = this.majNbCat2 + this.cat2
+      this.nbCat3 = this.majNbCat3 + this.cat3
     },
-    sendEmail(e) {
-      try {
-        emailjs.sendForm('service_d258rig', 'template_kaz9kwr', e.target,
-        'user_cuX0tTERXsnjRTqwjPSHW', {
-          cat1: this.cat1,
-          cat2: this.cat2,
-          cat3: this.cat3,
-          username: this.username,
-          email: this.email,
-          })
+    sendEmail: (e) => {
 
-      } catch(error) {
-          console.log({error})
-      }
-      // Reset form field
-      this.username = ''
-      this.email = ''
+      emailjs.sendForm('service_d258rig', 'template_eqv468h', e.target, 'user_cuX0tTERXsnjRTqwjPSHW')
+        .then((result) => {
+            console.log('SUCCESS!', result.status, result.text);
+            alert(`Merci pour votre réservation !`)
+        }, (error) => {
+            console.log('FAILED...', error);
+        });
     },
     
   },
-  mounted(){
+   mounted(){
     // CAT 1
     if (localStorage.nbCat1) {
       this.nbCat1 = localStorage.nbCat1;
