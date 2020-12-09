@@ -105,10 +105,14 @@ export default {
   methods: {
     update: function(){
       this.majNbCat1 = this.nbCat1 - this.cat1
+      this.majNbCat2 = this.nbCat2 - this.cat2
+      this.majNbCat3 = this.nbCat3 - this.cat3
 
     },
     collect : function(){
       this.nbCat1 = this.majNbCat1 + this.cat1
+      this.nbCat1 = this.majNbCat2 + this.cat2
+      this.nbCat1 = this.majNbCat3 + this.cat3
     },
     sendEmail(e) {
       try {
