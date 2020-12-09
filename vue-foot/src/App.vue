@@ -35,7 +35,7 @@
             v-if="$store.state.isLoggedIn"
             flat
             dark
-          ><img :src="imgAdd" alt="img-add" />Ajout</router-link>&emsp;
+          ><img :src="imgAdd" alt="img-add" />Ajout</router-link>
           <v-input class="connexion" type="button" value="Logout" @click="logout"
            onclick="return confirm('Êtes-vous sûrs de vouloir vous deconnectez ?')"
             v-if="$store.state.isLoggedIn"
