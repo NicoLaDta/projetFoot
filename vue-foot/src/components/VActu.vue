@@ -1,62 +1,5 @@
 <template>
   <div class="container-actu">
-<<<<<<< HEAD
-    <div class="actu">
-      <div>
-        <!-- {{article}} -->
-      </div>
-      <router-link to="/VActu/VArticle">
-        <div class="actu__bloc hot-news">
-         <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[0].title}}</h1>
-          <p>{{article[0].id}}</p>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[1].title}}</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[2].title}}</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[3].title}}</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[4].title}}</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[5].title}}</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[6].title}}</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[7].title}}</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-=======
     <div class="actu" :key ="item.id" v-for="item in article" >
       <div class="actu__bloc">
         <router-link :to="{name:'Article', query: {article: item}}">
@@ -76,7 +19,6 @@
                 alt="picto Trash"/>
             </button>
           </div>
->>>>>>> cb75ee2138c99529581b25e29e33d8d6fa627b9e
           <img :src="image2" alt="photo de l'article" />
           <h1 class="pt-roboto-condensed">{{item.title}}</h1>
         </router-link>
@@ -108,18 +50,12 @@ export default {
     };
   },
   async created() {
-<<<<<<< HEAD
-     this.article = await AuthService.getArticle();
-     console.log(this.article)
-    
-=======
     this.article = await AuthService.getArticle();
   },
   methods:{
     async clicked(id){
       this.deleted = await AuthService.deleteArticle(id);
     },
->>>>>>> cb75ee2138c99529581b25e29e33d8d6fa627b9e
   },
   mounted() {
     let button = document.querySelector("#add-more-button");
@@ -273,3 +209,4 @@ a {
   }
 }
 </style>
+
