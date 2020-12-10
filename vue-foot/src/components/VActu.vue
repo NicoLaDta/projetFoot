@@ -31,7 +31,7 @@
             </button>
           </div>
           <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[0].title}}</h1>
+          <h1 class="pt-roboto-condensed">{{ getarticle[0].description}}</h1>
         </div>
       </router-link>
       <router-link to="/VActu">
@@ -53,7 +53,7 @@
             </button>
           </div>
           <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[1].title}}</h1>
+          <!-- <h1 class="pt-roboto-condensed">{{getarticle[1].title}}</h1> -->
         </div>
       </router-link>
       <router-link to="/VActu">
@@ -75,7 +75,7 @@
             </button>
           </div>
           <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[2].title}}</h1>
+          <!-- <h1 class="pt-roboto-condensed">{{getarticle[2].title}}</h1> -->
         </div>
       </router-link>
       <router-link to="/VActu">
@@ -97,7 +97,7 @@
             </button>
           </div>
           <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[3].title}}</h1>
+          <!-- <h1 class="pt-roboto-condensed">{{getarticle[3].title}}</h1> -->
         </div>
       </router-link>
       <router-link to="/VActu">
@@ -119,7 +119,7 @@
             </button>
           </div>
           <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[4].title}}</h1>
+          <!-- <h1 class="pt-roboto-condensed">{{getarticle[4].title}}</h1> -->
         </div>
       </router-link>
       <router-link to="/VActu">
@@ -141,7 +141,7 @@
             </button>
           </div>
           <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[5].title}}</h1>
+          <!-- <h1 class="pt-roboto-condensed">{{getarticle[5].title}}</h1> -->
         </div>
       </router-link>
       <router-link to="/VActu">
@@ -163,7 +163,7 @@
             </button>
           </div>
           <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[6].title}}</h1>
+          <!-- <h1 class="pt-roboto-condensed">{{getarticle[6].title}}</h1> -->
         </div>
       </router-link>
       <router-link to="/VActu">
@@ -185,7 +185,7 @@
             </button>
           </div>
           <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[7].title}}</h1>
+          <!-- <h1 class="pt-roboto-condensed">{{getarticle[7].title}}</h1> -->
         </div>
       </router-link>
       <router-link to="/VActu">
@@ -207,7 +207,7 @@
             </button>
           </div>
           <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[8].title}}</h1>
+          <!-- <h1 class="pt-roboto-condensed">{{getarticle[8].title}}</h1> -->
         </div>
       </router-link>
       <router-link to="/VActu">
@@ -229,7 +229,7 @@
             </button>
           </div>
           <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[9].title}}</h1>
+          <!-- <h1 class="pt-roboto-condensed">{{getarticle[9].title}}</h1> -->
         </div>
       </router-link>
       <router-link to="/VActu">
@@ -251,7 +251,7 @@
             </button>
           </div>
           <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[10].title}}</h1>
+          <!-- <h1 class="pt-roboto-condensed">{{getarticle[10].title}}</h1> -->
         </div>
       </router-link>
       <router-link to="/VActu">
@@ -273,7 +273,7 @@
             </button>
           </div>
           <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[11].title}}</h1>
+          <!-- <h1 class="pt-roboto-condensed">{{getarticle[11].title}}</h1> -->
         </div>
       </router-link>
     </div>
@@ -285,6 +285,7 @@
         value="Voir plus"
       />
     </div>
+    {{ getarticle }}
   </div>
 </template>
 
@@ -298,11 +299,12 @@ export default {
       image2: require("@/assets/img-article/article.jpg"),
       pictoUpdate: require("@/assets/image/update.png"),
       pictoTrash: require("@/assets/image/trash.png"),
-      article: null, 
+      getarticle: null, 
     };
   },
   async created() {
-    this.article = await AuthService.getArticle();
+    let getarticle = await AuthService.getArticle();
+    console.log(getarticle)
   },
   mounted() {
     let button = document.querySelector("#add-more-button");
