@@ -10,17 +10,15 @@
       </div>
       <div class="container-text">
         <router-link to="/VBoutique">Retour</router-link>
-        <h1 class="font-semibold">{{ getproduct[0].nomproduit }}</h1>
+        <h1 class="font-semibold">{{ product.nomproduit }}</h1>
         <p>
-          {{ getproduct[0].descriptions }}
+          {{ product.descriptions }}
         </p>
         <p class="text-center text-xl font-bold mt-5 mb-8">
           Pour acquérir ce produit, rendez-vous en boutique !
         </p>
       </div>
     </div>
-    <div>{{ getproduct[0] }}</div>
-
     <div class="find-us-container">
       <h1>Où nous trouver ?</h1>
 
@@ -44,7 +42,16 @@
     </div>
   </div>
 </template>
-
+<script>
+export default {
+  name: "Product",
+  data(){
+    return{
+      product : this.$route.query.product
+    };
+  },
+};
+</script>
 <style lang="postcss">
 h1 {
   font-size: 3rem;
@@ -147,29 +154,3 @@ h1 {
   }
 }
 </style>
-
-<script>
-  let uuid = 0;
-import AuthService from '@/services/AuthService.js';
-export default {
-  name: "Product",
-  beforeCreate() {
-    this.uuid = uuid.toString();
-    uuid += 1;
-    console.log(uuid);
-  },
-  data(){
-    return{
-      product:'',
-      Product: {},
-      title: this.$route.params.title,
-      getproduct: null
-    };
-  },
-  async created() {
-    let product = await AuthService.getProduct();
-    console.log(product[0])
-    this.getproduct = product
-  },
-};
-</script>

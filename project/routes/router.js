@@ -132,6 +132,41 @@ router.post('/articleAdd', userMiddleware.validateAdd, (req, res, next) => {
     );
 });
 
+router.put('/articleUpdate', userMiddleware.validateAdd, (req, res, next) => {
+    db.query(
+        `UPDATE article set title = ${db.escape(req.body.title)}, description = ${db.escape(req.body.title)} where id = ${db.escape(req.body.id)};`,
+        (err, result) => {
+            if (err) {
+                throw err;
+                return res.status(400).send({
+                    msg: err
+                });
+            }
+            return res.status(201).send({
+                msg: 'Updated!'
+            });
+        }
+    );
+});
+
+router.delete('/article/:id', (req, res, next) => {
+    db.query(
+        `DELETE From article where id = ${db.escape(req.params.id)};`,
+        (err, result) => {
+            if (err) {
+                throw err;
+                return res.status(400).send({
+                    msg: err
+                });
+            }
+            return res.status(201).send({
+                msg: 'Deleted!'
+            });
+        }
+    );
+});
+
+
 router.get('/product', (req, res) => {
     db.query(
         `SELECT * FROM product`, (err, rows, fields)=>{
@@ -155,6 +190,40 @@ router.post('/productAdd', userMiddleware.validateAddProduct, (req, res, next) =
             }
             return res.status(201).send({
                 msg: 'Inserted!'
+            });
+        }
+    );
+});
+
+router.put('/productUpdate', userMiddleware.validateAdd, (req, res, next) => {
+    db.query(
+        `UPDATE product set nomproduit = ${db.escape(req.body.nomproduit)}, prix = ${db.escape(req.body.prix)}, descriptions = ${db.escape(req.body.descriptions)}  where id = ${db.escape(req.body.id)};`,
+        (err, result) => {
+            if (err) {
+                throw err;
+                return res.status(400).send({
+                    msg: err
+                });
+            }
+            return res.status(201).send({
+                msg: 'Updated!'
+            });
+        }
+    );
+});
+
+router.delete('/product/:id', (req, res, next) => {
+    db.query(
+        `DELETE From product where id = ${db.escape(req.body.id)};`,
+        (err, result) => {
+            if (err) {
+                throw err;
+                return res.status(400).send({
+                    msg: err
+                });
+            }
+            return res.status(201).send({
+                msg: 'Deleted!'
             });
         }
     );
