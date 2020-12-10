@@ -32,7 +32,6 @@
         value="Voir plus"
       />
     </div>
-    {{ getarticle }}
   </div>
 </template>
 
@@ -51,8 +50,7 @@ export default {
     };
   },
   async created() {
-    let getarticle = await AuthService.getArticle();
-    console.log(getarticle)
+    this.article = await AuthService.getArticle();
   },
   methods:{
     async clicked(id){
