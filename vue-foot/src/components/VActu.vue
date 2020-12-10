@@ -10,10 +10,10 @@
             </router-link>
             <div class="div-picto">
               <button>
-                <img :src="pictoUpdate" flat dark alt="picto Update" />
+                <img :src="pictoUpdate" flat v-if="$store.state.isLoggedIn" dark alt="picto Update" />
               </button>
               <button @click="clicked(item.id)">
-                <img :src="pictoTrash" flat dark alt="picto Trash" />
+                <img :src="pictoTrash" flat v-if="$store.state.isLoggedIn" dark alt="picto Trash" />
               </button>
             </div>
           </div>
