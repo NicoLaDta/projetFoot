@@ -42,4 +42,22 @@ export default {
       .delete(`article/${id}/`)
       .then(response => response.data)
   },
+  updateArticle(id){
+    console.log(id)
+    return Api()
+      .delete(`article/${id}/`)
+      .then(response => response.data)
+  },
+  updateProduct(id){
+    console.log(id)
+    return Api()
+      .delete(`product/${id}/`)
+      .then(response => response.data)
+  },
+  deleteProduct(id){
+    console.log(id)
+    return Api()
+      .delete(`product/${id}/`)
+      .then(response => response.data)
+  },
 };
