@@ -16,14 +16,14 @@
             <p class="little">{{majNbCat1}} / {{nbMaxCat1}} restants</p>
             <input type="number" min="0" max="10" value="0" id="numberCat1" name="cat1" v-model.number="cat1" v-on:click="update">
       </div>
-      <div class="categorie cat2">
+      <div class="categorie cat2" @click="update">
           <p>CATEGORIE 2</p>
           <p style="color: #8d0506; font-weight: bold">12€</p>
           <p>Nombre de billets souhaités :</p>
           <p class="little">{{majNbCat2}} / {{nbMaxCat2}} restants</p>
             <input type="number" min="0" max="10" value="0" id="numberCat2" name="cat2" v-model.number="cat2" v-on:click="update">
       </div>
-      <div class="categorie cat3">
+      <div class="categorie cat3" @click="update">
           <p>CATEGORIE 3</p>
           <p style="color: #156654; font-weight: bold">7€</p>
           <p>Nombre de billets souhaités :</p>

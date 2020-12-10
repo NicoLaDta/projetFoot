@@ -1,78 +1,28 @@
 <template>
   <div class="container-actu">
-    <div class="actu">
-      <router-link to="/VActu/VArticle">
-        <div class="actu__bloc hot-news">
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc">
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc add">
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc add">
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc add">
-          <img :src="img" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">Title Article</h1>
-        </div>
-      </router-link>
+    <div class="actu" :key ="item.id" v-for="item in article" >
+      <div class="actu__bloc">
+        <router-link :to="{name:'Article', query: {article: item}}">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate"
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark 
+              alt="picto Update" />
+            </button>
+            <button @click="clicked(item.id)">
+            <img :src="pictoTrash"
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark 
+                alt="picto Trash"/>
+            </button>
+          </div>
+          <img :src="image2" alt="photo de l'article" />
+          <h1 class="pt-roboto-condensed">{{item.title}}</h1>
+        </router-link>
+      </div>
     </div>
     <div class="add-more">
       <input
@@ -84,6 +34,54 @@
     </div>
   </div>
 </template>
+
+<script>
+import AuthService from '@/services/AuthService.js';
+export default {
+  name: "Actualités",
+  data() {
+    return {
+      img: require("@/assets/img-article/img-1.jpg"),
+      image2: require("@/assets/img-article/article.jpg"),
+      pictoUpdate: require("@/assets/image/update.png"),
+      pictoTrash: require("@/assets/image/trash.png"),
+      article: null,
+      deleted: "",
+    };
+  },
+  async created() {
+    this.article = await AuthService.getArticle();
+  },
+  methods:{
+    async clicked(id){
+      this.deleted = await AuthService.deleteArticle(id);
+    },
+  },
+  mounted() {
+    let button = document.querySelector("#add-more-button");
+    //Je réccupère tous les éléments à partir du 7ème
+      let elements = document.querySelectorAll(".actu :nth-child(n + 7)");
+
+    //Add display none
+      for (var i=0; i<elements.length; i++){
+         elements[i].classList.add('displayNone')
+      }
+
+    button.addEventListener("click", () => {
+      
+      for (var i=0; i<elements.length; i++){
+         elements[i].classList.toggle("displayNone")
+      }
+
+      if (button.value === "Voir plus") {
+        button.value = "Voir moins";
+      } else {
+        button.value = "Voir plus";
+      }
+    });
+  },
+};
+</script>
 
 <style lang="postcss" scoped>
 .container-actu {
@@ -117,6 +115,7 @@ a {
   border-radius: 20px;
   width: 400px;
   padding-bottom: 15px;
+  position: relative;
 }
 .actu__bloc img {
   width: 100%;
@@ -130,6 +129,21 @@ a {
   font-size: 1.25rem;
 }
 
+/* ------------- */
+/* PICTO IN ACTUBLOC */
+/* ------------- */
+.div-picto {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  background-color: #FFF;
+  padding: 2px;
+}
+.div-picto img {
+  width: 20px;
+  height: 20px;
+}
 /* ------------- */
 /* ADD MORE */
 /* ------------- */
@@ -163,6 +177,28 @@ a {
   color: #fff;
 }
 
+/* ------------- */
+/* POPUP */
+/* ------------- */
+.pop-up-update {
+  background-color: rgba(138, 135, 135, 0.993);
+  position: absolute;
+  z-index: 2;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  display: none;
+}
+.pop-up__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
 @media (max-width: 1044px) {
   .actu__bloc{
     width: 100%;
@@ -172,46 +208,4 @@ a {
     margin-right: 20px;
   }
 }
-
 </style>
-
-<script>
-import AuthService from '@/services/AuthService.js';
-export default {
-  name: "Actualités",
-  data() {
-    return {
-      img: require("@/assets/img-article/img-1.jpg"),
-      result: null
-    };
-  },
-  async article() {
-    let getArticle = await AuthService.getArticle();
-    console.log(getArticle)
-    this.result = getArticle
-  },
-  mounted() {
-    let button = document.querySelector("#add-more-button");
-    //Je réccupère tous les éléments à partir du 7ème
-      let elements = document.querySelectorAll(".actu :nth-child(n + 7)");
-
-    //Add display none
-      for (var i=0; i<elements.length; i++){
-         elements[i].classList.add('displayNone')
-      }
-
-    button.addEventListener("click", () => {
-      
-      for (var i=0; i<elements.length; i++){
-         elements[i].classList.toggle("displayNone")
-      }
-
-      if (button.value === "Voir plus") {
-        button.value = "Voir moins";
-      } else {
-        button.value = "Voir plus";
-      }
-    });
-  },
-};
-</script>

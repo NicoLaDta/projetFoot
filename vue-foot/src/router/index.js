@@ -88,7 +88,11 @@ const routes = [
     name: "Admin",
     component: VAdmin
   },
-
+  {
+    path: "/VProduct/:title",
+    name: "Product",
+    component: VProduct
+  }
 ]
 const router = new VueRouter({
   mode: 'history',

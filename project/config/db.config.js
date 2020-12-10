@@ -4,8 +4,7 @@ const connection = mysql.createConnection({
   user: 'root',
   password: '',
   database: 'footDb',
-  port:"3306",
-  multipleStatements: true
+  port:"3306"
 });
 
 connection.connect();

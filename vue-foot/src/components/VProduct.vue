@@ -10,24 +10,15 @@
       </div>
       <div class="container-text">
         <router-link to="/VBoutique">Retour</router-link>
-        <h1 class="font-semibold">Title</h1>
+        <h1 class="font-semibold">{{ product.nomproduit }}</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto enim
-          distinctio placeat accusamus adipisci id magnam harum tempore quaerat
-          unde consequuntur quisquam iure similique, temporibus nobis in sed.
-          Quaerat soluta tempore fuga esse similique nobis, odio reiciendis
-          accusamus earum, atque voluptas. Nostrum voluptates, eaque inventore
-          eius odit animi suscipit voluptatibus laudantium quaerat sint
-          possimus, porro quasi. Voluptatem eum at repudiandae rerum. At neque
-          dignissimos, ullam reiciendis laboriosam rerum alias voluptate amet
-          qui eius fugiat voluptas blanditiis repellat eveniet earum officia?
+          {{ product.descriptions }}
         </p>
         <p class="text-center text-xl font-bold mt-5 mb-8">
           Pour acquérir ce produit, rendez-vous en boutique !
         </p>
       </div>
     </div>
-
     <div class="find-us-container">
       <h1>Où nous trouver ?</h1>
 
@@ -51,7 +42,16 @@
     </div>
   </div>
 </template>
-
+<script>
+export default {
+  name: "Product",
+  data(){
+    return{
+      product : this.$route.query.product
+    };
+  },
+};
+</script>
 <style lang="postcss">
 h1 {
   font-size: 3rem;
@@ -154,9 +154,3 @@ h1 {
   }
 }
 </style>
-
-<script>
-export default {
-  name: "Product",
-};
-</script>
