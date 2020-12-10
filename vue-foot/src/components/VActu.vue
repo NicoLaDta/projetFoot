@@ -8,6 +8,7 @@
         <div class="actu__bloc hot-news">
          <img :src="image2" alt="photo de l'article" />
           <h1 class="pt-roboto-condensed">{{article[0].title}}</h1>
+          <p>{{article[0].id}}</p>
         </div>
       </router-link>
       <router-link to="/VActu">
@@ -103,7 +104,7 @@ export default {
   },
   async created() {
      this.article = await AuthService.getArticle();
-    // console.log(article)
+     console.log(this.article)
     
   },
   mounted() {
