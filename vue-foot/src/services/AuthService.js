@@ -36,4 +36,10 @@ export default {
       .post('productAdd/', credentials)
       .then(response => response.data);
   },
+  deleteArticle(id){
+    console.log(id)
+    return Api()
+      .delete(`article/${id}/`)
+      .then(response => response.data)
+  },
 };

@@ -1,80 +1,32 @@
 <template>
-  <div class="container-boutique flex flex-wrap justify-center">
-    <section class="card flex flex-col rounded">
-      <router-link to="/VProduct" class="relative">
-        <div class="div-picto">
-          <button>
-            <img :src="pictoUpdate" 
-              v-if="$store.state.isLoggedIn"
-              flat
-              dark
-            alt="picto Update" />
-          </button>
-          <button>
-            <img :src="pictoTrash" 
-              v-if="$store.state.isLoggedIn"
-              flat
-              dark
-            alt="picto Trash" />
-          </button>
-        </div>
-        <img class="item-img rounded-t-lg" src="@/assets/image-boutique/survet.jpg" />
-        <div class="presentation flex justify-between m-4">
-          <p>{{ getproduct[0].nomproduit }}</p>
-          <p class="text-red-600 font-semibold">{{ getproduct[0].prix }} €</p>
-        </div>
-      </router-link>
-    </section>
-    <section class="card flex flex-col rounded">
-      <router-link to="/VProduct" class="relative">
-       <div class="div-picto">
-          <button>
-            <img :src="pictoUpdate" 
-              v-if="$store.state.isLoggedIn"
-              flat
-              dark
-            alt="picto Update" />
-          </button>
-          <button>
-            <img :src="pictoTrash" 
-              v-if="$store.state.isLoggedIn"
-              flat
-              dark
-            alt="picto Trash" />
-          </button>
-        </div>
-        <img class="item-img rounded-t-lg" src="@/assets/image-boutique/maillot_r.jpg">
-        <div class="presentation flex justify-between m-4">
-          <p>{{ getproduct[1].nomproduit }}</p>
-          <p class="text-red-600 font-semibold">{{ getproduct[1].prix }} €</p>
-        </div>
-      </router-link>
-    </section>
-    <section class="card flex flex-col rounded">
-      <router-link to="/VProduct" class="relative">
-       <div class="div-picto">
-          <button>
-            <img :src="pictoUpdate" 
-              v-if="$store.state.isLoggedIn"
-              flat
-              dark
-            alt="picto Update" />
-          </button>
-          <button>
-            <img :src="pictoTrash" 
-              v-if="$store.state.isLoggedIn"
-              flat
-              dark
-            alt="picto Trash" />
-          </button>
-        </div>
-      <img class="item-img rounded-t-lg" src="@/assets/image-boutique/maillot_1.png">
-      <div class="presentation flex justify-between m-4">
-        <p>{{ getproduct[2].nomproduit }}</p>
-        <p class="text-red-600 font-semibold">{{ getproduct[2].prix }} €</p>
-      </div>
-      </router-link>
-    </section>
+  <div class="container-boutique flex flex-wrap justify-center" >
+    <div class="prod" :key ="item.id" v-for="item in product" >
+      <section class="card flex flex-col rounded">
+        <router-link :to="{name:'Product', query: {product: item}}" class="relative">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Update" />
+            </button>
+            <button>
+              <img :src="pictoTrash" 
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark
+              alt="picto Trash" />
+            </button>
+          </div>
+          <img class="item-img rounded-t-lg" src="@/assets/image-boutique/survet.jpg" />
+          <div class="presentation flex justify-between m-4">
+            <p>{{ item.nomproduit }}</p>
+            <p class="text-red-600 font-semibold">{{ item.prix }} €</p>
+          </div>
+        </router-link>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -148,13 +100,13 @@ export default {
   name: "Boutique",
   data() {
     return {
-      getproduct: null,
+      product: null,
       pictoUpdate: require("@/assets/image/update.png"),
       pictoTrash: require("@/assets/image/trash.png"),
     };
   },
   async created() {
-    this.getproduct = await AuthService.getProduct();
+    this.product = await AuthService.getProduct();
   },
 };
 </script>
