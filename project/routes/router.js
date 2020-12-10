@@ -132,7 +132,7 @@ router.post('/articleAdd', userMiddleware.validateAdd, (req, res, next) => {
     );
 });
 
-router.put('/articleUpdate', userMiddleware.validateAdd, (req, res, next) => {
+router.put('/article/:id', userMiddleware.validateAdd, (req, res, next) => {
     db.query(
         `UPDATE article set title = ${db.escape(req.body.title)}, description = ${db.escape(req.body.title)} where id = ${db.escape(req.body.id)};`,
         (err, result) => {
@@ -195,7 +195,7 @@ router.post('/productAdd', userMiddleware.validateAddProduct, (req, res, next) =
     );
 });
 
-router.put('/productUpdate', userMiddleware.validateAdd, (req, res, next) => {
+router.put('/product/:id', userMiddleware.validateAdd, (req, res, next) => {
     db.query(
         `UPDATE product set nomproduit = ${db.escape(req.body.nomproduit)}, prix = ${db.escape(req.body.prix)}, descriptions = ${db.escape(req.body.descriptions)}  where id = ${db.escape(req.body.id)};`,
         (err, result) => {
