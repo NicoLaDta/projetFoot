@@ -19,7 +19,7 @@
               alt="picto Trash" />
             </button>
           </div>
-          <img class="item-img rounded-t-lg" src="@/assets/image-boutique/survet.jpg" />
+          <img class="item-img rounded-t-lg" :src="`https://api.alanakra.fr/foot/${item.nomproduit}.jpg`" />
           <div class="presentation flex justify-between m-4">
             <p>{{ item.nomproduit }}</p>
             <p class="text-red-600 font-semibold">{{ item.prix }} €</p>
@@ -103,6 +103,9 @@ export default {
       product: null,
       pictoUpdate: require("@/assets/image/update.png"),
       pictoTrash: require("@/assets/image/trash.png"),
+      imgProduct1: null,
+      imgProduct2: null,
+      imgProduct3: null,
     };
   },
   async created() {

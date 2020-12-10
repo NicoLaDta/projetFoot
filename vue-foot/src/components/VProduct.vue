@@ -3,7 +3,7 @@
     <div class="pres">
       <div class="container-image">
         <img
-          :src= "imgProduct"
+          :src="`https://api.alanakra.fr/foot/${product.nomproduit}.jpg`"
           alt=""
           class="responsive"
         />
