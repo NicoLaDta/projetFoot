@@ -1,27 +1,35 @@
 <template>
-  <div class="container-actu">
-    <div class="actu" :key ="item.id" v-for="item in article" >
-      <div class="actu__bloc">
-        <router-link :to="{name:'Article', query: {article: item}}">
-          <div class="div-picto">
-            <button>
-              <img :src="pictoUpdate"
-                v-if="$store.state.isLoggedIn"
-                flat
-                dark 
-              alt="picto Update" />
-            </button>
-            <button @click="clicked(item.id)">
-            <img :src="pictoTrash"
-                v-if="$store.state.isLoggedIn"
-                flat
-                dark 
-                alt="picto Trash"/>
-            </button>
+  <div>
+    <div class="container-actu">
+      <div class="actu">
+        <div class="actu__n" :key="item.id" v-for="item in article">
+          <div class="actu__bloc">
+            <router-link :to="{ name: 'Article', query: { article: item } }">
+              <div class="div-picto">
+                <button>
+                  <img
+                    :src="pictoUpdate"
+                    v-if="$store.state.isLoggedIn"
+                    flat
+                    dark
+                    alt="picto Update"
+                  />
+                </button>
+                <button @click="clicked(item.id)">
+                  <img
+                    :src="pictoTrash"
+                    v-if="$store.state.isLoggedIn"
+                    flat
+                    dark
+                    alt="picto Trash"
+                  />
+                </button>
+              </div>
+              <img :src="image2" alt="photo de l'article" />
+              <h1 class="pt-roboto-condensed">{{ item.title }}</h1>
+            </router-link>
           </div>
-          <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{item.title}}</h1>
-        </router-link>
+        </div>
       </div>
     </div>
     <div class="add-more">
@@ -36,7 +44,7 @@
 </template>
 
 <script>
-import AuthService from '@/services/AuthService.js';
+import AuthService from "@/services/AuthService.js";
 export default {
   name: "Actualités",
   data() {
@@ -52,25 +60,24 @@ export default {
   async created() {
     this.article = await AuthService.getArticle();
   },
-  methods:{
-    async clicked(id){
+  methods: {
+    async clicked(id) {
       this.deleted = await AuthService.deleteArticle(id);
     },
   },
   mounted() {
     let button = document.querySelector("#add-more-button");
     //Je réccupère tous les éléments à partir du 7ème
-      let elements = document.querySelectorAll(".actu :nth-child(n + 7)");
+    let elements = document.querySelectorAll(".container-actu :nth-child(n + 7)");
 
     //Add display none
-      for (var i=0; i<elements.length; i++){
-         elements[i].classList.add('displayNone')
-      }
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].classList.add("displayNone");
+    }
 
     button.addEventListener("click", () => {
-      
-      for (var i=0; i<elements.length; i++){
-         elements[i].classList.toggle("displayNone")
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.toggle("displayNone");
       }
 
       if (button.value === "Voir plus") {
@@ -88,7 +95,7 @@ export default {
   margin-right: 100px;
   margin-left: 100px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .actu {
@@ -114,8 +121,10 @@ a {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   width: 400px;
+  height: 345px;
   padding-bottom: 15px;
   position: relative;
+  margin: 20px;
 }
 .actu__bloc img {
   width: 100%;
@@ -137,7 +146,7 @@ a {
   position: absolute;
   right: 0;
   top: 0px;
-  background-color: #FFF;
+  background-color: #fff;
   padding: 2px;
 }
 .div-picto img {
@@ -198,9 +207,8 @@ a {
   flex-direction: column;
 }
 
-
 @media (max-width: 1044px) {
-  .actu__bloc{
+  .actu__bloc {
     width: 100%;
   }
   .container-actu {
