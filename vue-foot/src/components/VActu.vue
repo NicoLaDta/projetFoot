@@ -9,8 +9,11 @@
               <h1 class="pt-roboto-condensed">{{ item.title }}</h1>
             </router-link>
             <div class="div-picto">
+              <modale :revele="revele" :toggleModale="toggleModale"></modale>
+
+
               <button>
-                <img :src="pictoUpdate" flat v-if="$store.state.isLoggedIn" dark alt="picto Update" />
+                <img v-on:click="toggleModale"  :src="pictoUpdate" flat v-if="$store.state.isLoggedIn" dark alt="picto Update" />
               </button>
               <button @click="clicked(item.id)">
                 <img :src="pictoTrash" flat v-if="$store.state.isLoggedIn" dark alt="picto Trash" />
@@ -32,12 +35,10 @@
 </template>
 
 <script>
+import ModaleActu from "./ModaleActu";
 import AuthService from "@/services/AuthService.js";
 export default {
   name: "Actualités",
-    components: {
-    Modale
-  },
   data() {
     return {
       img: require("@/assets/img-article/img-1.jpg"),
@@ -46,8 +47,11 @@ export default {
       pictoTrash: require("@/assets/image/trash.png"),
       article: null,
       deleted: "",
-      revele: false
+      revele: false,
     };
+  },
+  components: {
+    modale: ModaleActu,
   },
   async created() {
     this.article = await AuthService.getArticle();
@@ -56,9 +60,10 @@ export default {
     async clicked(id) {
       this.deleted = await AuthService.deleteArticle(id);
     },
-    toggleModale: function(){
-  this.revele = !this.revele
-}
+    toggleModale: function () {
+      this.revele = !this.revele;
+    },
+
   },
   mounted() {
     let button = document.querySelector("#add-more-button");
@@ -141,9 +146,8 @@ a {
 .div-picto {
   display: flex;
   position: absolute;
-  right: 160px;  
+  right: 160px;
   left: 160px;
-
   bottom: 0;
   background-color: #fff;
   padding: 2px;
