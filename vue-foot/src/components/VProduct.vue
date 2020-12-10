@@ -3,25 +3,25 @@
     <div class="pres">
       <div class="container-image">
         <img
-          src="@/assets/image-boutique/maillot_1_product.jpg"
+          :src= "imgProduct"
           alt=""
           class="responsive"
         />
       </div>
       <div class="container-text">
         <router-link to="/VBoutique">Retour</router-link>
-        <h1 class="font-semibold">{{ getproduct[0].nomproduit }}</h1>
+        <h1 class="font-semibold">{{ getproduct[id].nomproduit }}</h1>
         <p>
-          {{ getproduct[0].descriptions }}
-        </p>
-        <p class="text-center text-xl font-bold mt-5 mb-8">
-          Pour acquérir ce produit, rendez-vous en boutique !
+          {{ getproduct[id].descriptions }}
         </p>
       </div>
     </div>
-    <div>{{ getproduct[0] }}</div>
+    <div>{{ getproduct }}</div>
 
     <div class="find-us-container">
+        <p class="text-center text-xl font-bold mt-5 mb-8">
+          Pour acquérir ce produit, rendez-vous en boutique !
+        </p>
       <h1>Où nous trouver ?</h1>
 
       <div class="find-us flex flex-col md:flex-row">
@@ -149,27 +149,22 @@ h1 {
 </style>
 
 <script>
-  let uuid = 0;
 import AuthService from '@/services/AuthService.js';
 export default {
   name: "Product",
-  beforeCreate() {
-    this.uuid = uuid.toString();
-    uuid += 1;
-    console.log(uuid);
-  },
   data(){
     return{
+      id: 1,
       product:'',
       Product: {},
-      title: this.$route.params.title,
-      getproduct: null
+      getproduct: null,
+      imgProduct: 'https://api.alanakra.fr/foot/survet.jpg',
+      test: null
     };
   },
   async created() {
-    let product = await AuthService.getProduct();
-    console.log(product[0])
-    this.getproduct = product
-  },
+    this.getproduct = await AuthService.getProduct();
+    console.log(this.getproduct)
+  }
 };
 </script>
