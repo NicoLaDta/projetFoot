@@ -8,6 +8,22 @@
       <router-link class="link" to="/VClassement">Classement</router-link>
       <router-link class="link" to="/VBilletterie">Billetterie</router-link>
       <router-link class="link" to="/VBoutique">Boutique</router-link>
+      <router-link class="link" to="/login"
+            v-if="!$store.state.isLoggedIn"
+            flat
+            dark
+          >Connexion</router-link>
+      <router-link class="link" to="/Admin"
+            v-if="$store.state.isLoggedIn"
+            flat
+            dark
+          >Ajout</router-link>&emsp;
+      <v-input class="link" type="button" value="Logout" @click="logout"
+           onclick="return confirm('Êtes-vous sûrs de vouloir vous deconnectez ?')"
+            v-if="$store.state.isLoggedIn"
+            flat
+            dark
+          >Deconnexion</v-input>
     </nav>
     
   </div>

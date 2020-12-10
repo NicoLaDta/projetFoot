@@ -1,5 +1,6 @@
 <template>
   <div class="container-actu">
+<<<<<<< HEAD
     <div class="actu">
       <div>
         <!-- {{article}} -->
@@ -55,28 +56,31 @@
       </router-link>
       <router-link to="/VActu">
         <div class="actu__bloc">
+=======
+    <div class="actu" :key ="item.id" v-for="item in article" >
+      <div class="actu__bloc">
+        <router-link :to="{name:'Article', query: {article: item}}">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate"
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark 
+              alt="picto Update" />
+            </button>
+            <button @click="clicked(item.id)">
+            <img :src="pictoTrash"
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark 
+                alt="picto Trash"/>
+            </button>
+          </div>
+>>>>>>> cb75ee2138c99529581b25e29e33d8d6fa627b9e
           <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[8].title}}</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc add">
-          <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[9].title}}</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc add">
-          <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[10].title}}</h1>
-        </div>
-      </router-link>
-      <router-link to="/VActu">
-        <div class="actu__bloc add">
-          <img :src="image2" alt="photo de l'article" />
-          <h1 class="pt-roboto-condensed">{{article[11].title}}</h1>
-        </div>
-      </router-link>
+          <h1 class="pt-roboto-condensed">{{item.title}}</h1>
+        </router-link>
+      </div>
     </div>
     <div class="add-more">
       <input
@@ -86,8 +90,6 @@
         value="Voir plus"
       />
     </div>
-    {{article[0].title}}
-    
   </div>
 </template>
 
@@ -99,13 +101,25 @@ export default {
     return {
       img: require("@/assets/img-article/img-1.jpg"),
       image2: require("@/assets/img-article/article.jpg"),
-      article:null
+      pictoUpdate: require("@/assets/image/update.png"),
+      pictoTrash: require("@/assets/image/trash.png"),
+      article: null,
+      deleted: "",
     };
   },
   async created() {
+<<<<<<< HEAD
      this.article = await AuthService.getArticle();
      console.log(this.article)
     
+=======
+    this.article = await AuthService.getArticle();
+  },
+  methods:{
+    async clicked(id){
+      this.deleted = await AuthService.deleteArticle(id);
+    },
+>>>>>>> cb75ee2138c99529581b25e29e33d8d6fa627b9e
   },
   mounted() {
     let button = document.querySelector("#add-more-button");
@@ -165,6 +179,7 @@ a {
   border-radius: 20px;
   width: 400px;
   padding-bottom: 15px;
+  position: relative;
 }
 .actu__bloc img {
   width: 100%;
@@ -178,6 +193,21 @@ a {
   font-size: 1.25rem;
 }
 
+/* ------------- */
+/* PICTO IN ACTUBLOC */
+/* ------------- */
+.div-picto {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  background-color: #FFF;
+  padding: 2px;
+}
+.div-picto img {
+  width: 20px;
+  height: 20px;
+}
 /* ------------- */
 /* ADD MORE */
 /* ------------- */
@@ -210,6 +240,28 @@ a {
   border: solid 2px #991917;
   color: #fff;
 }
+
+/* ------------- */
+/* POPUP */
+/* ------------- */
+.pop-up-update {
+  background-color: rgba(138, 135, 135, 0.993);
+  position: absolute;
+  z-index: 2;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  display: none;
+}
+.pop-up__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 
 @media (max-width: 1044px) {
   .actu__bloc{
