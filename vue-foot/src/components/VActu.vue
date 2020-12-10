@@ -5,29 +5,17 @@
         <div class="actu__n" :key="item.id" v-for="item in article">
           <div class="actu__bloc">
             <router-link :to="{ name: 'Article', query: { article: item } }">
-              <div class="div-picto">
-                <button>
-                  <img
-                    :src="pictoUpdate"
-                    v-if="$store.state.isLoggedIn"
-                    flat
-                    dark
-                    alt="picto Update"
-                  />
-                </button>
-                <button @click="clicked(item.id)">
-                  <img
-                    :src="pictoTrash"
-                    v-if="$store.state.isLoggedIn"
-                    flat
-                    dark
-                    alt="picto Trash"
-                  />
-                </button>
-              </div>
               <img :src="image2" alt="photo de l'article" />
               <h1 class="pt-roboto-condensed">{{ item.title }}</h1>
             </router-link>
+            <div class="div-picto">
+              <button>
+                <img :src="pictoUpdate" flat dark alt="picto Update" />
+              </button>
+              <button @click="clicked(item.id)">
+                <img :src="pictoTrash" flat dark alt="picto Trash" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -68,7 +56,9 @@ export default {
   mounted() {
     let button = document.querySelector("#add-more-button");
     //Je réccupère tous les éléments à partir du 7ème
-    let elements = document.querySelectorAll(".container-actu :nth-child(n + 7)");
+    let elements = document.querySelectorAll(
+      ".container-actu :nth-child(n + 7)"
+    );
 
     //Add display none
     for (var i = 0; i < elements.length; i++) {
@@ -144,14 +134,19 @@ a {
 .div-picto {
   display: flex;
   position: absolute;
-  right: 0;
-  top: 0px;
+  right: 160px;  
+  left: 160px;
+
+  bottom: 0;
   background-color: #fff;
   padding: 2px;
+  margin-bottom: 20px;
 }
 .div-picto img {
   width: 20px;
   height: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 /* ------------- */
 /* ADD MORE */
