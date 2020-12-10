@@ -1,30 +1,39 @@
 <template>
-  <div class="container-boutique flex flex-wrap justify-center" >
-    <div class="prod" :key ="item.id" v-for="item in product" >
+  <div class="container-boutique flex flex-wrap justify-center">
+    <div class="prod" :key="item.id" v-for="item in product">
       <section class="card flex flex-col rounded">
-        <router-link :to="{name:'Product', query: {product: item}}" class="relative">
-          <div class="div-picto">
-            <button>
-              <img :src="pictoUpdate" 
-                v-if="$store.state.isLoggedIn"
-                flat
-                dark
-              alt="picto Update" />
-            </button>
-            <button>
-              <img :src="pictoTrash" 
-                v-if="$store.state.isLoggedIn"
-                flat
-                dark
-              alt="picto Trash" />
-            </button>
-          </div>
-          <img class="item-img rounded-t-lg" src="@/assets/image-boutique/survet.jpg" />
+        <router-link
+          :to="{ name: 'Product', query: { product: item } }"
+          class="relative"
+        >
+          <img
+            class="item-img rounded-t-lg"
+            src="@/assets/image-boutique/survet.jpg"
+          />
           <div class="presentation flex justify-between m-4">
             <p>{{ item.nomproduit }}</p>
             <p class="text-red-600 font-semibold">{{ item.prix }} €</p>
           </div>
         </router-link>
+        <div class="div-picto">
+          <modale-boutique
+            :revele="revele"
+            :toggleModale="toggleModale"
+          ></modale-boutique>
+          <button>
+            <img
+              v-on:click="toggleModale"
+              :src="pictoUpdate"
+              flat
+              v-if="$store.state.isLoggedIn"
+              dark
+              alt="picto Update"
+            />
+          </button>
+          <button>
+            <img :src="pictoTrash" flat v-if="$store.state.isLoggedIn" dark alt="picto Trash" />
+          </button>
+        </div>
       </section>
     </div>
   </div>
@@ -58,17 +67,19 @@
 .div-picto {
   display: flex;
   position: absolute;
-  right: 0;
-  top: 0px;
-  background-color: #FFF;
+  right: 160px;
+  left: 160px;
   padding: 2px;
+  margin-bottom: 20px;
 }
 .div-picto img {
   width: 20px;
   height: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
-.item-img{
+.item-img {
   /* max-height: 400px; */
   object-fit: cover;
   height: 300px;
@@ -96,6 +107,7 @@
 
 <script>
 import AuthService from "@/services/AuthService.js";
+import ModaleBoutique from "./ModaleBoutique.vue";
 export default {
   name: "Boutique",
   data() {
@@ -103,7 +115,16 @@ export default {
       product: null,
       pictoUpdate: require("@/assets/image/update.png"),
       pictoTrash: require("@/assets/image/trash.png"),
+      revele: false,
     };
+  },
+  methods: {
+    toggleModale: function () {
+      this.revele = !this.revele;
+    },
+  },
+  components: {
+    ModaleBoutique,
   },
   async created() {
     this.product = await AuthService.getProduct();

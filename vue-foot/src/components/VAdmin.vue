@@ -146,6 +146,7 @@ export default {
         this.msg = error.response.data.msg;
       }
     },
+
     async productAdd() {
       try {
         const credentials = {
