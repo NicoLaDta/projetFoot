@@ -10,14 +10,15 @@
       </div>
       <div class="container-text">
         <router-link to="/VBoutique">Retour</router-link>
-        <h1 class="font-semibold">{{ getproduct[id].nomproduit }}</h1>
+        <h1 class="font-semibold">{{ product.nomproduit }}</h1>
         <p>
-          {{ getproduct[id].descriptions }}
+          {{ product.descriptions }}
+        </p>
+        <p class="text-center text-xl font-bold mt-5 mb-8">
+          Pour acquérir ce produit, rendez-vous en boutique !
         </p>
       </div>
     </div>
-    <div>{{ getproduct }}</div>
-
     <div class="find-us-container">
         <p class="text-center text-xl font-bold mt-5 mb-8">
           Pour acquérir ce produit, rendez-vous en boutique !
@@ -44,7 +45,16 @@
     </div>
   </div>
 </template>
-
+<script>
+export default {
+  name: "Product",
+  data(){
+    return{
+      product : this.$route.query.product
+    };
+  },
+};
+</script>
 <style lang="postcss">
 h1 {
   font-size: 3rem;
@@ -147,7 +157,6 @@ h1 {
   }
 }
 </style>
-
 <script>
 import AuthService from '@/services/AuthService.js';
 export default {
