@@ -35,6 +35,9 @@
 import AuthService from "@/services/AuthService.js";
 export default {
   name: "Actualités",
+    components: {
+    Modale
+  },
   data() {
     return {
       img: require("@/assets/img-article/img-1.jpg"),
@@ -43,6 +46,7 @@ export default {
       pictoTrash: require("@/assets/image/trash.png"),
       article: null,
       deleted: "",
+      revele: false
     };
   },
   async created() {
@@ -52,6 +56,9 @@ export default {
     async clicked(id) {
       this.deleted = await AuthService.deleteArticle(id);
     },
+    toggleModale: function(){
+  this.revele = !this.revele
+}
   },
   mounted() {
     let button = document.querySelector("#add-more-button");
