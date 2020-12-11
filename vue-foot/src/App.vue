@@ -4,7 +4,9 @@
     <!-- HEADER -->
     <!--        -->
     <div class="container-global-nav z-10">
-      <img class="logo-club" :src="logo" />
+      <router-link to="/">
+        <img class="logo-club" :src="logo" />
+      </router-link>
       <div class="pt-roboto nav flex ">
         <nav class="mx-auto nav-desktop">
           <router-link class="padding-router color-focus hover" to="/">Home</router-link

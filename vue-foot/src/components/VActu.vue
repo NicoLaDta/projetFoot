@@ -14,7 +14,13 @@
                 <img v-on:click="toggleModale" :src="pictoUpdate" flat v-if="$store.state.isLoggedIn" dark alt="picto Update" />
               </v-button>
               <button @click="clicked(item.id)">
-                <img :src="pictoTrash" flat v-if="$store.state.isLoggedIn" dark alt="picto Trash" />
+                <img
+                  :src="pictoTrash"
+                  flat
+                  v-if="$store.state.isLoggedIn"
+                  dark
+                  alt="picto Trash"
+                />
               </button>
             </div>
           </div>
@@ -58,9 +64,11 @@ export default {
   },
   mounted() {
     let button = document.querySelector("#add-more-button");
+
     //Je réccupère tous les éléments à partir du 7ème
     let elements = document.querySelectorAll(
-      ".container-actu :nth-child(n + 7)"
+      ".actu :nth-child(n + 5)"
+      // '.actu'
     );
     //Add display none
     for (var i = 0; i < elements.length; i++) {
@@ -68,6 +76,7 @@ export default {
     }
 
     button.addEventListener("click", () => {
+      console.log('clic')
       for (var i = 0; i < elements.length; i++) {
         elements[i].classList.toggle("displayNone");
       }
@@ -83,6 +92,23 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.modal-mask {
+     position: fixed;
+     z-index: 9998;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, .5);
+     display: table;
+     transition: opacity .3s ease;
+   }
+
+   .modal-wrapper {
+     display: table-cell;
+     vertical-align: middle;
+   }
+
 .container-actu {
   margin-right: 100px;
   margin-left: 100px;
