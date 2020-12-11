@@ -4,15 +4,18 @@
 
     <div class="modale">
        <router-link to="/VBoutique">
-        X
         </router-link>
             <form action="">
         <div class="flex flex-col m-2">
-          <label for="">Modifier le nom de l'article</label>
+          <label for="">Modifier le nom du produit</label>
           <input type="text" placeholder="Titre" v-model="title"/>
         </div>
         <div class="flex flex-col m-2">
-          <label for="">Modifier la description de l'article</label>
+          <label for="">Modifier le prix</label>
+          <input type="text" placeholder="Titre" >
+        </div>
+        <div class="flex flex-col m-2">
+          <label for="">Modifier la description du produit</label>
           <textarea v-model="description" name="" id="" cols="30" rows="10" ></textarea>
         </div>
         <div class="flex flex-col m-2">
@@ -27,7 +30,6 @@
 <script>
 export default {
   name: "ModaleBoutique",
-  props: ["revele", "toggleModale"]
 };
 </script>
 
