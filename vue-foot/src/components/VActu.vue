@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div>
     <div class="container-actu">
       <div class="actu">
@@ -19,6 +20,27 @@
                 <img :src="pictoTrash" flat v-if="$store.state.isLoggedIn" dark alt="picto Trash" />
               </button>
             </div>
+=======
+  <div class="container-actu">
+    <div class="actu" :key ="item.id" v-for="item in article">
+      <div class="actu__bloc">
+        <router-link :to="{name:'Article', query: {article: item}}">
+          <div class="div-picto">
+            <button>
+              <img :src="pictoUpdate"
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark 
+              alt="picto Update" />
+            </button>
+            <button @click="clicked(item.id)">
+            <img :src="pictoTrash"
+                v-if="$store.state.isLoggedIn"
+                flat
+                dark 
+                alt="picto Trash"/>
+            </button>
+>>>>>>> 9347fc672781fdc1878f11b2053b874e61afee15
           </div>
         </div>
       </div>
@@ -31,6 +53,7 @@
         value="Voir plus"
       />
     </div>
+
   </div>
 </template>
 
@@ -93,6 +116,23 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.modal-mask {
+     position: fixed;
+     z-index: 9998;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, .5);
+     display: table;
+     transition: opacity .3s ease;
+   }
+
+   .modal-wrapper {
+     display: table-cell;
+     vertical-align: middle;
+   }
+
 .container-actu {
   margin-right: 100px;
   margin-left: 100px;
@@ -223,3 +263,4 @@ a {
   }
 }
 </style>
+

@@ -1,48 +1,53 @@
 <template>
-
-  <hooper class="hooper cont" :settings="hooperSettings">
-    <slide> 
-    <img class="imageSlide" :src="actual">
-      <div class="title"><h1>Nom de l'actu</h1></div>
-      
-    </slide>
-    <slide >        
-       <img class="imageSlide" :src="maillot">
-       <div class="title"><h1>Nom de l'actu</h1></div>
-    </slide>
-      <hooper-navigation slot="hooper-addons"></hooper-navigation>
-  </hooper>
+  <div>
+    <transition-group name="fade" tag="div">
+      <div v-for="i in [currentIndex]" :key="i">
+        <img :src="currentImg" />
+         <div class="title"><h1>Nom de l'actu</h1></div>
+      </div>
+    </transition-group>
+    <a class="prev" @click="prev" href="#">&#10094; Previous</a>
+    <a class="next" @click="next" href="#">&#10095; Next</a>
+  </div>
 </template>
 
 <script>
-  import { Hooper, Slide, Navigation as HooperNavigation } from 'hooper';
-  import 'hooper/dist/hooper.css';
- 
   export default {
-    name: 'App',
-    components: {
-      Hooper,
-      Slide,
-      HooperNavigation,
-    },
-    data() {
+    name: 'App',   
+  data() {
     return {
-      actual: require("@/assets/image/actual.png"),
-      maillot: require("@/assets/image/maillot.jpg"),
-      partenaires: require("@/assets/image/partenaires.jpg"),
-      hooperSettings: {
-        wheelControl:false,
-        //  autoPlay:true,
-        //  playSpeed:5000,
-      }
-    }
+      images: [
+       require("@/assets/image/actual.png"),
+       require("@/assets/image/maillot.jpg"),
+      ],
+      timer: null,
+      currentIndex: 0
+    };
+  },
+mounted: function() {
+    this.startSlide();
+  },
+
+  methods: {
+    // startSlide: function() {
+    //   this.timer = setInterval(this.next, 4000);
+    // },
+
+    next: function() {
+      this.currentIndex += 1;
     },
-    mounted(){
-      var sheet = document.createElement('style')
-      sheet.innerHTML = ".icon-arrowRight{background-color: #991917} .icon-arrowLeft{background-color: #991917}";
-     document.body.appendChild(sheet);
+    prev: function() {
+      this.currentIndex -= 1;
+    }
+  },
+
+  computed: {
+    currentImg: function() {
+      return this.images[Math.abs(this.currentIndex) % this.images.length];
     }
   }
+
+   }
 </script>
 
 
@@ -60,9 +65,9 @@
     object-fit: cover;
 }
 .title{
-    position: relative;
+    position: absolute;
     color: white;
-    bottom: 200px;
+    bottom: -120px;
     background-color:#991917;
     width: 690px;
     height: 117px;
@@ -71,7 +76,7 @@
     text-align: center;
 } 
 
- @media screen and (max-width: 800px) {
+ @media screen and (max-width: 950px) {
     .hooper{
     height: 60vh;
     /* border: solid red 2px; */
@@ -93,6 +98,57 @@
    bottom: 150px;
 }
 
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.9s ease;
+  overflow: hidden;
+  visibility: visible;
+  position: absolute;
+  width:100%;
+  opacity: 1;
+}
+
+.fade-enter,
+.fade-leave-to {
+  visibility: hidden;
+  width:100%;
+  opacity: 0;
+}
+
+img {
+  height:700px;
+  width:100%;
+  display: block;
+    object-fit: cover;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.7s ease;
+  border-radius: 0 4px 4px 0;
+  text-decoration: none;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.9);
 }
  
 </style>
