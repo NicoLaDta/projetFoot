@@ -67,8 +67,7 @@ export default {
 
     //Je réccupère tous les éléments à partir du 7ème
     let elements = document.querySelectorAll(
-      ".actu :nth-child(n + 5)"
-      // '.actu'
+      ".actu :nth-child(n+5)"
     );
     //Add display none
     for (var i = 0; i < elements.length; i++) {
