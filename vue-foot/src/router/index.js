@@ -14,6 +14,8 @@ import Home from '../components/Home.vue'
 import VProduct from '../components/VProduct.vue'
 import VMenuMobile from '../components/VMenuMobile.vue'
 import VAdmin from '../components/VAdmin.vue'
+import ModaleActu from '../components/ModaleActu.vue'
+import ModaleBoutique from '../components/ModaleBoutique.vue'
 
 Vue.use(VueRouter)
 
@@ -72,6 +74,16 @@ const routes = [
     path: '/VMenuMobile',
     name: 'MenuMobile',
     component: VMenuMobile
+  },
+  {
+    path: "/VActu/ModaleActu",
+    name: "ModaleActu",
+    component: ModaleActu
+  },
+  {
+    path: "/ModaleBoutique",
+    name: "ModaleBoutique",
+    component: ModaleBoutique
   },
   {
     path: "/sign-up",

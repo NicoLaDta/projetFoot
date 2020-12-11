@@ -10,11 +10,9 @@
             </router-link>
             <div class="div-picto">
               <modale :revele="revele" :toggleModale="toggleModale"></modale>
-
-
-              <button>
+              <v-button :to="{ name: 'ModaleActu', query: { article: item } }">
                 <img v-on:click="toggleModale" :src="pictoUpdate" flat v-if="$store.state.isLoggedIn" dark alt="picto Update" />
-              </button>
+              </v-button>
               <button @click="clicked(item.id)">
                 <img :src="pictoTrash" flat v-if="$store.state.isLoggedIn" dark alt="picto Trash" />
               </button>
@@ -39,6 +37,7 @@ export default {
       pictoTrash: require("@/assets/image/trash.png"),
       article: null,
       deleted: "",
+      update:"",
       revele: false,
     };
   },
@@ -56,7 +55,6 @@ export default {
     toggleModale: function () {
       this.revele = !this.revele;
     },
-
   },
   mounted() {
     let button = document.querySelector("#add-more-button");
@@ -64,7 +62,6 @@ export default {
     let elements = document.querySelectorAll(
       ".container-actu :nth-child(n + 7)"
     );
-
     //Add display none
     for (var i = 0; i < elements.length; i++) {
       elements[i].classList.add("displayNone");

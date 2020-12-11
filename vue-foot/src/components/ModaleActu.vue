@@ -14,7 +14,7 @@
           <textarea name="" id="" cols="30" rows="10" ></textarea>
         </div>
         <div class="flex flex-col m-2">
-          <input type="submit" v-on:click="update" value="Submit"/>
+          <input type="submit" v-on:click="updated(item.id)" value="Submit"/>
         </div>
       </form>
     </div>
@@ -23,14 +23,16 @@
 
 
 <script>
-import AuthService from "@/services/AuthService.js";
 export default {
   name: "ModaleActu",
   props: ["revele", "toggleModale"],
-  methods:{
-    async clicked(id) {
-      this.update = await AuthService.updateArticle(id);
-    },
+  data(){
+    return{
+      article: this.$route.query.article
+    };
+  },
+  mounted(){
+    console.log(this.article);
   }
 };
 </script>
