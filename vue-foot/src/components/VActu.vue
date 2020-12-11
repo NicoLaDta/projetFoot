@@ -35,14 +35,14 @@
         </div>
       </div>
     </div>
-    <div class="add-more">
+    <!-- <div class="add-more">
       <input
         type="button"
         id="add-more-button"
         class="add-more__button"
         value="Voir plus"
       />
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -79,17 +79,20 @@ export default {
   },
   mounted() {
     let button = document.querySelector("#add-more-button");
+
     //Je réccupère tous les éléments à partir du 7ème
     let elements = document.querySelectorAll(
-      ".container-actu :nth-child(n + 7)"
+      ".actu :nth-child(n + 5)"
+      // '.actu'
     );
-
+    console.log(elements)
     //Add display none
     for (var i = 0; i < elements.length; i++) {
       elements[i].classList.add("displayNone");
     }
 
     button.addEventListener("click", () => {
+      console.log('clic')
       for (var i = 0; i < elements.length; i++) {
         elements[i].classList.toggle("displayNone");
       }

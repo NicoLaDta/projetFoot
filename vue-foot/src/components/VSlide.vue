@@ -3,7 +3,7 @@
     <transition-group name="fade" tag="div">
       <div v-for="i in [currentIndex]" :key="i">
         <img :src="currentImg" />
-         <div class="title"><h1>Nom de l'actu</h1></div>
+         <!-- <div class="title"><h1>Nouveaux maillots</h1></div> -->
       </div>
     </transition-group>
     <a class="prev" @click="prev" href="#">&#10094; Previous</a>
