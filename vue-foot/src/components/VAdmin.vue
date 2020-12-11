@@ -117,15 +117,11 @@ export default {
       title:"",
       nomproduit:"",
       prix: null,
-      images: [],
       description:"",
       descriptions:"",
     };
   },
   methods: { 
-    Onchange(e){
-       this.images = e.target.files[0]
-    },
     async articleAdd() {
       try {
         const credentials = {
@@ -144,7 +140,6 @@ export default {
         const credentials = {
           nomproduit: this.nomproduit,
           prix: this.prix,
-          image: this.image,
           descriptions: this.descriptions
         };
         const response = await AuthService.productAdd(credentials);

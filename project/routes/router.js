@@ -214,7 +214,7 @@ router.put('/product/:id', userMiddleware.validateAdd, (req, res, next) => {
 
 router.delete('/product/:id', (req, res, next) => {
     db.query(
-        `DELETE From product where id = ${db.escape(req.body.id)};`,
+        `DELETE from product where id = ${db.escape(req.body.id)};`,
         (err, result) => {
             if (err) {
                 throw err;

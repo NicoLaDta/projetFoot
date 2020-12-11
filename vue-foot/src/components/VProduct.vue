@@ -3,7 +3,7 @@
     <div class="pres">
       <div class="container-image">
         <img
-          :src="`https://api.alanakra.fr/foot/${product.nomproduit}.jpg`"
+          src="@/assets/image-boutique/maillot_1_product.jpg"
           alt=""
           class="responsive"
         />
@@ -22,9 +22,6 @@
       </div>
     </div>
     <div class="find-us-container">
-        <p class="text-center text-xl font-bold mt-5 mb-8">
-          Pour acquérir ce produit, rendez-vous en boutique !
-        </p>
       <h1>Où nous trouver ?</h1>
 
       <div class="find-us flex flex-col md:flex-row">
@@ -188,23 +185,3 @@ export default {
   }
 }
 </style>
-<script>
-import AuthService from '@/services/AuthService.js';
-export default {
-  name: "Product",
-  data(){
-    return{
-      id: 1,
-      product:'',
-      Product: {},
-      getproduct: null,
-      imgProduct: 'https://api.alanakra.fr/foot/survet.jpg',
-      test: null
-    };
-  },
-  async created() {
-    this.getproduct = await AuthService.getProduct();
-    console.log(this.getproduct)
-  }
-};
-</script>
