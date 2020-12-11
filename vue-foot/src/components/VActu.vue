@@ -11,12 +11,24 @@
             <div class="div-picto">
               <modale :revele="revele" :toggleModale="toggleModale"></modale>
 
-
               <button>
-                <img v-on:click="toggleModale"  :src="pictoUpdate" flat v-if="$store.state.isLoggedIn" dark alt="picto Update" />
+                <img
+                  v-on:click="toggleModale"
+                  :src="pictoUpdate"
+                  flat
+                  v-if="$store.state.isLoggedIn"
+                  dark
+                  alt="picto Update"
+                />
               </button>
               <button @click="clicked(item.id)">
-                <img :src="pictoTrash" flat v-if="$store.state.isLoggedIn" dark alt="picto Trash" />
+                <img
+                  :src="pictoTrash"
+                  flat
+                  v-if="$store.state.isLoggedIn"
+                  dark
+                  alt="picto Trash"
+                />
               </button>
             </div>
           </div>
@@ -63,13 +75,12 @@ export default {
     toggleModale: function () {
       this.revele = !this.revele;
     },
-
   },
   mounted() {
     let button = document.querySelector("#add-more-button");
     //Je réccupère tous les éléments à partir du 7ème
     let elements = document.querySelectorAll(
-      ".container-actu :nth-child(n + 7)"
+      ".actu :nth-child(n+5)"
     );
 
     //Add display none

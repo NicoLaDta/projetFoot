@@ -9,12 +9,14 @@
         />
       </div>
       <div class="container-text">
-        <router-link to="/VBoutique">Retour</router-link>
+        <div id="retour-button">
+          <router-link to="/VBoutique">Retour</router-link>
+        </div>
         <h1 class="font-semibold">{{ product.nomproduit }}</h1>
         <p>
           {{ product.descriptions }}
         </p>
-        <p class="text-center text-xl font-bold mt-5 mb-8">
+        <p class="text-center text-xl font-bold mt-5 mb-8" id="to-gt">
           Pour acquérir ce produit, rendez-vous en boutique !
         </p>
       </div>
@@ -45,16 +47,20 @@
 <script>
 export default {
   name: "Product",
-  data(){
-    return{
-      product : this.$route.query.product
+  data() {
+    return {
+      product: this.$route.query.product,
     };
   },
 };
 </script>
 <style lang="postcss">
-h1 {
-  font-size: 3rem;
+.article h1 {
+  background-color: #991917;
+  color: white;
+  padding: 15px;
+  margin: 30px;
+  text-align: center;
 }
 
 .pres {
@@ -66,10 +72,35 @@ h1 {
   width: 60%;
   max-width: 800px;
   margin-left: 40px;
+  margin: 30px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 20px;
+  flex-direction: column;
 }
+
+.container-text h1{
+  text-align: center;
+  margin: 30px;
+  font-size: 1.5rem;
+  font-weight: medium;
+  background-color: #991917;
+  color: white;
+  padding: 15px;
+}
+
+.container-text p{
+  margin: 30px;
+
+}
+
 .map {
   width: 50%;
   justify-content: center;
+}
+
+#retour-button:hover {
+  text-decoration: underline;
 }
 /* ———————————————— */
 /* OU NOUS TROUVER */

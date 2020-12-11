@@ -102,7 +102,7 @@
         >
           <img :src="logoGennevilliers" alt="logo-gennevilliers" />
         </a>
-        <a href="http://www.seine-saint-denis.fr" target="_blank">
+        <a href="https://seinesaintdenis.fr" target="_blank">
           <img :src="logoSeineSaintDenis" alt="logo-seinesaintdenis" />
         </a>
       </div>
