@@ -45,13 +45,13 @@ export default {
   updateArticle(id){
     console.log(id)
     return Api()
-      .delete(`article/${id}/`)
+      .put(`article/${id}/`)
       .then(response => response.data)
   },
   updateProduct(id){
     console.log(id)
     return Api()
-      .delete(`product/${id}/`)
+      .put(`product/${id}/`)
       .then(response => response.data)
   },
   deleteProduct(id){

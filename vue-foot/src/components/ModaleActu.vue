@@ -7,14 +7,14 @@
             <form action="">
         <div class="flex flex-col m-2">
           <label for="">Modifier le nom de l'article</label>
-          <input type="text" placeholder="Titre" v-model="title"/>
+          <input type="text" placeholder="Titre"/>
         </div>
         <div class="flex flex-col m-2">
           <label for="">Modifier le texte de l'article</label>
-          <textarea v-model="description" name="" id="" cols="30" rows="10" ></textarea>
+          <textarea name="" id="" cols="30" rows="10" ></textarea>
         </div>
         <div class="flex flex-col m-2">
-          <input type="submit" @click="articleUpdate" value="Submit"/>
+          <input type="submit" v-on:click="update" value="Submit"/>
         </div>
       </form>
     </div>
@@ -23,9 +23,15 @@
 
 
 <script>
+import AuthService from "@/services/AuthService.js";
 export default {
   name: "ModaleActu",
-  props: ["revele", "toggleModale"]
+  props: ["revele", "toggleModale"],
+  methods:{
+    async clicked(id) {
+      this.update = await AuthService.updateArticle(id);
+    },
+  }
 };
 </script>
 

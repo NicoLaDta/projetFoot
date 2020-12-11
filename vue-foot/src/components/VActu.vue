@@ -13,7 +13,7 @@
 
 
               <button>
-                <img v-on:click="toggleModale"  :src="pictoUpdate" flat v-if="$store.state.isLoggedIn" dark alt="picto Update" />
+                <img v-on:click="toggleModale" :src="pictoUpdate" flat v-if="$store.state.isLoggedIn" dark alt="picto Update" />
               </button>
               <button @click="clicked(item.id)">
                 <img :src="pictoTrash" flat v-if="$store.state.isLoggedIn" dark alt="picto Trash" />
@@ -22,14 +22,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="add-more">
-      <input
-        type="button"
-        id="add-more-button"
-        class="add-more__button"
-        value="Voir plus"
-      />
     </div>
   </div>
 </template>
@@ -59,6 +51,7 @@ export default {
   methods: {
     async clicked(id) {
       this.deleted = await AuthService.deleteArticle(id);
+      window.location.reload()
     },
     toggleModale: function () {
       this.revele = !this.revele;

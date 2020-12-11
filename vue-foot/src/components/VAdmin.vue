@@ -9,10 +9,6 @@
           <input type="text" placeholder="Titre" v-model="title"/>
         </div>
         <div class="flex flex-col m-2">
-          <label for="">Image</label>
-          <input type="file" accept="image/png, image/jpeg" @change="Onchange"/>
-        </div>
-        <div class="flex flex-col m-2">
           <label for="">Texte de l'article</label>
           <textarea v-model="description" name="" id="" cols="30" rows="10" ></textarea>
         </div>
@@ -32,10 +28,6 @@
         <div class="flex flex-col m-2">
           <label for="">Prix</label>
           <input type="text" placeholder="Prix en €" v-model="prix"/>
-        </div>
-        <div class="flex flex-col m-2">
-          <label for="">Image du produit</label>
-          <input type="file" accept="image/png, image/jpeg" />
         </div>
         <div class="flex flex-col m-2">
           <label for="">Description</label>

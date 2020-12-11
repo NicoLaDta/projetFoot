@@ -30,7 +30,7 @@
               alt="picto Update"
             />
           </button>
-          <button>
+          <button @click="clicked(item.id)">
             <img :src="pictoTrash" flat v-if="$store.state.isLoggedIn" dark alt="picto Trash" />
           </button>
         </div>
@@ -121,6 +121,10 @@ export default {
   methods: {
     toggleModale: function () {
       this.revele = !this.revele;
+    },
+    async clicked(id) {
+      this.deleted = await AuthService.deleteProduct(id);
+      window.location.reload()
     },
   },
   components: {
