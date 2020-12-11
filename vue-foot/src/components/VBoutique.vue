@@ -3,7 +3,7 @@
     <div class="prod" :key="item.id" v-for="item in product">
       <section class="card flex flex-col rounded">
         <router-link :to="{ name: 'Product', query: { product: item } }" class="relative">
-          <img class="item-img rounded-t-lg" src="@/assets/image-boutique/survet.jpg"/>
+          <img class="item-img rounded-t-lg" :src="`https://api.alanakra.fr/foot/${item.nomproduit}.jpg`"/>
           <div class="presentation flex justify-between m-4">
             <p>{{ item.nomproduit }}</p>
             <p class="text-red-600 font-semibold">{{ item.prix }} €</p>
