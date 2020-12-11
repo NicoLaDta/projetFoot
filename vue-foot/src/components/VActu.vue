@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div>
     <div class="container-actu">
       <div class="actu">
@@ -12,35 +11,26 @@
             <div class="div-picto">
               <modale :revele="revele" :toggleModale="toggleModale"></modale>
 
-
               <button>
-                <img v-on:click="toggleModale"  :src="pictoUpdate" flat v-if="$store.state.isLoggedIn" dark alt="picto Update" />
+                <img
+                  v-on:click="toggleModale"
+                  :src="pictoUpdate"
+                  flat
+                  v-if="$store.state.isLoggedIn"
+                  dark
+                  alt="picto Update"
+                />
               </button>
               <button @click="clicked(item.id)">
-                <img :src="pictoTrash" flat v-if="$store.state.isLoggedIn" dark alt="picto Trash" />
+                <img
+                  :src="pictoTrash"
+                  flat
+                  v-if="$store.state.isLoggedIn"
+                  dark
+                  alt="picto Trash"
+                />
               </button>
             </div>
-=======
-  <div class="container-actu">
-    <div class="actu" :key ="item.id" v-for="item in article">
-      <div class="actu__bloc">
-        <router-link :to="{name:'Article', query: {article: item}}">
-          <div class="div-picto">
-            <button>
-              <img :src="pictoUpdate"
-                v-if="$store.state.isLoggedIn"
-                flat
-                dark 
-              alt="picto Update" />
-            </button>
-            <button @click="clicked(item.id)">
-            <img :src="pictoTrash"
-                v-if="$store.state.isLoggedIn"
-                flat
-                dark 
-                alt="picto Trash"/>
-            </button>
->>>>>>> 9347fc672781fdc1878f11b2053b874e61afee15
           </div>
         </div>
       </div>
@@ -53,7 +43,6 @@
         value="Voir plus"
       />
     </div>
-
   </div>
 </template>
 

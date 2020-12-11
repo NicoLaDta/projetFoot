@@ -87,11 +87,6 @@ const routes = [
     path: "/Admin",
     name: "Admin",
     component: VAdmin
-  },
-  {
-    path: "/VProduct/:title",
-    name: "Product",
-    component: VProduct
   }
 ]
 const router = new VueRouter({
