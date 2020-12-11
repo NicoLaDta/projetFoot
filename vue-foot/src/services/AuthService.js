@@ -48,16 +48,16 @@ export default {
       .put(`article/${id}/`)
       .then(response => response.data)
   },
-  updateProduct(id){
-    console.log(id)
-    return Api()
-      .put(`product/${id}/`)
-      .then(response => response.data)
-  },
   deleteProduct(id){
     console.log(id)
     return Api()
       .delete(`product/${id}/`)
       .then(response => response.data)
   },
+  updateProduct(id){
+    console.log(id)
+    return Api()
+      .put(`product/${id}/`)
+      .then(response => response.data)
+  }
 };

@@ -84,11 +84,11 @@ export default {
       cat2: 0,
       cat3: 0,
 
-      nbMaxCat1 : 1000,
+      nbMaxCat1 : 2000,
       nbMaxCat2 : 3000,
       nbMaxCat3 : 5000,
 
-      nbCat1 : 1000,
+      nbCat1 : 2000,
       nbCat2 : 3000,
       nbCat3 : 5000,
 

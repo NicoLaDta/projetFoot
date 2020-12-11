@@ -197,7 +197,7 @@ router.post('/productAdd', userMiddleware.validateAddProduct, (req, res, next) =
 
 router.put('/product/:id', userMiddleware.validateAdd, (req, res, next) => {
     db.query(
-        `UPDATE product set nomproduit = ${db.escape(req.body.nomproduit)}, prix = ${db.escape(req.body.prix)}, descriptions = ${db.escape(req.body.descriptions)}  where id = ${db.escape(req.body.id)};`,
+        `UPDATE product set nomproduit = ${db.escape(req.body.nomproduit)}, prix = ${db.escape(req.body.prix)}, descriptions = ${db.escape(req.body.descriptions)}  where id = ${db.escape(req.params.id)};`,
         (err, result) => {
             if (err) {
                 throw err;
@@ -214,7 +214,7 @@ router.put('/product/:id', userMiddleware.validateAdd, (req, res, next) => {
 
 router.delete('/product/:id', (req, res, next) => {
     db.query(
-        `DELETE from product where id = ${db.escape(req.body.id)};`,
+        `DELETE from product where id = ${db.escape(req.params.id)};`,
         (err, result) => {
             if (err) {
                 throw err;

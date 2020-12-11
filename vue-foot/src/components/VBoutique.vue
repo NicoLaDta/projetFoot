@@ -2,7 +2,7 @@
   <div class="container-boutique flex flex-wrap justify-center">
     <div class="prod" :key="item.id" v-for="item in product">
       <section class="card flex flex-col rounded">
-        <router-link :to="{ name: 'Product', query: { product: item } }" class="relative">
+        <router-link class="relative" :to="{ name: 'Product', query: { product: item } }" >
           <img class="item-img rounded-t-lg" src="@/assets/image-boutique/survet.jpg"/>
           <div class="presentation flex justify-between m-4">
             <p>{{ item.nomproduit }}</p>
@@ -12,16 +12,9 @@
         <div class="div-picto">
           <modale-boutique :revele="revele" :toggleModale="toggleModale"></modale-boutique>
           <button>
-            <img
-              v-on:click="toggleModale"
-              :src="pictoUpdate"
-              flat
-              v-if="$store.state.isLoggedIn"
-              dark
-              alt="picto Update"
-            />
+            <img v-on:click="toggleModale" :src="pictoUpdate" flat v-if="$store.state.isLoggedIn" dark alt="picto Update" />
           </button>
-          <button @click="clicked(item.id)">
+          <button @click="clickedmgl(item.id)">
             <img :src="pictoTrash" flat v-if="$store.state.isLoggedIn" dark alt="picto Trash" />
           </button>
         </div>
@@ -40,15 +33,15 @@ export default {
       pictoUpdate: require("@/assets/image/update.png"),
       pictoTrash: require("@/assets/image/trash.png"),
       revele: false,
-      product: null,
       deleted:"",
+      product: null,
     };
   },
   async created() {
     this.product = await AuthService.getProduct();
   },
   methods: {
-    async clicked(id) {
+    async clickedmgl(id) {
       this.deleted = await AuthService.deleteProduct(id);
       window.location.reload()
     },
