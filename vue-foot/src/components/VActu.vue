@@ -1,6 +1,6 @@
 <template>
   <div class="container-actu">
-    <div class="actu" :key ="item.id" v-for="item in article" >
+    <div class="actu" :key ="item.id" v-for="item in article">
       <div class="actu__bloc">
         <router-link :to="{name:'Article', query: {article: item}}">
           <div class="div-picto">
@@ -32,6 +32,7 @@
         value="Voir plus"
       />
     </div>
+
   </div>
 </template>
 
@@ -84,6 +85,23 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.modal-mask {
+     position: fixed;
+     z-index: 9998;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, .5);
+     display: table;
+     transition: opacity .3s ease;
+   }
+
+   .modal-wrapper {
+     display: table-cell;
+     vertical-align: middle;
+   }
+
 .container-actu {
   margin-right: 100px;
   margin-left: 100px;
