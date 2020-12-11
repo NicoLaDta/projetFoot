@@ -9,10 +9,9 @@
               <h1 class="pt-roboto-condensed">{{ item.title }}</h1>
             </router-link>
             <div class="div-picto">
-              <modale :revele="revele" :toggleModale="toggleModale"></modale>
-              <button >
+              <router-link to="/VActu/ModaleActu" >
                 <img v-on:click="toggleModale" :src="pictoUpdate" flat v-if="$store.state.isLoggedIn" dark alt="picto Update" />
-              </button>
+              </router-link>
               <button @click="clicked(item.id)">
                 <img :src="pictoTrash" flat v-if="$store.state.isLoggedIn" dark alt="picto Trash" />
               </button>
@@ -25,7 +24,6 @@
 </template>
 
 <script>
-import ModaleActu from "./ModaleActu";
 import AuthService from "@/services/AuthService.js";
 export default {
   name: "Actualités",
@@ -40,9 +38,6 @@ export default {
       update:"",
       revele: false,
     };
-  },
-  components: {
-    modale: ModaleActu,
   },
   async created() {
     this.article = await AuthService.getArticle();

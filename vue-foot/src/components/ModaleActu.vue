@@ -1,9 +1,13 @@
 <template>
-  <div class="bloc-modale" v-if="revele" >
-    <div class="overlay" v-on:click="toggleModale"></div>
+  <div class="bloc-modale" >
+    <div class="overlay"></div>
 
     <div class="modale">
-      <div class="btn-modale" v-on:click="toggleModale" >X</div>
+      <div class="btn-modale" >
+        <router-link to="/VActu">
+        X
+        </router-link>
+        </div>
             <form action="">
         <div class="flex flex-col m-2">
           <label for="">Modifier le nom de l'article</label>
@@ -64,7 +68,7 @@ export default {
   color: #333;
   padding: 50px;
   position: fixed;
-  top: 40%;
+  /* top: 40%; */
 }
 
 .btn-modale {

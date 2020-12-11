@@ -2,20 +2,37 @@
   <div class="container-boutique flex flex-wrap justify-center">
     <div class="prod" :key="item.id" v-for="item in product">
       <section class="card flex flex-col rounded">
-        <router-link class="relative" :to="{ name: 'Product', query: { product: item } }" >
-          <img class="item-img rounded-t-lg" src="@/assets/image-boutique/survet.jpg"/>
+        <router-link
+          :to="{ name: 'Product', query: { product: item } }"
+          class="relative"
+        >
+          <img
+            class="item-img rounded-t-lg"
+            :src="`https://api.alanakra.fr/foot/${item.nomproduit}.jpg`"
+          />
           <div class="presentation flex justify-between m-4">
             <p>{{ item.nomproduit }}</p>
             <p class="text-red-600 font-semibold">{{ item.prix }} €</p>
           </div>
         </router-link>
-        <div class="div-picto">
-          <modale-boutique :revele="revele" :toggleModale="toggleModale"></modale-boutique>
-          <button>
-            <img v-on:click="toggleModale" :src="pictoUpdate" flat v-if="$store.state.isLoggedIn" dark alt="picto Update" />
-          </button>
-          <button @click="clickedmgl(item.id)">
-            <img :src="pictoTrash" flat v-if="$store.state.isLoggedIn" dark alt="picto Trash" />
+        <div class="div-picto flex pb-3">
+          <router-link to="/ModaleBoutique">
+            <img
+              :src="pictoUpdate"
+              flat
+              v-if="$store.state.isLoggedIn"
+              dark
+              alt="picto Update"
+            />
+          </router-link>
+          <button @click="clicked(item.id)">
+            <img
+              :src="pictoTrash"
+              flat
+              v-if="$store.state.isLoggedIn"
+              dark
+              alt="picto Trash"
+            />
           </button>
         </div>
       </section>
@@ -25,7 +42,7 @@
 
 <script>
 import AuthService from "@/services/AuthService.js";
-import ModaleBoutique from "./ModaleBoutique.vue";
+// import ModaleBoutique from "./ModaleBoutique.vue";
 export default {
   name: "Boutique",
   data() {
@@ -43,15 +60,15 @@ export default {
   methods: {
     async clickedmgl(id) {
       this.deleted = await AuthService.deleteProduct(id);
-      window.location.reload()
+      window.location.reload();
     },
-    toggleModale: function () {
-      this.revele = !this.revele;
-    },
+    // toggleModale: function () {
+    //   this.revele = !this.revele;
+    // },
   },
-  components: {
-    ModaleBoutique,
-  },
+  // components: {
+  //   ModaleBoutique,
+  // },
 };
 </script>
 
@@ -79,9 +96,9 @@ export default {
 /* ------------- */
 .div-picto {
   display: flex;
-  position: absolute;
-  right: 160px;
-  left: 160px;
+  /* position: absolute; */
+  /* right: 160px;
+  left: 160px; */
   padding: 2px;
   margin-bottom: 20px;
 }
